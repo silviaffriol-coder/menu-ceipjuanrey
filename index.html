@@ -47,6 +47,26 @@
     </footer>
 
 </div> <!-- PECHA app-container -->
+<script>
+    const elementoData = document.getElementById("data-hoxe");
+
+    const hoxe = new Date();
+
+    const diasSemana = [
+        "Domingo", "Luns", "Martes", "Mércores", "Xoves", "Venres", "Sábado"
+    ];
+
+    const meses = [
+        "xaneiro", "febreiro", "marzo", "abril", "maio", "xuño",
+        "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"
+    ];
+
+    const diaSemana = diasSemana[hoxe.getDay()];
+    const dia = hoxe.getDate();
+    const mes = meses[hoxe.getMonth()];
+
+    elementoData.textContent = `${diaSemana}, ${dia} de ${mes}`;
+</script>
 
 </body>
 
