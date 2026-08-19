@@ -1,36 +1,85 @@
-// -----------------------------
-// MENÚ BASAL POR DÍAS REAIS
-// -----------------------------
+// -------------------------------------------
+// MENÚ BASAL POR MESES E DÍAS (CURSO COMPLETO)
+// -------------------------------------------
 
-const menuBasalPorDia = {
-    "2024-09-09": "Repolo con allada · Polo ao forno con verduras e patacas · Iogur ou froita",
-    "2024-09-10": "Sopa de verduras con fideos integrais e garavanzos · Luras á romana con ensalada · Froita",
-    "2024-09-11": "Crema de cenoria con pataca · Tortilla de champiñóns e ensalada de espárragos · Froita",
-    // 12 NON HAI COMEDOR
-    "2024-09-13": "Ensalada Arco da Vella · Arroz con lentellas · Froita",
+const menusBasal = {
+    // ---------------- SEPTEMBRO ----------------
+    "2024-09": {
+        "09": "Repolo con allada · Polo ao forno con verduras e patacas · Iogur ou froita",
+        "10": "Sopa de verduras con fideos integrais e garavanzos · Luras á romana · Froita",
+        "11": "Crema de cenoria con pataca · Tortilla de champiñóns · Froita",
+        "13": "Ensalada Arco da Vella · Arroz con lentellas · Froita",
 
-    "2024-09-16": "Coliflor con allada · Guiso de tenreira con patacas cocidas · Froita",
-    "2024-09-17": "Crema de verduras de tempada · Arroz á cubana · Iogur ou froita",
-    "2024-09-18": "Ensalada caprese · Potaxe de garavanzos con verduras · Froita",
-    "2024-09-19": "Guiso de patacas con verduras · Peituga de polo ao limón con ensalada · Froita",
-    "2024-09-20": "Menestra con allada · Pasta integral con bonito e salsa de tomate · Froita",
+        "16": "Coliflor con allada · Guiso de tenreira · Froita",
+        "17": "Crema de verduras · Arroz á cubana · Iogur ou froita",
+        "18": "Ensalada caprese · Potaxe de garavanzos · Froita",
+        "19": "Guiso de patacas · Peituga de polo ao limón · Froita",
+        "20": "Menestra · Pasta integral con bonito · Froita",
 
-    "2024-09-23": "Ensalada completa · Raxo de pavo con arroz e pisto · Froita",
-    "2024-09-24": "Sopa de polo con fideos integrais · Pescada en salsa verde con patacas · Froita",
-    "2024-09-25": "Ensalada de garavanzos · Brócoli con pataca e ovo con allada · Froita",
-    "2024-09-26": "Crema de cabaciña · Fideuá de marisco · Froita",
-    "2024-09-27": "Salteado de verduras con fabas · Ensaladilla rusa · Iogur ou froita",
+        "23": "Ensalada completa · Raxo de pavo con arroz · Froita",
+        "24": "Sopa de polo · Pescada en salsa verde · Froita",
+        "25": "Ensalada de garavanzos · Brócoli con pataca e ovo · Froita",
+        "26": "Crema de cabaciña · Fideuá de marisco · Froita",
+        "27": "Salteado de verduras · Ensaladilla rusa · Iogur ou froita",
 
-    "2024-09-30": "Xudías verdes con patacas · Lombo ao forno con salsa de verduras · Froita",
-    "2024-10-01": "Ensalada de tomate, olivas e sardiñas · Tortilla de patacas e cebola con cabaciña · Froita",
-    "2024-10-02": "Garavanzos con espinacas · Ensalada de pasta · Iogur ou froita",
-    "2024-10-03": "Crema de cabaza · Polo guisado e patacas ao forno con ensalada · Froita",
-    "2024-10-04": "Arroz 3 verduras · Salmón á prancha con ensalada con froita de tempada · Froita"
+        "30": "Xudías verdes · Lombo ao forno · Froita"
+    },
+
+    // ---------------- OUTUBRO ----------------
+    "2024-10": {
+        "01": "Ensalada de tomate, olivas e sardiñas · Tortilla de patacas · Froita",
+        "02": "Garavanzos con espinacas · Ensalada de pasta · Iogur ou froita",
+        "03": "Crema de cabaza · Polo guisado · Froita",
+        "04": "Arroz 3 verduras · Salmón á prancha · Froita"
+        // 12 festivo → NON HAI COMEDOR
+    },
+
+    // ---------------- NOVEMBRO ----------------
+    "2024-11": {
+        // Engadir aquí cando teña o PDF:
+        // "04": "EXEMPLO · EXEMPLO · EXEMPLO"
+    },
+
+    // ---------------- DECEMBRO ----------------
+    "2024-12": {
+        // Engadir cando chegue o PDF
+    },
+
+    // ---------------- XANEIRO ----------------
+    "2025-01": {
+        // Engadir cando chegue o PDF
+    },
+
+    // ---------------- FEBREIRO ----------------
+    "2025-02": {
+        // Engadir cando chegue o PDF
+    },
+
+    // ---------------- MARZO ----------------
+    "2025-03": {
+        // Engadir cando chegue o PDF
+    },
+
+    // ---------------- ABRIL ----------------
+    "2025-04": {
+        // Engadir cando chegue o PDF
+    },
+
+    // ---------------- MAIO ----------------
+    "2025-05": {
+        // Engadir cando chegue o PDF
+    },
+
+    // ---------------- XUÑO ----------------
+    "2025-06": {
+        // Engadir cando chegue o PDF
+    }
 };
 
-// -----------------------------
+
+// -------------------------------------------
 // MENÚS ESPECIAIS (COMPLETOS)
-// -----------------------------
+// -------------------------------------------
 
 const menusEspeciais = {
     lactosa: {
@@ -67,9 +116,10 @@ const menusEspeciais = {
     }
 };
 
-// -----------------------------
-// MOSTRAR MENÚ BASAL DO DÍA
-// -----------------------------
+
+// -------------------------------------------
+// MOSTRAR MENÚ BASAL DO DÍA AUTOMÁTICO
+// -------------------------------------------
 
 function mostrarMenuBasalHoxe() {
     const hoxe = new Date();
@@ -77,49 +127,50 @@ function mostrarMenuBasalHoxe() {
     const ano = hoxe.getFullYear();
     const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
     const dia = String(hoxe.getDate()).padStart(2, "0");
-    const dataActual = `${ano}-${mes}-${dia}`;
 
-    const diaSemana = hoxe.getDay(); // 0 domingo, 6 sábado
+    const claveMes = `${ano}-${mes}`;
 
     const titulo = document.getElementById("titulo-menu");
     const box = document.getElementById("menu-box");
 
     // Fin de semana
-    if (diaSemana === 0 || diaSemana === 6) {
+    if (hoxe.getDay() === 0 || hoxe.getDay() === 6) {
         titulo.innerText = "Hoxe non hai comedor";
         box.innerHTML = "<p>Fin de semana.</p>";
         return;
     }
 
     // Festivo 12 de outubro
-    if (dataActual === "2024-10-12") {
+    if (claveMes === "2024-10" && dia === "12") {
         titulo.innerText = "Hoxe non hai comedor";
         box.innerHTML = "<p>Festivo nacional.</p>";
         return;
     }
 
     // Antes do 9 de setembro
-    if (dataActual < "2024-09-09") {
+    if (claveMes === "2024-09" && dia < "09") {
         titulo.innerText = "O comedor aínda non comezou";
         box.innerHTML = "<p>Inicio o 9 de setembro.</p>";
         return;
     }
 
-    const menu = menuBasalPorDia[dataActual];
+    const menuMes = menusBasal[claveMes];
+    const menuDia = menuMes ? menuMes[dia] : null;
 
-    if (!menu) {
+    if (!menuDia) {
         titulo.innerText = "Menú non dispoñible";
         box.innerHTML = "<p>Non hai datos para este día.</p>";
         return;
     }
 
     titulo.innerText = "Menú Basal de hoxe";
-    box.innerHTML = `<p>${menu}</p>`;
+    box.innerHTML = `<p>${menuDia}</p>`;
 }
 
-// -----------------------------
+
+// -------------------------------------------
 // MOSTRAR MENÚS ESPECIAIS
-// -----------------------------
+// -------------------------------------------
 
 function mostrarMenu(tipo) {
     if (tipo === "basal") {
@@ -138,10 +189,12 @@ function mostrarMenu(tipo) {
     event.target.classList.add("active");
 }
 
-// -----------------------------
-// INICIO
-// -----------------------------
+
+// -------------------------------------------
+// INICIO AUTOMÁTICO
+// -------------------------------------------
 
 mostrarMenuBasalHoxe();
+
 
 
