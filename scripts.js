@@ -9,6 +9,7 @@ if (imaxeSelo) {
 // Triple tap no selo para abrir panel admin
 let taps = 0;
 let lastTapTime = 0;
+let adminUnlocked = false;
 
 const selo = document.getElementById("selo");
 const panel = document.getElementById("panelAdmin");
@@ -16,6 +17,7 @@ const panel = document.getElementById("panelAdmin");
 selo.addEventListener("click", () => {
     const now = Date.now();
 
+    // Se o toque é rápido, conta como parte da secuencia
     if (now - lastTapTime < 500) {
         taps++;
     } else {
@@ -24,7 +26,9 @@ selo.addEventListener("click", () => {
 
     lastTapTime = now;
 
+    // Cando chega a 3 toques → desbloquea admin
     if (taps === 3) {
+        adminUnlocked = true;
         panel.classList.remove("panel-oculto");
         panel.classList.add("panel-visible");
     }
@@ -34,6 +38,10 @@ selo.addEventListener("click", () => {
 document.getElementById("pecharAdmin").addEventListener("click", () => {
     panel.classList.remove("panel-visible");
     panel.classList.add("panel-oculto");
+
+    // Volver bloquear o acceso admin
+    adminUnlocked = false;
+    taps = 0;
 });
 
 // Mostrar menú do día actual
