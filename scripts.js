@@ -21,6 +21,25 @@ document.getElementById("pecharAdmin").addEventListener("click", () => {
     document.getElementById("panelAdmin").classList.add("panel-oculto");
 });
 
+// CARGAR MENÚ EXISTENTE AO SELECCIONAR DATA NO PANEL ADMIN
+document.getElementById("dataSelect").addEventListener("change", () => {
+    const data = document.getElementById("dataSelect").value;
+
+    if (!data) return;
+
+    const menu = MENUS_BASAL[data];
+
+    if (menu) {
+        document.getElementById("primeiroInput").value = menu.primeiro;
+        document.getElementById("segundoInput").value = menu.segundo;
+        document.getElementById("sobremesaInput").value = menu.sobremesa;
+    } else {
+        document.getElementById("primeiroInput").value = "";
+        document.getElementById("segundoInput").value = "";
+        document.getElementById("sobremesaInput").value = "";
+    }
+});
+
 // GARDAR MENÚ
 document.getElementById("gardarBtn").addEventListener("click", () => {
     const data = document.getElementById("dataSelect").value;
