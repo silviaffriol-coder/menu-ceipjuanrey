@@ -1,135 +1,181 @@
 /* ---------------------------------------------------
-   ESTILOS XERAIS
+   ESTILOS XERAIS DA APP DO COMEDOR – CEIP JUAN REY
+   Curso 2026–2027
 --------------------------------------------------- */
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f2f6fa;
+    font-family: Arial, sans-serif;
+    background: #e9f2ff;
     color: #333;
 }
 
+/* CONTEDOR PRINCIPAL */
 .app {
-    max-width: 600px;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
 }
 
-/* ---------------------------------------------------
-   CABECEIRA
---------------------------------------------------- */
+/* SELLO DO COLEXIO */
+.selo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
+.selo-container img {
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0003;
+}
+
+/* CABECEIRA */
 header {
     text-align: center;
     margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 28px;
+    font-size: 2rem;
     margin: 0;
-    color: #005bbb;
+    color: #003366;
 }
 
 .subtitulo {
-    font-size: 16px;
-    color: #666;
-    margin-top: 5px;
+    font-size: 1rem;
+    color: #0055aa;
 }
 
-/* ---------------------------------------------------
-   BOTÓNS SELECTORES
---------------------------------------------------- */
-
+/* SELECTORES DE MENÚ */
 .selectores {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-around;
     margin-bottom: 20px;
-    flex-wrap: wrap;
 }
 
 .selector {
-    flex: 1;
-    padding: 12px;
-    background: #e3e9f0;
+    padding: 10px 15px;
     border: none;
+    background: #cce0ff;
+    color: #003366;
+    font-size: 1rem;
     border-radius: 8px;
-    font-size: 15px;
     cursor: pointer;
     transition: 0.2s;
-    text-align: center;
 }
 
 .selector:hover {
-    background: #d4dce6;
+    background: #b3d1ff;
 }
 
 .selector.active {
-    background: #005bbb;
+    background: #0055aa;
     color: white;
-    font-weight: bold;
 }
 
-/* ---------------------------------------------------
-   CAIXA DO MENÚ
---------------------------------------------------- */
-
+/* CAIXA DO MENÚ */
 .menu-container {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px #0002;
 }
 
+.menu-box {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* TÍTULO DO MENÚ */
 #titulo-menu {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #005bbb;
     text-align: center;
+    color: #003366;
 }
 
-.menu-box p {
-    font-size: 18px;
-    margin: 10px 0;
-    line-height: 1.4;
-    text-align: center;
-}
-
-/* ---------------------------------------------------
-   RODAPÉ
---------------------------------------------------- */
-
+/* FOOTER */
 footer {
-    margin-top: 25px;
+    margin-top: 30px;
     text-align: center;
-}
-
-.footer-text {
-    font-size: 14px;
-    color: #777;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 /* ---------------------------------------------------
-   RESPONSIVE
+   ESTILOS PARA MENÚ MENSUAL
 --------------------------------------------------- */
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    #titulo-menu {
-        font-size: 20px;
-    }
-
-    .menu-box p {
-        font-size: 17px;
-    }
-
-    .selector {
-        font-size: 14px;
-        padding: 10px;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+th {
+    background: #0055aa;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background: #f2f6ff;
+}
+
+/* ---------------------------------------------------
+   ESTILOS PANEL ADMIN (simple, neutro)
+--------------------------------------------------- */
+
+.admin-container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.admin-container h1 {
+    text-align: center;
+    color: #003366;
+}
+
+.admin-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0002;
+    margin-top: 20px;
+}
+
+.admin-box label {
+    font-weight: bold;
+}
+
+.admin-box input,
+.admin-box textarea,
+.admin-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.admin-box button {
+    background: #0055aa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.admin-box button:hover {
+    background: #003f7d;
+}
