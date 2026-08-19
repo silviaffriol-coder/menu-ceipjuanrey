@@ -7,7 +7,8 @@
 
 <style>
   body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
-  h1 { text-align: center; margin-bottom: 30px; }
+  h1 { text-align: center; margin-bottom: 20px; }
+  img { display:block; margin:0 auto 25px; max-width:300px; border-radius:10px; }
   .tabs { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
   .tab { padding: 10px 20px; background: #ddd; border-radius: 5px; cursor: pointer; }
   .tab.active { background: #4a90e2; color: white; }
@@ -18,6 +19,9 @@
 <body>
 
 <h1>Menú do Comedor – Curso 2026–2027</h1>
+
+<!-- FOTO DO COLEXIO -->
+<img src="img/foto-colexio.jpg" alt="CEIP Juan Rey">
 
 <div class="tabs">
   <div class="tab active" onclick="mostrarMenu('basal')">Basal</div>
@@ -32,7 +36,13 @@
 // ------------------------------------------------------------
 // 1) LISTA COMPLETA DE DÍAS NON LECTIVOS
 // ------------------------------------------------------------
+
+// Agosto 2026 completo (non lectivo)
 const nonLectivos = [
+  "2026-08-01","2026-08-02","2026-08-03","2026-08-04","2026-08-05","2026-08-06","2026-08-07","2026-08-08","2026-08-09","2026-08-10",
+  "2026-08-11","2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20",
+  "2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31",
+
   // Antes de comezar o curso
   "2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08",
 
@@ -66,7 +76,7 @@ const nonLectivos = [
 ];
 
 // ------------------------------------------------------------
-// 2) MENÚS (TI CAMBIAS ESTES TEXTOS CANDO QUEIRAS)
+// 2) MENÚS (CAMBIAS TI OS TEXTOS)
 // ------------------------------------------------------------
 const menus = {
   basal: {
@@ -129,4 +139,3 @@ function mostrarMenu(tipo) {
 
 </body>
 </html>
-
