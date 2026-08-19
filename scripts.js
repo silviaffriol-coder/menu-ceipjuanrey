@@ -66,7 +66,8 @@ function mostrarTipo(tipo) {
     const coleccion = {
         basal: MENUS_BASAL,
         glute: MENUS_SEN_GLUTE,
-        musulman: MENUS_MUSULMAN
+        musulman: MENUS_MUSULMAN,
+        lactosa: MENUS_SEN_LACTOSA
     }[tipo];
 
     const hoxe = new Date();
