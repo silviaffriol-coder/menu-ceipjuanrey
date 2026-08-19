@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración – CEIP Juan Rey</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <h1>Panel de Administración</h1>
+    <p style="text-align:center; color:#555;">
+        Só accesible mediante o xesto secreto no selo do colexio.
+    </p>
+
+    <div class="admin-box">
+
+        <h2>Editar Menús do Día</h2>
+
+        <label for="dia">Día da semana:</label>
+        <select id="dia">
+            <option value="luns">Luns</option>
+            <option value="martes">Martes</option>
+            <option value="mércores">Mércores</option>
+            <option value="xoves">Xoves</option>
+            <option value="venres">Venres</option>
+        </select>
+
+        <label for="tipo">Tipo de menú:</label>
+        <select id="tipo">
+            <option value="basal">Basal</option>
+            <option value="lactosa">Sen lactosa</option>
+            <option value="glute">Sen glute</option>
+            <option value="musulman">Musulmán</option>
+        </select>
+
+        <label for="primeiro">Primeiro prato:</label>
+        <input type="text" id="primeiro">
+
+        <label for="segundo">Segundo prato:</label>
+        <input type="text" id="segundo">
+
+        <label for="postre">Postre:</label>
+        <input type="text" id="postre">
+
+        <button onclick="gardarMenu()">Gardar cambios</button>
+
+        <p id="mensaxe" style="margin-top:15px; color:#0055aa; font-weight:bold;"></p>
+
+    </div>
+
+    <nav style="text-align:center; margin-top:25px;">
+        <a href="index.html"><button>Volver ao menú</button></a>
+    </nav>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
