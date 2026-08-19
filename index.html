@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú do Comedor – CEIP Juan Rey</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
 
     <header>
-        <img id="selo" src="selo.png" alt="Selo do centro" class="selo-img">
+        <!-- A imaxe que contén o selo integrado -->
+        <img src="img/foto-colexio.jpg" alt="Selo do centro" class="selo-img">
         <h1>Menú do Comedor – CEIP Juan Rey</h1>
     </header>
 
     <main>
         <div id="menuMostrado">
             <h2 id="diaTitulo"></h2>
-            <p><strong>Primeiro:</strong> <span id="primeiroMostrado"></span></p>
-            <p><strong>Segundo:</strong> <span id="segundoMostrado"></span></p>
-            <p><strong>Sobremesa:</strong> <span id="sobremesaMostrado"></span></p>
+
+            <p><strong>Primeiro:</strong> 
+                <span id="primeiroMostrado">—</span>
+            </p>
+
+            <p><strong>Segundo:</strong> 
+                <span id="segundoMostrado">—</span>
+            </p>
+
+            <p><strong>Sobremesa:</strong> 
+                <span id="sobremesaMostrado">—</span>
+            </p>
         </div>
     </main>
 
-    <!-- PANEL ADMIN OCULTO -->
+    <!-- PANEL ADMIN OCULTO AO INICIO -->
     <div id="panelAdmin" class="panel-oculto">
         <h2>Panel de administración</h2>
 
