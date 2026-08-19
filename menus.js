@@ -41,39 +41,25 @@ const menusBasal = {
     },
 
     // ---------------- DECEMBRO ----------------
-    "2024-12": {
-        // Engadir cando chegue o PDF
-    },
+    "2024-12": {},
 
     // ---------------- XANEIRO ----------------
-    "2025-01": {
-        // Engadir cando chegue o PDF
-    },
+    "2025-01": {},
 
     // ---------------- FEBREIRO ----------------
-    "2025-02": {
-        // Engadir cando chegue o PDF
-    },
+    "2025-02": {},
 
     // ---------------- MARZO ----------------
-    "2025-03": {
-        // Engadir cando chegue o PDF
-    },
+    "2025-03": {},
 
     // ---------------- ABRIL ----------------
-    "2025-04": {
-        // Engadir cando chegue o PDF
-    },
+    "2025-04": {},
 
     // ---------------- MAIO ----------------
-    "2025-05": {
-        // Engadir cando chegue o PDF
-    },
+    "2025-05": {},
 
     // ---------------- XUÑO ----------------
-    "2025-06": {
-        // Engadir cando chegue o PDF
-    }
+    "2025-06": {}
 };
 
 
@@ -133,38 +119,51 @@ function mostrarMenuBasalHoxe() {
     const titulo = document.getElementById("titulo-menu");
     const box = document.getElementById("menu-box");
 
+    // Crear data real en texto
+    const diasSemana = ["Domingo","Luns","Martes","Mércores","Xoves","Venres","Sábado"];
+    const mesesTexto = ["xaneiro","febreiro","marzo","abril","maio","xuño","xullo","agosto","setembro","outubro","novembro","decembro"];
+    const textoData = `${diasSemana[hoxe.getDay()]}, ${dia} de ${mesesTexto[hoxe.getMonth()]}`;
+
     // Fin de semana
     if (hoxe.getDay() === 0 || hoxe.getDay() === 6) {
         titulo.innerText = "Hoxe non hai comedor";
-        box.innerHTML = "<p>Fin de semana.</p>";
+        box.innerHTML = `<p>${textoData}</p><p>Fin de semana.</p>`;
         return;
     }
 
     // Festivo 12 de outubro
     if (claveMes === "2024-10" && dia === "12") {
         titulo.innerText = "Hoxe non hai comedor";
-        box.innerHTML = "<p>Festivo nacional.</p>";
+        box.innerHTML = `<p>${textoData}</p><p>Festivo nacional.</p>`;
         return;
     }
 
     // Antes do 9 de setembro
     if (claveMes === "2024-09" && dia < "09") {
         titulo.innerText = "O comedor aínda non comezou";
-        box.innerHTML = "<p>Inicio o 9 de setembro.</p>";
+        box.innerHTML = `<p>${textoData}</p><p>Inicio o 9 de setembro.</p>`;
+        return;
+    }
+
+    // Mes sen menú cargado (ex: agosto)
+    if (!menusBasal[claveMes]) {
+        titulo.innerText = "Hoxe non hai comedor";
+        box.innerHTML = `<p>${textoData}</p><p>Non hai comedor este mes.</p>`;
         return;
     }
 
     const menuMes = menusBasal[claveMes];
-    const menuDia = menuMes ? menuMes[dia] : null;
+    const menuDia = menuMes[dia];
 
     if (!menuDia) {
         titulo.innerText = "Menú non dispoñible";
-        box.innerHTML = "<p>Non hai datos para este día.</p>";
+        box.innerHTML = `<p>${textoData}</p><p>Non hai datos para este día.</p>`;
         return;
     }
 
+    // Día lectivo con menú
     titulo.innerText = "Menú Basal de hoxe";
-    box.innerHTML = `<p>${menuDia}</p>`;
+    box.innerHTML = `<p>${textoData}</p><p>${menuDia}</p>`;
 }
 
 
@@ -195,6 +194,3 @@ function mostrarMenu(tipo) {
 // -------------------------------------------
 
 mostrarMenuBasalHoxe();
-
-
-
