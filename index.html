@@ -1,68 +1,94 @@
 <!DOCTYPE html>
 <html lang="gl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú do Comedor – CEIP Juan Rey</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <title>Menú comedor CEIP Juan Rey 2026-2027</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 0.5rem; }
+    .fila { margin-bottom: 1rem; }
+    label { font-weight: 600; margin-right: 0.5rem; }
+    select, input[type="date"] { padding: 0.3rem 0.4rem; }
+    #resultado { margin-top: 1.5rem; border-top: 1px solid #ccc; padding-top: 1rem; }
+    .campo { margin-bottom: 0.4rem; }
+    .etiqueta { font-weight: 600; }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <img src="img/foto-colexio.jpg" alt="Selo do centro" class="selo-img">
-        <h1>Menú do Comedor – CEIP Juan Rey</h1>
-    </header>
+  <h1>Menú do comedor 2026-2027</h1>
+  <p>Escolle o tipo de menú e a data para ver o prato correspondente.</p>
 
-    <main>
-        <div id="menuMostrado">
-            <h2 id="diaTitulo"></h2>
+  <!-- Tipo de menú -->
+  <div class="fila">
+    <label for="tipoMenu">Tipo de menú:</label>
+    <select id="tipoMenu">
+      <option value="MENUS_BASAL">Basal</option>
+      <option value="MENUS_MUSULMAN">Musulmán</option>
+      <option value="MENUS_SEN_GLUTE">Sen glute</option>
+      <option value="MENUS_SEN_MARISCO">Sen marisco</option>
+      <option value="MENUS_SEN_LACTOSA">Sen lactosa</option>
+    </select>
+  </div>
 
-            <p><strong>Primeiro:</strong> 
-                <span id="primeiroMostrado">—</span>
-            </p>
+  <!-- Data -->
+  <div class="fila">
+    <label for="dataMenu">Data:</label>
+    <input type="date" id="dataMenu">
+    <button type="button" onclick="mostrarMenu()">Ver menú</button>
+  </div>
 
-            <p><strong>Segundo:</strong> 
-                <span id="segundoMostrado">—</span>
-            </p>
-
-            <p><strong>Sobremesa:</strong> 
-                <span id="sobremesaMostrado">—</span>
-            </p>
-        </div>
-    </main>
-
-    <!-- PANEL ADMIN OCULTO AO INICIO -->
-    <div id="panelAdmin" class="panel-oculto">
-        <h2>Panel de administración</h2>
-
-        <label for="dataSelect">Data a modificar:</label>
-        <input type="date" id="dataSelect">
-
-        <label for="dietaSelect">Dieta:</label>
-        <select id="dietaSelect">
-            <option value="basal">Basal</option>
-            <option value="musulman">Musulmán</option>
-            <option value="sen_glute">Sen glute</option>
-            <option value="sen_marisco">Sen marisco</option>
-            <option value="sen_lactosa">Sen lactosa / baixo fructosa</option>
-        </select>
-
-        <label for="primeiroInput">Primeiro prato:</label>
-        <input type="text" id="primeiroInput">
-
-        <label for="segundoInput">Segundo prato:</label>
-        <input type="text" id="segundoInput">
-
-        <label for="sobremesaInput">Sobremesa:</label>
-        <input type="text" id="sobremesaInput">
-
-        <button id="gardarBtn">Gardar menú</button>
-        <button id="pecharAdmin">Pechar</button>
+  <!-- Resultado -->
+  <div id="resultado">
+    <div class="campo">
+      <span class="etiqueta">Primeiro prato:</span>
+      <span id="primeiroPrato">—</span>
     </div>
+    <div class="campo">
+      <span class="etiqueta">Segundo prato:</span>
+      <span id="segundoPrato">—</span>
+    </div>
+    <div class="campo">
+      <span class="etiqueta">Sobremesa:</span>
+      <span id="sobremesaPrato">—</span>
+    </div>
+  </div>
 
-    <script src="menus.js"></script>
-    <script src="scripts.js"></script>
+  <!-- Carga do ficheiro menus.js -->
+  <script src="menus.js"></script>
+
+  <script>
+    function mostrarMenu() {
+      const tipo = document.getElementById('tipoMenu').value;
+      const data = document.getElementById('dataMenu').value;
+
+      if (!data) {
+        alert('Escolle unha data.');
+        return;
+      }
+
+      const coleccion = {
+        MENUS_BASAL,
+        MENUS_MUSULMAN,
+        MENUS_SEN_GLUTE,
+        MENUS_SEN_MARISCO,
+        MENUS_SEN_LACTOSA
+      }[tipo];
+
+      const menu = coleccion[data];
+
+      if (!menu) {
+        document.getElementById('primeiroPrato').textContent = 'Sen menú rexistrado';
+        document.getElementById('segundoPrato').textContent = '—';
+        document.getElementById('sobremesaPrato').textContent = '—';
+        return;
+      }
+
+      document.getElementById('primeiroPrato').textContent = menu.primeiro || '—';
+      document.getElementById('segundoPrato').textContent = menu.segundo || '—';
+      document.getElementById('sobremesaPrato').textContent = menu.sobremesa || '—';
+    }
+  </script>
+
 </body>
 </html>
-
