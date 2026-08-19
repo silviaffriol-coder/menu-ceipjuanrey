@@ -1,181 +1,53 @@
-/* ---------------------------------------------------
-   ESTILOS XERAIS DA APP DO COMEDOR – CEIP JUAN REY
-   Curso 2026–2027
---------------------------------------------------- */
-
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #e9f2ff;
-    color: #333;
+    background: #f4f4f4;
 }
 
-/* CONTEDOR PRINCIPAL */
-.app {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* SELLO DO COLEXIO */
-.selo-container {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.selo-container img {
-    width: 180px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #0003;
-}
-
-/* CABECEIRA */
 header {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
-header h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: #003366;
-}
-
-.subtitulo {
-    font-size: 1rem;
-    color: #0055aa;
-}
-
-/* SELECTORES DE MENÚ */
-.selectores {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.selector {
-    padding: 10px 15px;
-    border: none;
-    background: #cce0ff;
-    color: #003366;
-    font-size: 1rem;
-    border-radius: 8px;
+.selo-img {
+    width: 120px;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.selector:hover {
-    background: #b3d1ff;
-}
-
-.selector.active {
-    background: #0055aa;
-    color: white;
-}
-
-/* CAIXA DO MENÚ */
-.menu-container {
-    background: white;
+main {
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #0002;
-}
-
-.menu-box {
-    margin-top: 15px;
-    font-size: 1.1rem;
-}
-
-/* TÍTULO DO MENÚ */
-#titulo-menu {
     text-align: center;
-    color: #003366;
 }
 
-/* FOOTER */
-footer {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* ---------------------------------------------------
-   ESTILOS PARA MENÚ MENSUAL
---------------------------------------------------- */
-
-table {
+.panel-oculto {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th {
-    background: #0055aa;
-    color: white;
-    padding: 10px;
-}
-
-td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:nth-child(even) {
-    background: #f2f6ff;
-}
-
-/* ---------------------------------------------------
-   ESTILOS PANEL ADMIN (simple, neutro)
---------------------------------------------------- */
-
-.admin-container {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-}
-
-.admin-container h1 {
-    text-align: center;
-    color: #003366;
-}
-
-.admin-box {
+    height: 100%;
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #0002;
-    margin-top: 20px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-.admin-box label {
-    font-weight: bold;
+.panel-visible {
+    display: block;
 }
 
-.admin-box input,
-.admin-box textarea,
-.admin-box select {
+#panelAdmin input {
     width: 100%;
     padding: 10px;
-    margin-top: 8px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
 }
 
-.admin-box button {
-    background: #0055aa;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+#panelAdmin button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
-.admin-box button:hover {
-    background: #003f7d;
-}
