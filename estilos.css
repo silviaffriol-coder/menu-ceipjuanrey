@@ -20,8 +20,13 @@ main {
     text-align: center;
 }
 
+/* PANEL ADMIN OCULTO / VISIBLE */
 .panel-oculto {
     display: none;
+}
+
+.panel-visible {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,10 +37,6 @@ main {
     overflow-y: auto;
     z-index: 9999;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-.panel-visible {
-    display: block;
 }
 
 #panelAdmin input {
@@ -50,4 +51,3 @@ main {
     margin-top: 10px;
     font-size: 16px;
 }
-
