@@ -2,11 +2,11 @@ const menus = {
   basal: {
     titulo: "Menú Basal",
     items: [
-      "Luns: Repolo con allada, Polo ao forno, Xogur",
-      "Martes: Sopa de veranos, Depa de cenoria, Froita",
-      "Mércores: Luras á romana, Tortilla de champiñons, Froita",
-      "Xoves: Pasta integral, Pasta integral, Froita",
-      "Venres: Pesacada Arco da Vella, Arroz con lentellas, Froita"
+      "Luns: Repolo con allada, Polo ao forno, Iogur",
+      "Martes: Sopa de verduras, Crema de cenoria, Froita",
+      "Mércores: Luras á romana, Tortilla de champiñóns, Froita",
+      "Xoves: Pasta integral con salsa suave, Froita",
+      "Venres: Pescada Arco da Vella, Arroz con lentellas, Froita"
     ]
   },
 
