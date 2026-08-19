@@ -95,12 +95,11 @@ const MENUS_BASAL = {
     },
 
     "2026-09-30": {
-        primeiro: "Xudías verdes con patacas",
-        segundo: "Lombo ao forno con salsa de verduras",
-        sobremesa: "Froita"
-    }
-};
-    // OUTUBRO 2026
+    primeiro: "Xudías verdes con patacas",
+    segundo: "Lombo ao forno con salsa de verduras",
+    sobremesa: "Froita"
+},
+// OUTUBRO 2026
 
     // 1 de outubro (xoves)
     "2026-10-01": {
@@ -1409,4 +1408,5 @@ const MENUS_BASAL = {
         primeiro: "Sopa de polo con fideos integrais",
         segundo: "Pescada en salsa verde con patacas cocidas e ensalada sinxela",
         sobremesa: "Froita"
-    }
+    };
+
