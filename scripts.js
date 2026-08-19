@@ -1,106 +1,72 @@
-// Detectar a imaxe que contén o selo integrado
-const imaxeSelo = document.querySelector('img[src*="foto-colexio"]');
-
-// Se existe, asignarlle un ID para poder facer triple-tap
-if (imaxeSelo) {
-    imaxeSelo.id = "selo";
-}
-
-// Triple tap no selo para abrir panel admin
+// TRIPLE TAP NO SELLO
 let taps = 0;
-let lastTapTime = 0;
-let adminUnlocked = false;
+let timeout;
 
-const selo = document.getElementById("selo");
-const panel = document.getElementById("panelAdmin");
+document.getElementById("selo").addEventListener("click", () => {
+    taps++;
+    clearTimeout(timeout);
 
-selo.addEventListener("click", () => {
-    const now = Date.now();
+    timeout = setTimeout(() => { taps = 0; }, 500);
 
-    // Se o toque é rápido, conta como parte da secuencia
-    if (now - lastTapTime < 500) {
-        taps++;
-    } else {
-        taps = 1;
-    }
-
-    lastTapTime = now;
-
-    // Cando chega a 3 toques → desbloquea admin
     if (taps === 3) {
-        adminUnlocked = true;
-        panel.classList.remove("panel-oculto");
-        panel.classList.add("panel-visible");
+        document.getElementById("panelAdmin").classList.remove("panel-oculto");
+        document.getElementById("panelAdmin").classList.add("panel-visible");
+        taps = 0;
     }
 });
 
-// Pechar panel
+// PECHAR PANEL
 document.getElementById("pecharAdmin").addEventListener("click", () => {
-    panel.classList.remove("panel-visible");
-    panel.classList.add("panel-oculto");
-
-    // Volver bloquear o acceso admin
-    adminUnlocked = false;
-    taps = 0;
+    document.getElementById("panelAdmin").classList.remove("panel-visible");
+    document.getElementById("panelAdmin").classList.add("panel-oculto");
 });
 
-// Mostrar menú do día actual
-function cargarMenu() {
-    const hoxe = new Date();
-    const ano = hoxe.getFullYear();
-    const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
-    const dia = String(hoxe.getDate()).padStart(2, "0");
-
-    const clave = `menu_${ano}-${mes}-${dia}`;
-
-    document.getElementById("diaTitulo").textContent = `${dia}/${mes}/${ano}`;
-
-    const datos = JSON.parse(localStorage.getItem(clave));
-
-    if (datos) {
-        document.getElementById("primeiroMostrado").textContent = datos.primeiro;
-        document.getElementById("segundoMostrado").textContent = datos.segundo;
-        document.getElementById("sobremesaMostrado").textContent = datos.sobremesa;
-    }
-}
-
-cargarMenu();
-
-// Cargar menú da data seleccionada
-document.getElementById("dataSelect").addEventListener("change", () => {
-    const data = document.getElementById("dataSelect").value;
-
-    if (!data) return;
-
-    const datos = JSON.parse(localStorage.getItem(`menu_${data}`));
-
-    if (datos) {
-        document.getElementById("primeiroInput").value = datos.primeiro;
-        document.getElementById("segundoInput").value = datos.segundo;
-        document.getElementById("sobremesaInput").value = datos.sobremesa;
-    } else {
-        document.getElementById("primeiroInput").value = "";
-        document.getElementById("segundoInput").value = "";
-        document.getElementById("sobremesaInput").value = "";
-    }
-});
-
-// Gardar menú dunha data concreta
+// GARDAR MENÚ
 document.getElementById("gardarBtn").addEventListener("click", () => {
     const data = document.getElementById("dataSelect").value;
+    const primeiro = document.getElementById("primeiroInput").value;
+    const segundo = document.getElementById("segundoInput").value;
+    const sobremesa = document.getElementById("sobremesaInput").value;
 
     if (!data) {
         alert("Escolle unha data.");
         return;
     }
 
-    const primeiro = document.getElementById("primeiroInput").value;
-    const segundo = document.getElementById("segundoInput").value;
-    const sobremesa = document.getElementById("sobremesaInput").value;
-
-    const menu = { primeiro, segundo, sobremesa };
-
-    localStorage.setItem(`menu_${data}`, JSON.stringify(menu));
+    MENUS_BASAL[data] = {
+        primeiro,
+        segundo,
+        sobremesa
+    };
 
     alert("Menú gardado!");
 });
+
+// MOSTRAR MENÚ DOS BOTÓNS (sempre o día actual)
+function mostrarTipo(tipo) {
+    const coleccion = {
+        basal: MENUS_BASAL,
+        glute: MENUS_SEN_GLUTE,
+        musulman: MENUS_MUSULMAN
+    }[tipo];
+
+    const hoxe = new Date();
+    const ano = hoxe.getFullYear();
+    const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoxe.getDate()).padStart(2, "0");
+    const dataHoxe = `${ano}-${mes}-${dia}`;
+
+    const menu = coleccion[dataHoxe];
+
+    if (!menu) {
+        document.getElementById("contido").textContent =
+            "Sen menú rexistrado para hoxe.";
+        return;
+    }
+
+    document.getElementById("contido").innerHTML = `
+        <p><strong>Primeiro:</strong> ${menu.primeiro}</p>
+        <p><strong>Segundo:</strong> ${menu.segundo}</p>
+        <p><strong>Sobremesa:</strong> ${menu.sobremesa}</p>
+    `;
+}
