@@ -1,3 +1,10 @@
+// Detectar a imaxe que contén o selo integrado
+const imaxeSelo = document.querySelector('img[src*="foto-colexio"]');
+
+// Se existe, asignarlle un ID para poder facer triple-tap
+if (imaxeSelo) {
+    imaxeSelo.id = "selo";
+}
 // Mostrar menú do día actual
 function cargarMenu() {
     const hoxe = new Date();
