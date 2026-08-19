@@ -36,8 +36,7 @@ const menusBasal = {
 
     // ---------------- NOVEMBRO ----------------
     "2024-11": {
-        // Engadir aquí cando teña o PDF:
-        // "04": "EXEMPLO · EXEMPLO · EXEMPLO"
+        // Engadir aquí cando teñas o PDF
     },
 
     // ---------------- DECEMBRO ----------------
@@ -104,6 +103,46 @@ const menusEspeciais = {
 
 
 // -------------------------------------------
+// FESTIVOS OFICIAIS + VACACIÓNS + FIN DE CURSO
+// -------------------------------------------
+
+// Festivos nacionais + autonómicos
+const festivos = [
+    "2024-10-12", // Hispanidade
+    "2024-11-01", // Todos os Santos
+    "2024-12-06", // Constitución
+    "2024-12-08", // Inmaculada
+    "2024-12-07", // Día do Ensino
+    "2025-01-01", // Aninovo
+    "2025-01-06", // Reis
+    "2025-05-01", // Día do Traballo
+    "2025-05-17", // Letras Galegas
+];
+
+// Vacacións de Nadal
+const vacacionsNadal = {
+    inicio: "2024-12-22",
+    fin: "2025-01-07"
+};
+
+// Entroido
+const entroido = [
+    "2025-02-08",
+    "2025-02-09",
+    "2025-02-10"
+];
+
+// Semana Santa
+const vacacionsSemanaSanta = {
+    inicio: "2025-03-22",
+    fin: "2025-03-29"
+};
+
+// Fin de curso
+const finCurso = "2025-06-21";
+
+
+// -------------------------------------------
 // MOSTRAR MENÚ BASAL DO DÍA AUTOMÁTICO
 // -------------------------------------------
 
@@ -115,6 +154,7 @@ function mostrarMenuBasalHoxe() {
     const dia = String(hoxe.getDate()).padStart(2, "0");
 
     const claveMes = `${ano}-${mes}`;
+    const claveDia = `${ano}-${mes}-${dia}`;
 
     const titulo = document.getElementById("titulo-menu");
     const box = document.getElementById("menu-box");
@@ -131,10 +171,38 @@ function mostrarMenuBasalHoxe() {
         return;
     }
 
-    // Festivo 12 de outubro
-    if (claveMes === "2024-10" && dia === "12") {
+    // Festivos nacionais/autonómicos
+    if (festivos.includes(claveDia)) {
         titulo.innerText = "Hoxe non hai comedor";
-        box.innerHTML = `<p>${textoData}</p><p>Festivo nacional.</p>`;
+        box.innerHTML = `<p>${textoData}</p><p>Festivo oficial.</p>`;
+        return;
+    }
+
+    // Entroido
+    if (entroido.includes(claveDia)) {
+        titulo.innerText = "Hoxe non hai comedor";
+        box.innerHTML = `<p>${textoData}</p><p>Entroido.</p>`;
+        return;
+    }
+
+    // Vacacións de Nadal
+    if (claveDia >= vacacionsNadal.inicio && claveDia <= vacacionsNadal.fin) {
+        titulo.innerText = "Hoxe non hai comedor";
+        box.innerHTML = `<p>${textoData}</p><p>Vacacións de Nadal.</p>`;
+        return;
+    }
+
+    // Semana Santa
+    if (claveDia >= vacacionsSemanaSanta.inicio && claveDia <= vacacionsSemanaSanta.fin) {
+        titulo.innerText = "Hoxe non hai comedor";
+        box.innerHTML = `<p>${textoData}</p><p>Vacacións de Semana Santa.</p>`;
+        return;
+    }
+
+    // Fin de curso
+    if (claveDia > finCurso) {
+        titulo.innerText = "Hoxe non hai comedor";
+        box.innerHTML = `<p>${textoData}</p><p>Fin de curso.</p>`;
         return;
     }
 
