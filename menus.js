@@ -1,10 +1,10 @@
 // -------------------------------------------
-// MENÚ BASAL POR MESES E DÍAS (CURSO COMPLETO)
+// MENÚ BASAL POR MESES E DÍAS (CURSO 2026–27)
 // -------------------------------------------
 
 const menusBasal = {
-    // ---------------- SEPTEMBRO ----------------
-    "2024-09": {
+    // ---------------- SETEMBRO 2026 ----------------
+    "2026-09": {
         "09": "Repolo con allada · Polo ao forno con verduras e patacas · Iogur ou froita",
         "10": "Sopa de verduras con fideos integrais e garavanzos · Luras á romana · Froita",
         "11": "Crema de cenoria con pataca · Tortilla de champiñóns · Froita",
@@ -25,35 +25,47 @@ const menusBasal = {
         "30": "Xudías verdes · Lombo ao forno · Froita"
     },
 
-    // ---------------- OUTUBRO ----------------
-    "2024-10": {
+    // ---------------- OUTUBRO 2026 ----------------
+    "2026-10": {
         "01": "Ensalada de tomate, olivas e sardiñas · Tortilla de patacas · Froita",
         "02": "Garavanzos con espinacas · Ensalada de pasta · Iogur ou froita",
         "03": "Crema de cabaza · Polo guisado · Froita",
         "04": "Arroz 3 verduras · Salmón á prancha · Froita"
+        // 12 outubro → festivo
     },
 
-    // ---------------- NOVEMBRO ----------------
-    "2024-11": {},
+    // ---------------- NOVEMBRO 2026 ----------------
+    "2026-11": {},
 
-    // ---------------- DECEMBRO ----------------
-    "2024-12": {},
+    // ---------------- DECEMBRO 2026 ----------------
+    "2026-12": {},
 
-    // ---------------- XANEIRO ----------------
-    "2025-01": {},
+    // ---------------- XANEIRO 2027 ----------------
+    "2027-01": {},
 
-    // ---------------- FEBREIRO ----------------
-    "2025-02": {},
+    // ---------------- FEBREIRO 2027 ----------------
+    "2027-02": {},
 
-    // ---------------- MARZO ----------------
-    "2025-03": {},
+    // ---------------- MARZO 2027 ----------------
+    "2027-03": {},
 
-    // ---------------- ABRIL ----------------
-    "2025-04": {},
+    // ---------------- ABRIL 2027 ----------------
+    "2027-04": {},
 
-    // ---------------- MAIO ----------------
-    "2025-05": {},
+    // ---------------- MAIO 2027 ----------------
+    "2027-05": {},
 
-    // ---------------- XUÑO ----------------
-    "2025-06": {}
+    // ---------------- XUÑO 2027 ----------------
+    "2027-06": {}
 };
+
+
+// -------------------------------------------
+// MENÚS ESPECIAIS (COMPLETOS)
+// -------------------------------------------
+
+const menusEspeciais = {
+    lactosa: {
+        titulo: "Menú Sen Lactosa",
+        items: [
+            "
