@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Menú comedor CEIP Juan Rey 2026-2027</title>
+
   <style>
     body { font-family: system-ui, sans-serif; margin: 2rem; }
     h1 { margin-bottom: 0.5rem; }
@@ -12,12 +13,56 @@
     #resultado { margin-top: 1.5rem; border-top: 1px solid #ccc; padding-top: 1rem; }
     .campo { margin-bottom: 0.4rem; }
     .etiqueta { font-weight: 600; }
+
+    /* Panel admin */
+    .panel-oculto { display:none; }
+    .panel-visible { display:block; }
   </style>
 </head>
+
 <body>
 
   <h1>Menú do comedor 2026-2027</h1>
   <p>Escolle o tipo de menú e a data para ver o prato correspondente.</p>
+
+  <!-- SELLO INTEGRADO NA IMAXE DO COLEXIO -->
+  <img src="img/foto-colexio.jpg"
+       alt="Foto do colexio"
+       id="fotoColexio"
+       style="width:180px; display:block; margin:20px auto; cursor:pointer;">
+
+
+  <!-- PANEL ADMIN OCULTO (ÁBRESE CON 3 TOQUES NO SELLO) -->
+  <div id="panelAdmin" class="panel-oculto" style="
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      background:white;
+      padding:20px;
+      border:2px solid #333;
+      border-radius:10px;
+      width:300px;
+      z-index:999;
+  ">
+      <button id="pecharAdmin" style="float:right;">X</button>
+      <h3>Panel de administración</h3>
+
+      <label>Data:</label>
+      <input type="date" id="dataSelect">
+
+      <label>Primeiro:</label>
+      <input type="text" id="primeiroInput">
+
+      <label>Segundo:</label>
+      <input type="text" id="segundoInput">
+
+      <label>Sobremesa:</label>
+      <input type="text" id="sobremesaInput">
+
+      <button id="gardarBtn" style="margin-top:10px;">Gardar</button>
+  </div>
+
 
   <!-- Tipo de menú -->
   <div class="fila">
@@ -54,9 +99,10 @@
     </div>
   </div>
 
-  <!-- Carga do ficheiro menus.js -->
+  <!-- Carga dos menús -->
   <script src="menus.js"></script>
 
+  <!-- Script do menú -->
   <script>
     function mostrarMenu() {
       const tipo = document.getElementById('tipoMenu').value;
@@ -89,6 +135,9 @@
       document.getElementById('sobremesaPrato').textContent = menu.sobremesa || '—';
     }
   </script>
+
+  <!-- Script do triple tap -->
+  <script src="scripts.js"></script>
 
 </body>
 </html>
