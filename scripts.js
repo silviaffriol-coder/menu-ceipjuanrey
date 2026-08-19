@@ -1,49 +1,40 @@
-const menus = {
-    basal: `
-        <h3>Menú basal semanal</h3>
-        <table>
-            <tr><th>Luns</th><td>Sopa / Polbo / Froita</td></tr>
-            <tr><th>Martes</th><td>Macarróns / Tortilla / Iogur</td></tr>
-            <tr><th>Mércores</th><td>Crema / Pescada / Froita</td></tr>
-            <tr><th>Xoves</th><td>Arroz / Polo / Froita</td></tr>
-            <tr><th>Venres</th><td>Verduras / Pizza / Iogur</td></tr>
-        </table>
-    `,
+/* ---------------------------------------------------
+   SCRIPTS PRINCIPAIS – CEIP JUAN REY
+   Panel oculto + interaccións da app
+--------------------------------------------------- */
 
-    lactosa: `
-        <h3>Menú sen lactosa</h3>
-        <table>
-            <tr><th>Luns</th><td>Sopa / Polbo / Froita</td></tr>
-            <tr><th>Martes</th><td>Macarróns / Tortilla / Froita</td></tr>
-            <tr><th>Mércores</th><td>Crema / Pescada / Froita</td></tr>
-            <tr><th>Xoves</th><td>Arroz / Polo / Froita</td></tr>
-            <tr><th>Venres</th><td>Verduras / Pizza sen lactosa / Froita</td></tr>
-        </table>
-    `,
+/* ---------------------------------------------------
+   XESTO SECRETO: 3 TOQUES NO SELO
+--------------------------------------------------- */
 
-    glute: `
-        <h3>Menú sen glute</h3>
-        <table>
-            <tr><th>Luns</th><td>Sopa / Polbo / Froita</td></tr>
-            <tr><th>Martes</th><td>Pasta sen glute / Tortilla / Iogur</td></tr>
-            <tr><th>Mércores</th><td>Crema / Pescada / Froita</td></tr>
-            <tr><th>Xoves</th><td>Arroz / Polo / Froita</td></tr>
-            <tr><th>Venres</th><td>Verduras / Pizza sen glute / Iogur</td></tr>
-        </table>
-    `,
+document.addEventListener("DOMContentLoaded", () => {
 
-    musulman: `
-        <h3>Menú musulmán</h3>
-        <table>
-            <tr><th>Luns</th><td>Sopa / Peixe / Froita</td></tr>
-            <tr><th>Martes</th><td>Macarróns / Tortilla / Iogur</td></tr>
-            <tr><th>Mércores</th><td>Crema / Pescada / Froita</td></tr>
-            <tr><th>Xoves</th><td>Arroz / Peixe / Froita</td></tr>
-            <tr><th>Venres</th><td>Verduras / Pizza vexetariana / Froita</td></tr>
-        </table>
-    `
-};
+    // Detectar o selo do colexio
+    const selo = document.getElementById("selo-colexio");
 
-function mostrar(tipo) {
-    document.getElementById("contido").innerHTML = menus[tipo];
-}
+    if (selo) {
+        let contadorToques = 0;
+
+        selo.addEventListener("click", () => {
+            contadorToques++;
+
+            // Se toca 3 veces → entrar en admin.html
+            if (contadorToques === 3) {
+                window.location.href = "admin.html";
+            }
+
+            // Reiniciar contador despois de 1 segundo
+            setTimeout(() => {
+                contadorToques = 0;
+            }, 1000);
+        });
+    }
+});
+
+/* ---------------------------------------------------
+   CAMBIO DE MENÚ (xa o fai menus.js)
+--------------------------------------------------- */
+
+/* Aquí non vai nada porque menus.js xa controla
+   a carga automática do menú segundo o día real.
+   scripts.js só se encarga do panel oculto. */
