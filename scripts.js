@@ -5,32 +5,6 @@ const imaxeSelo = document.querySelector('img[src*="foto-colexio"]');
 if (imaxeSelo) {
     imaxeSelo.id = "selo";
 }
-// Mostrar menú do día actual
-function cargarMenu() {
-    const hoxe = new Date();
-    const ano = hoxe.getFullYear();
-    const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
-    const dia = String(hoxe.getDate()).padStart(2, "0");
-
-    const clave = `menu_${ano}-${mes}-${dia}`;
-
-    document.getElementById("diaTitulo").textContent = `${dia}/${mes}/${ano}`;
-
-    const datos = JSON.parse(localStorage.getItem(clave));
-
-    if (datos) {
-        document.getElementById("primeiroMostrado").textContent = datos.primeiro;
-        document.getElementById("segundoMostrado").textContent = datos.segundo;
-        document.getElementById("sobremesaMostrado").textContent = datos.sobremesa;
-    } else {
-        document.getElementById("primeiroMostrado").textContent = "—";
-        document.getElementById("segundoMostrado").textContent = "—";
-        document.getElementById("sobremesaMostrado").textContent = "—";
-    }
-}
-
-cargarMenu();
-
 
 // Triple tap no selo para abrir panel admin
 let taps = 0;
@@ -61,6 +35,28 @@ document.getElementById("pecharAdmin").addEventListener("click", () => {
     panel.classList.remove("panel-visible");
     panel.classList.add("panel-oculto");
 });
+
+// Mostrar menú do día actual
+function cargarMenu() {
+    const hoxe = new Date();
+    const ano = hoxe.getFullYear();
+    const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoxe.getDate()).padStart(2, "0");
+
+    const clave = `menu_${ano}-${mes}-${dia}`;
+
+    document.getElementById("diaTitulo").textContent = `${dia}/${mes}/${ano}`;
+
+    const datos = JSON.parse(localStorage.getItem(clave));
+
+    if (datos) {
+        document.getElementById("primeiroMostrado").textContent = datos.primeiro;
+        document.getElementById("segundoMostrado").textContent = datos.segundo;
+        document.getElementById("sobremesaMostrado").textContent = datos.sobremesa;
+    }
+}
+
+cargarMenu();
 
 // Cargar menú da data seleccionada
 document.getElementById("dataSelect").addEventListener("change", () => {
