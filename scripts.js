@@ -11,6 +11,10 @@ document.getElementById("selo").addEventListener("click", () => {
     if (taps === 3) {
         document.getElementById("panelAdmin").classList.remove("panel-oculto");
         document.getElementById("panelAdmin").classList.add("panel-visible");
+
+        // sincronizar selector co tipo actual
+        document.getElementById("tipoAdmin").value = tipoActual;
+
         taps = 0;
     }
 });
@@ -21,13 +25,36 @@ document.getElementById("pecharAdmin").addEventListener("click", () => {
     document.getElementById("panelAdmin").classList.add("panel-oculto");
 });
 
+// TIPO ACTUAL DE MENÚ
+let tipoActual = "basal";
+
+// Coleccións
+const coleccions = {
+    basal: MENUS_BASAL,
+    glute: MENUS_SEN_GLUTE,
+    musulman: MENUS_MUSULMAN,
+    lactosa: MENUS_SEN_LACTOSA,
+    marisco: MENUS_SEN_MARISCO
+};
+
 // CARGAR MENÚ EXISTENTE AO SELECCIONAR DATA NO PANEL ADMIN
 document.getElementById("dataSelect").addEventListener("change", () => {
-    const data = document.getElementById("dataSelect").value;
+    cargarMenuAdmin();
+});
 
+// Cando se cambia o tipo dentro do panel admin
+document.getElementById("tipoAdmin").addEventListener("change", () => {
+    tipoActual = document.getElementById("tipoAdmin").value;
+    cargarMenuAdmin();
+});
+
+// Función que carga o menú no panel admin
+function cargarMenuAdmin() {
+    const data = document.getElementById("dataSelect").value;
     if (!data) return;
 
-    const menu = MENUS_BASAL[data];
+    const coleccion = coleccions[tipoActual];
+    const menu = coleccion[data];
 
     if (menu) {
         document.getElementById("primeiroInput").value = menu.primeiro;
@@ -38,7 +65,7 @@ document.getElementById("dataSelect").addEventListener("change", () => {
         document.getElementById("segundoInput").value = "";
         document.getElementById("sobremesaInput").value = "";
     }
-});
+}
 
 // GARDAR MENÚ
 document.getElementById("gardarBtn").addEventListener("click", () => {
@@ -52,7 +79,9 @@ document.getElementById("gardarBtn").addEventListener("click", () => {
         return;
     }
 
-    MENUS_BASAL[data] = {
+    const coleccion = coleccions[tipoActual];
+
+    coleccion[data] = {
         primeiro,
         segundo,
         sobremesa
@@ -63,12 +92,9 @@ document.getElementById("gardarBtn").addEventListener("click", () => {
 
 // MOSTRAR MENÚ DOS BOTÓNS (sempre o día actual)
 function mostrarTipo(tipo) {
-    const coleccion = {
-        basal: MENUS_BASAL,
-        glute: MENUS_SEN_GLUTE,
-        musulman: MENUS_MUSULMAN,
-        lactosa: MENUS_SEN_LACTOSA
-    }[tipo];
+    tipoActual = tipo;
+
+    const coleccion = coleccions[tipo];
 
     const hoxe = new Date();
     const ano = hoxe.getFullYear();
