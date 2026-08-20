@@ -279,5 +279,30 @@ const MENUS_SEN_GLUTE = {
     "2026-10-06": { primeiro: "Arroz 3 verduras", segundo: "Salmón á prancha con ensalada con froita de tempada", sobremesa: "Froita" }
 };
 
-const MENUS_SEN_MARISCO = JSON.parse(JSON.stringify(MENUS_BASAL));
+const MENUS_SEN_MARISCO = {
+    "2026-09-09": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
+    "2026-09-10": { primeiro: "Sopa de verduras con fideos integrais e garavanzos", segundo: "Peixe á romana con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
+    "2026-09-11": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-14": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
+    "2026-09-15": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
+
+    "2026-09-16": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
+    "2026-09-17": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
+    "2026-09-18": { primeiro: "Ensalada capresse", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
+    "2026-09-21": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate", sobremesa: "Froita" },
+    "2026-09-22": { primeiro: "Menestra con allada", segundo: "Pasta integral con bonito e salsa de tomate", sobremesa: "Froita" },
+
+    "2026-09-23": { primeiro: "Ensalada completa", segundo: "Raxo de pavo e arroz con pisto", sobremesa: "Froita" },
+    "2026-09-24": { primeiro: "Sopa de polo con fideos integrais", segundo: "Pescada en salsa verde con patacas cocidas e ensalada sinxela", sobremesa: "Froita" },
+    "2026-09-25": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
+    "2026-09-28": { primeiro: "Crema de cabaciña", segundo: "Fideuá de peixe", sobremesa: "Froita" },
+    "2026-09-29": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
+
+    "2026-09-30": { primeiro: "Xudías verdes con patacas", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
+    "2026-10-01": { primeiro: "Ensalada de tomate, olivas e sardiñas", segundo: "Tortilla de patacas e cebola con cabaciña á prancha", sobremesa: "Froita" },
+    "2026-10-02": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta", sobremesa: "Iogur ou froita" },
+    "2026-10-05": { primeiro: "Crema de cabaza", segundo: "Polo guisado e patacas ao forno con ensalada de cenoria", sobremesa: "Froita" },
+    "2026-10-06": { primeiro: "Arroz 3 verduras", segundo: "Salmón á prancha con ensalada con froita de tempada", sobremesa: "Froita" }
+};
+
 const MENUS_SEN_LACTOSA = JSON.parse(JSON.stringify(MENUS_BASAL));
