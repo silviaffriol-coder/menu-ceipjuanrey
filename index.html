@@ -27,6 +27,7 @@
       <button onclick="mostrarTipo('glute')">Sen glute</button>
       <button onclick="mostrarTipo('musulman')">Musulmán</button>
       <button onclick="mostrarTipo('lactosa')">Sen lactosa</button>
+      <button onclick="mostrarTipo('marisco')">Sen marisco</button>
   </nav>
 
   <!-- Onde se mostra o menú do día actual -->
@@ -48,7 +49,7 @@
     </div>
   </div>
 
-  <!-- IMAXE DO SELLO PARA O TRIPLE TAP (MÁIS GRANDE) -->
+  <!-- IMAXE DO SELLO PARA O TRIPLE TAP -->
   <img src="img/foto-colexio.jpg"
        alt="Foto do colexio"
        id="selo"
@@ -71,6 +72,16 @@
       <button id="pecharAdmin" style="float:right;">X</button>
       <h3>Panel de administración</h3>
 
+      <!-- ⭐ SELECTOR DE TIPO DE MENÚ -->
+      <label for="tipoAdmin">Tipo de menú:</label>
+      <select id="tipoAdmin">
+          <option value="basal">Basal</option>
+          <option value="glute">Sen glute</option>
+          <option value="musulman">Musulmán</option>
+          <option value="lactosa">Sen lactosa</option>
+          <option value="marisco">Sen marisco</option>
+      </select>
+
       <label>Data:</label>
       <input type="date" id="dataSelect">
 
@@ -88,29 +99,6 @@
 
   <!-- Carga dos menús -->
   <script src="menus.js"></script>
-
-  <!-- MOSTRAR MENÚ AUTOMÁTICO AO ABRIR A APP -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const hoxe = new Date();
-      const ano = hoxe.getFullYear();
-      const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
-      const dia = String(hoxe.getDate()).padStart(2, "0");
-      const dataHoxe = `${ano}-${mes}-${dia}`;
-
-      const menu = MENUS_BASAL[dataHoxe];
-
-      if (menu) {
-          document.getElementById("primeiroPrato").textContent = menu.primeiro;
-          document.getElementById("segundoPrato").textContent = menu.segundo;
-          document.getElementById("sobremesaPrato").textContent = menu.sobremesa;
-      } else {
-          document.getElementById("primeiroPrato").textContent = "Sen menú rexistrado";
-          document.getElementById("segundoPrato").textContent = "—";
-          document.getElementById("sobremesaPrato").textContent = "—";
-      }
-    });
-  </script>
 
   <!-- Script do triple tap + panel admin + botóns -->
   <script src="scripts.js"></script>
