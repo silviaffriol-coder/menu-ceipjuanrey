@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Menús – CEIP Juan Rey</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Panel de Menús</h1>
+</header>
+
+<nav>
+    <button onclick="mostrarTipo('basal')">Basal</button>
+    <button onclick="mostrarTipo('musulman')">Musulmán</button>
+    <button onclick="mostrarTipo('glute')">Sen glute</button>
+    <button onclick="mostrarTipo('marisco')">Sen marisco</button>
+    <button onclick="mostrarTipo('lactosa')">Sen lactosa</button>
+</nav>
+
+<section id="selector">
+    <label for="dataMenu">Escolle unha data:</label>
+    <input type="date" id="dataMenu" onchange="cargarMenu()">
+</section>
+
+<section id="resultado">
+    <h2>Menú do día</h2>
+    <p><strong>Primeiro:</strong> <span id="primeiro"></span></p>
+    <p><strong>Segundo:</strong> <span id="segundo"></span></p>
+    <p><strong>Sobremesa:</strong> <span id="sobremesa"></span></p>
+</section>
+
+<section id="admin" style="display:none;">
+    <h2>Editar menú</h2>
+
+    <label>Primeiro:</label>
+    <input type="text" id="editPrimeiro">
+
+    <label>Segundo:</label>
+    <input type="text" id="editSegundo">
+
+    <label>Sobremesa:</label>
+    <input type="text" id="editSobremesa">
+
+    <button onclick="gardarMenu()">Gardar cambios</button>
+</section>
+<script src="menus.js"></script>
+
+<script>
+    let tipoActual = "basal"; // Por defecto carga o basal
+
+    function mostrarTipo(tipo) {
+        tipoActual = tipo;
+        cargarMenu();
+    }
+
+    function cargarMenu() {
+        const data = document.getElementById("dataMenu").value;
+
+        if (!data) {
+            document.getElementById("primeiro").textContent = "";
+            document.getElementById("segundo").textContent = "";
+            document.getElementById("sobremesa").textContent = "";
+            return;
+        }
+
+        const coleccion = {
+            basal: MENUS_BASAL,
+            musulman: MENUS_MUSULMAN,
+            glute: MENUS_SEN_GLUTE,
+            marisco: MENUS_SEN_MARISCO,
+            lactosa: MENUS_SEN_LACTOSA
+        }[tipoActual];
+
+        const menu = coleccion[data];
+
+        if (!menu) {
+            document.getElementById("primeiro").textContent = "Sen datos";
+            document.getElementById("segundo").textContent = "Sen datos";
+            document.getElementById("sobremesa").textContent = "Sen datos";
+            return;
+        }
+
+        document.getElementById("primeiro").textContent = menu.primeiro;
+        document.getElementById("segundo").textContent = menu.segundo;
+        document.getElementById("sobremesa").textContent = menu.sobremesa;
+
+        // Cargar no panel de edición
+        document.getElementById("editPrimeiro").value = menu.primeiro;
+        document.getElementById("editSegundo").value = menu.segundo;
+        document.getElementById("editSobremesa").value = menu.sobremesa;
+
+        document.getElementById("admin").style.display = "block";
+    }
+
+    function gardarMenu() {
+        const data = document.getElementById("dataMenu").value;
+
+        const coleccion = {
+            basal: MENUS_BASAL,
+            musulman: MENUS_MUSULMAN,
+            glute: MENUS_SEN_GLUTE,
+            marisco: MENUS_SEN_MARISCO,
+            lactosa: MENUS_SEN_LACTOSA
+        }[tipoActual];
+
+        coleccion[data] = {
+            primeiro: document.getElementById("editPrimeiro").value,
+            segundo: document.getElementById("editSegundo").value,
+            sobremesa: document.getElementById("editSobremesa").value
+        };
+
+        cargarMenu();
+        alert("Menú actualizado correctamente.");
+    }
+</script>
+</body>
+</html>
