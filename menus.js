@@ -1,8 +1,4 @@
 const MENUS_BASAL = {
-const MENUS_MUSULMAN = JSON.parse(JSON.stringify(MENUS_BASAL));
-const MENUS_SEN_GLUTE = JSON.parse(JSON.stringify(MENUS_BASAL));
-const MENUS_SEN_MARISCO = JSON.parse(JSON.stringify(MENUS_BASAL));
-const MENUS_SEN_LACTOSA = JSON.parse(JSON.stringify(MENUS_BASAL));
 
     // SETEMBRO 2026 — CHEO
     "2026-09-09": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
@@ -231,3 +227,7 @@ const MENUS_SEN_LACTOSA = JSON.parse(JSON.stringify(MENUS_BASAL));
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
 
 };
+const MENUS_MUSULMAN = JSON.parse(JSON.stringify(MENUS_BASAL));
+const MENUS_SEN_GLUTE = JSON.parse(JSON.stringify(MENUS_BASAL));
+const MENUS_SEN_MARISCO = JSON.parse(JSON.stringify(MENUS_BASAL));
+const MENUS_SEN_LACTOSA = JSON.parse(JSON.stringify(MENUS_BASAL));
