@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- ⭐ ESTA LIÑA É A QUE FAI QUE A FOTO SE VEXA GRANDE NO MÓBIL -->
+  <!-- Necesario para que se vexa grande no móbil -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Menú comedor CEIP Juan Rey 2026-2027</title>
@@ -69,7 +69,11 @@
       padding:20px;
       border:2px solid #333;
       border-radius:10px;
-      width:300px;
+
+      /* Panel máis grande e adaptable no móbil */
+      width:90%;
+      max-width:450px;
+
       z-index:999;
   ">
       <button id="pecharAdmin" style="float:right;">X</button>
