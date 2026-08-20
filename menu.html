@@ -36,6 +36,16 @@
 <section id="admin" style="display:none;">
     <h2>Editar menú</h2>
 
+    <!-- ⭐ SELECTOR DE TIPO DE MENÚ ENGADIDO -->
+    <label for="tipoAdmin">Tipo de menú:</label>
+    <select id="tipoAdmin" onchange="cambiarTipoAdmin()">
+        <option value="basal">Basal</option>
+        <option value="musulman">Musulmán</option>
+        <option value="glute">Sen glute</option>
+        <option value="marisco">Sen marisco</option>
+        <option value="lactosa">Sen lactosa</option>
+    </select>
+
     <label>Primeiro:</label>
     <input type="text" id="editPrimeiro">
 
@@ -47,6 +57,7 @@
 
     <button onclick="gardarMenu()">Gardar cambios</button>
 </section>
+
 <script src="menus.js"></script>
 
 <script>
@@ -93,7 +104,15 @@
         document.getElementById("editSegundo").value = menu.segundo;
         document.getElementById("editSobremesa").value = menu.sobremesa;
 
+        // ⭐ Sincronizar selector co tipo actual
+        document.getElementById("tipoAdmin").value = tipoActual;
+
         document.getElementById("admin").style.display = "block";
+    }
+
+    function cambiarTipoAdmin() {
+        tipoActual = document.getElementById("tipoAdmin").value;
+        cargarMenu();
     }
 
     function gardarMenu() {
@@ -117,5 +136,6 @@
         alert("Menú actualizado correctamente.");
     }
 </script>
+
 </body>
 </html>
