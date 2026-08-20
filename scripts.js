@@ -90,7 +90,7 @@ document.getElementById("gardarBtn").addEventListener("click", () => {
     alert("Menú gardado!");
 });
 
-// MOSTRAR MENÚ DOS BOTÓNS (sempre o día actual)
+// ⭐ MOSTRAR MENÚ DO DÍA ACTUAL AO SELECCIONAR TIPO
 function mostrarTipo(tipo) {
     tipoActual = tipo;
 
@@ -105,14 +105,13 @@ function mostrarTipo(tipo) {
     const menu = coleccion[dataHoxe];
 
     if (!menu) {
-        document.getElementById("contido").textContent =
-            "Sen menú rexistrado para hoxe.";
+        document.getElementById("primeiroPrato").textContent = "Sen menú rexistrado";
+        document.getElementById("segundoPrato").textContent = "—";
+        document.getElementById("sobremesaPrato").textContent = "—";
         return;
     }
 
-    document.getElementById("contido").innerHTML = `
-        <p><strong>Primeiro:</strong> ${menu.primeiro}</p>
-        <p><strong>Segundo:</strong> ${menu.segundo}</p>
-        <p><strong>Sobremesa:</strong> ${menu.sobremesa}</p>
-    `;
+    document.getElementById("primeiroPrato").textContent = menu.primeiro;
+    document.getElementById("segundoPrato").textContent = menu.segundo;
+    document.getElementById("sobremesaPrato").textContent = menu.sobremesa;
 }
