@@ -1192,3 +1192,62 @@ function encherMesCompletoPorDieta(ano, mes, menusPorDieta) {
         data.setDate(data.getDate() + 1);
     }
 }
+function importarTablaVertical(texto, ano, mes) {
+    const dietas = {
+        basal: MENUS_BASAL,
+        musulman: MENUS_MUSULMAN,
+        sen_glute: MENUS_SEN_GLUTE,
+        sen_marisco: MENUS_SEN_MARISCO,
+        sen_lactosa: MENUS_SEN_LACTOSA
+    };
+
+    // Eliminar alérxenos tipo (5,7,8)
+    texto = texto.replace(/\(\d+(,\d+)*\)/g, "").trim();
+
+    // Separar liñas e eliminar baleiras
+    const liñas = texto.split("\n").map(l => l.trim()).filter(l => l.length > 0);
+
+    // Cada semana = 3 filas (primeiro, segundo, sobremesa)
+    const semanas = [];
+    for (let i = 0; i < liñas.length; i += 3) {
+        semanas.push({
+            primeiros: liñas[i].split(/\t| {2,}/).map(x => x.trim()),
+            segundos: liñas[i + 1].split(/\t| {2,}/).map(x => x.trim()),
+            sobremesas: liñas[i + 2].split(/\t| {2,}/).map(x => x.trim())
+        });
+    }
+
+    // Xerar lista de días lectivos do mes
+    let data = new Date(ano, mes - 1, 1);
+    const diasLectivos = [];
+
+    while (data.getMonth() === mes - 1) {
+        const dw = data.getDay();
+        if (dw !== 0 && dw !== 6) {
+            diasLectivos.push(data.toISOString().split("T")[0]);
+        }
+        data.setDate(data.getDate() + 1);
+    }
+
+    // Asignar semanas aos días lectivos
+    let indexDia = 0;
+
+    semanas.forEach(sem => {
+        for (let col = 0; col < 5; col++) {
+            const iso = diasLectivos[indexDia];
+            if (!iso) return;
+
+            const primeiro = sem.primeiros[col] || "";
+            const segundo = sem.segundos[col] || "";
+            const sobremesa = sem.sobremesas[col] || "";
+
+            Object.values(dietas).forEach(dieta => {
+                if (dieta[iso]) {
+                    dieta[iso] = { primeiro, segundo, sobremesa };
+                }
+            });
+
+            indexDia++;
+        }
+    });
+}
