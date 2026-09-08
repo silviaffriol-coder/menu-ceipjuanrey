@@ -462,7 +462,7 @@ const MENUS_SEN_GLUTE = {
     // SETEMBRO 2026
     "2026-09-09": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
     "2026-09-10": { primeiro: "Pasta sen glute con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
-    "2026-09-11": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },,
+    "2026-09-11": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },
     "2026-09-14": { primeiro: "Pasta sen glute con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
     "2026-09-15": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },
     "2026-09-16": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
