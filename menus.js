@@ -1,9 +1,9 @@
 const MENUS_BASAL = {
 
     // SETEMBRO 2026 — CHEO
-    "2026-09-09": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
-    "2026-09-10": { primeiro: "Sopa de verduras con fideos integrais e garavanzos", segundo: "Luras á romana con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
-    "2026-09-11": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-09": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-10": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescado ao forno con verduras", sobremesa: "Froita" },
+    "2026-09-11": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
 
     "2026-09-14": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
     "2026-09-15": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
@@ -232,9 +232,9 @@ const MENUS_BASAL = {
  const MENUS_MUSULMAN = {
 
     // SETEMBRO 2026
-    "2026-09-09": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
-    "2026-09-10": { primeiro: "Sopa de verduras con fideos integrais e garavanzos", segundo: "Peixe á romana con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
-    "2026-09-11": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-09": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-10": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
+    "2026-09-11": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
     "2026-09-14": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
     "2026-09-15": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
     "2026-09-16": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
@@ -460,9 +460,9 @@ const MENUS_BASAL = {
 const MENUS_SEN_GLUTE = {
 
     // SETEMBRO 2026
-    "2026-09-09": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
-    "2026-09-10": { primeiro: "Sopa de verduras con fideos sen glute e garavanzos", segundo: "Luras á romana sen glute con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
-    "2026-09-11": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-09": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-10": { primeiro: "Pasta sen glute con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
+    "2026-09-11": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },,
     "2026-09-14": { primeiro: "Pasta sen glute con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
     "2026-09-15": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },
     "2026-09-16": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
@@ -688,10 +688,10 @@ const MENUS_SEN_GLUTE = {
 const MENUS_SEN_MARISCO = {
 
     // SETEMBRO 2026
-    "2026-09-09": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
-    "2026-09-10": { primeiro: "Sopa de verduras con fideos integrais e garavanzos", segundo: "Peixe á romana con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
+    "2026-09-09": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-10": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
     "2026-09-11": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
-    "2026-09-14": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
+    "2026-09-14": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
     "2026-09-15": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
     "2026-09-16": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
     "2026-09-17": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
