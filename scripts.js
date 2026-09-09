@@ -109,4 +109,4 @@ document.getElementById("adminData").addEventListener("change", () => {
     document.getElementById("adminSegundo").value = menu?.segundo || "";
     document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
 });
-⭐ Este scripts.js é EXACTAMENTE o
+
