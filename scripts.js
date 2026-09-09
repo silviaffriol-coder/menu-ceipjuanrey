@@ -74,12 +74,7 @@ function cambiarMenu(tipo) {
 
 function mostrarMenuHoxe() {
 
-    const hoxe = new Date();
-    const ano = hoxe.getFullYear();
-    const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
-    const dia = String(hoxe.getDate()).padStart(2, "0");
-
-    const dataHoxe = `${ano}-${mes}-${dia}`;
+   const dataHoxe = new Date().toLocaleDateString("sv-SE");
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
 
