@@ -9,25 +9,21 @@
 
 <body>
 
-    <!-- SELLO / FOTO DO COLEXIO -->
     <header class="header">
         <img src="img/foto-colexio.jpg" alt="Foto do colexio" class="selo">
         <h1>Menú do Comedor</h1>
     </header>
 
-    <!-- SELECTOR DE TIPO DE MENÚ -->
-    <section class="selector">
-        <label for="tipoMenu">Tipo de menú:</label>
-        <select id="tipoMenu">
-            <option value="basal">Basal</option>
-            <option value="sen_lactosa">Sen lactosa</option>
-            <option value="sen_glute">Sen glute</option>
-            <option value="musulman">Musulmán</option>
-            <option value="sen_marisco">Sen marisco</option>
-        </select>
-    </section>
+    <!-- BOTÓNS COMO ANTES -->
+    <nav>
+        <button onclick="cambiarMenu('basal')">Basal</button>
+        <button onclick="cambiarMenu('sen_lactosa')">Sen lactosa</button>
+        <button onclick="cambiarMenu('sen_glute')">Sen glute</button>
+        <button onclick="cambiarMenu('musulman')">Musulmán</button>
+        <button onclick="cambiarMenu('sen_marisco')">Sen marisco</button>
+    </nav>
 
-    <!-- MENÚ DE HOXE -->
+    <!-- MENÚ DO DÍA -->
     <section id="menuHoxe" class="menu">
         <h2 id="dataHoxe"></h2>
 
@@ -47,9 +43,8 @@
         </div>
     </section>
 
-    <!-- PANEL ADMIN OCULTO -->
+    <!-- PANEL ADMIN -->
     <section id="adminPanel" class="admin oculto">
-
         <h2>Panel de administración</h2>
 
         <label for="adminData">Data:</label>
