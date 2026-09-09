@@ -5,15 +5,20 @@
 let taps = 0;
 let tapTimer = null;
 
-document.querySelector(".selo").addEventListener("click", () => {
-    taps++;
-    clearTimeout(tapTimer);
-    tapTimer = setTimeout(() => taps = 0, 500);
+document.addEventListener("DOMContentLoaded", () => {
+    const selo = document.querySelector(".selo");
+    if (!selo) return;
 
-    if (taps === 3) {
-        abrirPanelAdmin();
-        taps = 0;
-    }
+    selo.addEventListener("click", () => {
+        taps++;
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => taps = 0, 700); // máis tempo para Drupal
+
+        if (taps === 3) {
+            abrirPanelAdmin();
+            taps = 0;
+        }
+    });
 });
 
 // ===============================
@@ -24,8 +29,13 @@ function abrirPanelAdmin() {
     document.getElementById("adminPanel").classList.remove("oculto");
 }
 
-document.getElementById("pecharAdmin").addEventListener("click", () => {
-    document.getElementById("adminPanel").classList.add("oculto");
+document.addEventListener("DOMContentLoaded", () => {
+    const pechar = document.getElementById("pecharAdmin");
+    if (pechar) {
+        pechar.addEventListener("click", () => {
+            document.getElementById("adminPanel").classList.add("oculto");
+        });
+    }
 });
 
 // ===============================
@@ -82,8 +92,8 @@ function mostrarMenuHoxe() {
     const menu = coleccion[dataHoxe];
 
     // ⭐ MOSTRAR DATA ACTUAL EN GALEGO
-    document.getElementById("dataHoxe").textContent =
-        `Menú do día ${formatoDataGalego(ano, mes, dia)}`;
+    const dataTexto = formatoDataGalego(ano, mes, dia);
+    document.getElementById("dataHoxe").textContent = `Menú do día ${dataTexto}`;
 
     // ⭐ MOSTRAR PRATOS
     document.getElementById("primeiro").textContent = menu?.primeiro || "Sen rexistro";
@@ -92,21 +102,25 @@ function mostrarMenuHoxe() {
 }
 
 // Mostrar ao cargar a páxina
-mostrarMenuHoxe();
+document.addEventListener("DOMContentLoaded", mostrarMenuHoxe);
 
 // ===============================
 // CARGAR MENÚ NO PANEL ADMIN
 // ===============================
 
-document.getElementById("adminData").addEventListener("change", () => {
-    const data = document.getElementById("adminData").value;
-    if (!data) return;
+document.addEventListener("DOMContentLoaded", () => {
+    const adminData = document.getElementById("adminData");
+    if (!adminData) return;
 
-    const coleccion = coleccions[tipoActual];
-    const menu = coleccion[data];
+    adminData.addEventListener("change", () => {
+        const data = adminData.value;
+        if (!data) return;
 
-    document.getElementById("adminPrimeiro").value = menu?.primeiro || "";
-    document.getElementById("adminSegundo").value = menu?.segundo || "";
-    document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
+        const coleccion = coleccions[tipoActual];
+        const menu = coleccion[data];
+
+        document.getElementById("adminPrimeiro").value = menu?.primeiro || "";
+        document.getElementById("adminSegundo").value = menu?.segundo || "";
+        document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
+    });
 });
-
