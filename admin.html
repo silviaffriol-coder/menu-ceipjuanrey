@@ -35,6 +35,7 @@
             <option value="lactosa">Sen lactosa</option>
             <option value="glute">Sen glute</option>
             <option value="musulman">Musulmán</option>
+            <option value="marisco">Sen marisco</option>
         </select>
 
         <label for="primeiro">Primeiro prato:</label>
@@ -50,6 +51,11 @@
 
         <p id="mensaxe" style="margin-top:15px; color:#0055aa; font-weight:bold;"></p>
 
+        <!-- ⭐ BOTÓN NOVO PARA BORRAR LOCALSTORAGE -->
+        <button id="resetBtn" style="margin-top:15px; background:#c62828; color:white; padding:8px 12px; border:none; border-radius:6px;">
+            Restablecer / borrar datos
+        </button>
+
     </div>
 
     <nav style="text-align:center; margin-top:25px;">
@@ -59,6 +65,14 @@
 </div>
 
 <script src="admin.js"></script>
+
+<!-- ⭐ SCRIPT QUE BORRA LOCALSTORAGE -->
+<script>
+document.getElementById("resetBtn").addEventListener("click", () => {
+    localStorage.clear();
+    alert("Datos borrados. Recarga a páxina.");
+});
+</script>
 
 </body>
 </html>
