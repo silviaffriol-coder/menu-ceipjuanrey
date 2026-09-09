@@ -1,92 +1,97 @@
-// O panel admin traballa con estes obxectos que veñen de menus.js
-const menusBase = {
-    basal: MENUS_BASAL,
-    lactosa: MENUS_SEN_LACTOSA,
-    glute: MENUS_SEN_GLUTE,
-    musulman: MENUS_MUSULMAN,
-    marisco: MENUS_SEN_MARISCO
-};
+/* ============================================================
+   PANEL DE ADMINISTRACIÓN – CEIP JUAN REY
+   Gardar menús por data real en cada colección
+   ============================================================ */
 
-// Carga menús: base + cambios gardados
-function cargarMenus() {
+/* Cargar menús gardados desde localStorage */
+function cargarMenusGardados() {
     const gardado = localStorage.getItem("menusCEIPJuanRey");
-
     if (gardado) {
-        const cambios = JSON.parse(gardado);
-
-        return {
-            basal: { ...menusBase.basal, ...(cambios.basal || {}) },
-            lactosa: { ...menusBase.lactosa, ...(cambios.lactosa || {}) },
-            glute: { ...menusBase.glute, ...(cambios.glute || {}) },
-            musulman: { ...menusBase.musulman, ...(cambios.musulman || {}) },
-            marisco: { ...menusBase.marisco, ...(cambios.marisco || {}) }
-        };
+        return JSON.parse(gardado);
     }
-
-    // Se non hai nada gardado, devolvemos só os base
     return {
-        basal: { ...menusBase.basal },
-        lactosa: { ...menusBase.lactosa },
-        glute: { ...menusBase.glute },
-        musulman: { ...menusBase.musulman },
-        marisco: { ...menusBase.marisco }
+        basal: MENUS_BASAL,
+        sen_lactosa: MENUS_SEN_LACTOSA,
+        sen_glute: MENUS_SEN_GLUTE,
+        musulman: MENUS_MUSULMAN,
+        sen_marisco: MENUS_SEN_MARISCO
     };
 }
 
-// Garda un menú para unha DATA concreta
-function gardarMenu() {
-    const tipo = document.getElementById("tipo").value;      // basal, lactosa, glute, musulman, marisco
-    const dataReal = document.getElementById("dataReal").value; // formato YYYY-MM-DD
-
-    const primeiro = document.getElementById("primeiro").value.trim();
-    const segundo = document.getElementById("segundo").value.trim();
-    const postre = document.getElementById("postre").value.trim();
-
-    if (!dataReal) {
-        document.getElementById("mensaxe").textContent =
-            "Debes escoller unha data.";
-        return;
-    }
-
-    if (!primeiro || !segundo || !postre) {
-        document.getElementById("mensaxe").textContent =
-            "Todos os campos deben estar cubertos.";
-        return;
-    }
-
-    // Cargamos o estado actual (base + gardado)
-    const menusActuais = cargarMenus();
-
-    // Se non existe o tipo, inicializámolo
-    if (!menusActuais[tipo]) menusActuais[tipo] = {};
-
-    // Actualizamos o menú desa data
-    menusActuais[tipo][dataReal] = {
-        primeiro,
-        segundo,
-        sobremesa: postre
-    };
-
-    // Gardamos só os cambios no localStorage
-    const gardadoBruto = localStorage.getItem("menusCEIPJuanRey");
-    const cambios = gardadoBruto ? JSON.parse(gardadoBruto) : {};
-
-    if (!cambios[tipo]) cambios[tipo] = {};
-    cambios[tipo][dataReal] = {
-        primeiro,
-        segundo,
-        sobremesa: postre
-    };
-
-    localStorage.setItem("menusCEIPJuanRey", JSON.stringify(cambios));
-
-    document.getElementById("mensaxe").textContent =
-        "Menú gardado correctamente ✔";
-
-    document.getElementById("primeiro").value = "";
-    document.getElementById("segundo").value = "";
-    document.getElementById("postre").value = "";
+/* Gardar menús en localStorage */
+function gardarMenus(menus) {
+    localStorage.setItem("menusCEIPJuanRey", JSON.stringify(menus));
 }
 
-// Cando carga a páxina, non tocamos nada máis
-document.addEventListener("DOMContentLoaded", () => {});
+/* ============================================================
+   CARGAR MENÚ NO PANEL ADMIN AO SELECCIONAR DATA
+   ============================================================ */
+
+document.getElementById("adminData").addEventListener("change", () => {
+    const data = document.getElementById("adminData").value;
+    if (!data) return;
+
+    const menus = cargarMenusGardados();
+    const tipo = tipoActual; // o tipo actual seleccionado cos botóns
+
+    const menu = menus[tipo][data];
+
+    document.getElementById("adminPrimeiro").value = menu?.primeiro || "";
+    document.getElementById("adminSegundo").value = menu?.segundo || "";
+    document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
+});
+
+/* ============================================================
+   GARDAR MENÚ EDITADO
+   ============================================================ */
+
+document.getElementById("gardarMenu").addEventListener("click", () => {
+
+    const data = document.getElementById("adminData").value;
+    const primeiro = document.getElementById("adminPrimeiro").value.trim();
+    const segundo = document.getElementById("adminSegundo").value.trim();
+    const sobremesa = document.getElementById("adminSobremesa").value.trim();
+
+    if (!data || !primeiro || !segundo || !sobremesa) {
+        alert("Todos os campos deben estar cubertos.");
+        return;
+    }
+
+    const menus = cargarMenusGardados();
+    const tipo = tipoActual;
+
+    // Crear o menú se non existe
+    menus[tipo][data] = {
+        primeiro: primeiro,
+        segundo: segundo,
+        sobremesa: sobremesa
+    };
+
+    // Gardar en localStorage
+    gardarMenus(menus);
+
+    alert("Menú gardado correctamente ✔");
+
+    // Limpar campos
+    document.getElementById("adminPrimeiro").value = "";
+    document.getElementById("adminSegundo").value = "";
+    document.getElementById("adminSobremesa").value = "";
+});
+
+/* ============================================================
+   CARGAR MENÚS GARDADOS AO INICIAR
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const gardado = localStorage.getItem("menusCEIPJuanRey");
+    if (gardado) {
+        const menusGardados = JSON.parse(gardado);
+
+        // Substituír os menús base polos gardados
+        Object.assign(MENUS_BASAL, menusGardados.basal);
+        Object.assign(MENUS_SEN_LACTOSA, menusGardados.sen_lactosa);
+        Object.assign(MENUS_SEN_GLUTE, menusGardados.sen_glute);
+        Object.assign(MENUS_MUSULMAN, menusGardados.musulman);
+        Object.assign(MENUS_SEN_MARISCO, menusGardados.sen_marisco);
+    }
+});
