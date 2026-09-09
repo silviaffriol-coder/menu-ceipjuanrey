@@ -9,10 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const selo = document.querySelector(".selo");
     if (!selo) return;
 
+    // Aseguramos que a imaxe é clicable
+    selo.style.cursor = "pointer";
+
     selo.addEventListener("click", () => {
         taps++;
         clearTimeout(tapTimer);
-        tapTimer = setTimeout(() => taps = 0, 700); // máis tempo para Drupal
+
+        // Drupal ás veces mete capas → damos máis tempo
+        tapTimer = setTimeout(() => taps = 0, 800);
 
         if (taps === 3) {
             abrirPanelAdmin();
@@ -26,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===============================
 
 function abrirPanelAdmin() {
-    document.getElementById("adminPanel").classList.remove("oculto");
+    const panel = document.getElementById("adminPanel");
+    if (panel) panel.classList.remove("oculto");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -91,17 +97,17 @@ function mostrarMenuHoxe() {
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
 
-    // ⭐ MOSTRAR DATA ACTUAL EN GALEGO
+    // ⭐ DATA EN GALEGO
     const dataTexto = formatoDataGalego(ano, mes, dia);
     document.getElementById("dataHoxe").textContent = `Menú do día ${dataTexto}`;
 
-    // ⭐ MOSTRAR PRATOS
+    // ⭐ PRATOS
     document.getElementById("primeiro").textContent = menu?.primeiro || "Sen rexistro";
     document.getElementById("segundo").textContent = menu?.segundo || "—";
     document.getElementById("sobremesa").textContent = menu?.sobremesa || "—";
 }
 
-// Mostrar ao cargar a páxina
+// Mostrar ao cargar
 document.addEventListener("DOMContentLoaded", mostrarMenuHoxe);
 
 // ===============================
