@@ -1,5 +1,3 @@
-/* ======== ESTILO XERAL ======== */
-
 body {
     font-family: Arial, sans-serif;
     background: #f4f7fb;
@@ -7,8 +5,6 @@ body {
     padding: 0;
     text-align: center;
 }
-
-/* ======== CABECEIRA ======== */
 
 header {
     background: #0054a6;
@@ -22,20 +18,24 @@ header {
     border-radius: 8px;
 }
 
-/* ======== SELECTOR DE MENÚ ======== */
-
-.selector {
+nav {
     margin: 20px 0;
 }
 
-.selector select {
-    padding: 10px;
-    font-size: 16px;
+nav button {
+    background: #0054a6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-/* ======== MENÚ DO DÍA ======== */
+nav button:hover {
+    background: #003f7d;
+}
 
 .menu {
     width: 90%;
@@ -46,10 +46,6 @@ header {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.menu h2 {
-    margin-bottom: 20px;
-}
-
 .prato {
     margin-bottom: 20px;
 }
@@ -58,8 +54,6 @@ header {
     color: #0054a6;
     margin-bottom: 8px;
 }
-
-/* ======== PANEL ADMIN ======== */
 
 .admin {
     width: 90%;
@@ -100,8 +94,6 @@ header {
 .admin button:hover {
     background: #003f7d;
 }
-
-/* ======== OCULTAR PANEL ======== */
 
 .oculto {
     display: none;
