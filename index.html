@@ -3,55 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú CEIP Juan Rey</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Menú do Comedor – CEIP Juan Rey</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div id="selo" class="selo-colexio">
-    <img src="img/foto-colexio.jpg" alt="Colexio">
-</div>
+    <!-- SELLO / FOTO DO COLEXIO -->
+    <header class="header">
+        <img src="img/foto-colexio.jpg" alt="Foto do colexio" class="selo">
+        <h1>Menú do Comedor</h1>
+    </header>
 
-<div id="panelAdmin" class="panel-oculto">
-    <button id="pecharAdmin">Pechar</button>
+    <!-- SELECTOR DE TIPO DE MENÚ -->
+    <section class="selector">
+        <label for="tipoMenu">Tipo de menú:</label>
+        <select id="tipoMenu">
+            <option value="basal">Basal</option>
+            <option value="sen_lactosa">Sen lactosa</option>
+            <option value="sen_glute">Sen glute</option>
+            <option value="musulman">Musulmán</option>
+            <option value="sen_marisco">Sen marisco</option>
+        </select>
+    </section>
 
-    <h2>Panel de Administración</h2>
+    <!-- MENÚ DE HOXE -->
+    <section id="menuHoxe" class="menu">
+        <h2 id="dataHoxe"></h2>
 
-    <label>Data:</label>
-    <input type="date" id="dataSelect">
+        <div class="prato">
+            <h3>Primeiro prato</h3>
+            <p id="primeiro"></p>
+        </div>
 
-    <label>Tipo de menú:</label>
-    <select id="tipoAdmin">
-        <option value="basal">Basal</option>
-        <option value="lactosa">Sen lactosa</option>
-        <option value="glute">Sen glute</option>
-        <option value="musulman">Musulmán</option>
-        <option value="marisco">Sen marisco</option>
-    </select>
+        <div class="prato">
+            <h3>Segundo prato</h3>
+            <p id="segundo"></p>
+        </div>
 
-    <label>Primeiro prato:</label>
-    <input type="text" id="primeiroInput">
+        <div class="prato">
+            <h3>Sobremesa</h3>
+            <p id="sobremesa"></p>
+        </div>
+    </section>
 
-    <label>Segundo prato:</label>
-    <input type="text" id="segundoInput">
+    <!-- PANEL ADMIN OCULTO -->
+    <section id="adminPanel" class="admin oculto">
 
-    <label>Sobremesa:</label>
-    <input type="text" id="sobremesaInput">
+        <h2>Panel de administración</h2>
 
-    <button id="gardarBtn">Gardar</button>
-</div>
+        <label for="adminData">Data:</label>
+        <input type="date" id="adminData">
 
-<div class="menu-dia">
-    <h1>Menú de hoxe</h1>
-    <p id="primeiroPrato"></p>
-    <p id="segundoPrato"></p>
-    <p id="sobremesaPrato"></p>
-</div>
+        <label for="adminPrimeiro">Primeiro prato:</label>
+        <input type="text" id="adminPrimeiro">
 
-<script src="menus.js"></script>
-<script src="admin.js"></script>
-<script src="scripts.js"></script>
+        <label for="adminSegundo">Segundo prato:</label>
+        <input type="text" id="adminSegundo">
+
+        <label for="adminSobremesa">Sobremesa:</label>
+        <input type="text" id="adminSobremesa">
+
+        <button id="gardarMenu">Gardar menú</button>
+        <button id="pecharAdmin">Pechar</button>
+    </section>
+
+    <script src="menus.js"></script>
+    <script src="scripts.js"></script>
+    <script src="admin.js"></script>
 
 </body>
 </html>
