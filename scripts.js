@@ -74,11 +74,15 @@ function cambiarMenu(tipo) {
 
 function mostrarMenuHoxe() {
 
-   const dataHoxe = new Date().toLocaleDateString("sv-SE");
+    // ⭐ DATA LOCAL REAL EN FORMATO YYYY-MM-DD
+    const dataHoxe = new Date().toLocaleDateString("sv-SE");
+
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
 
     // ⭐ DATA EN FORMATO 09/09/2026
+    const [ano, mes, dia] = dataHoxe.split("-");
+
     document.getElementById("dataHoxe").textContent =
         `Menú do día ${dia}/${mes}/${ano}`;
 
