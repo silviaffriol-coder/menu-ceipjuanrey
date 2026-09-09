@@ -1,150 +1,57 @@
 <!DOCTYPE html>
 <html lang="gl">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Necesario para que se vexa grande no móbil -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Menú comedor CEIP Juan Rey 2026-2027</title>
-
-  <style>
-    body { font-family: system-ui, sans-serif; margin: 2rem; }
-    h1 { margin-bottom: 0.5rem; }
-    nav button { margin-right: 10px; padding: 8px 12px; }
-    #resultado { margin-top: 1.5rem; border-top: 1px solid #ccc; padding-top: 1rem; }
-    .campo { margin-bottom: 0.4rem; }
-    .etiqueta { font-weight: 600; }
-
-    .panel-oculto { display:none; }
-    .panel-visible { display:block; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú CEIP Juan Rey</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-  <h1>Menú do comedor 2026-2027</h1>
+<div id="selo" class="selo-colexio">
+    <img src="img/foto-colexio.jpg" alt="Colexio">
+</div>
 
-  <!-- BOTÓNS DE MENÚS POR TIPO -->
-  <nav style="margin:20px 0;">
-      <button onclick="mostrarTipo('basal')">Basal</button>
-      <button onclick="mostrarTipo('glute')">Sen glute</button>
-      <button onclick="mostrarTipo('musulman')">Musulmán</button>
-      <button onclick="mostrarTipo('lactosa')">Sen lactosa</button>
-      <button onclick="mostrarTipo('marisco')">Sen marisco</button>
-  </nav>
+<div id="panelAdmin" class="panel-oculto">
+    <button id="pecharAdmin">Pechar</button>
 
-  <!-- Onde se mostra o menú do día actual -->
-  <div id="contido" style="margin-top:15px; font-weight:600;"></div>
+    <h2>Panel de Administración</h2>
 
-  <!-- Resultado detallado -->
-  <div id="resultado">
-    <div class="campo">
-      <span class="etiqueta">Primeiro prato:</span>
-      <span id="primeiroPrato">—</span>
-    </div>
-    <div class="campo">
-      <span class="etiqueta">Segundo prato:</span>
-      <span id="segundoPrato">—</span>
-    </div>
-    <div class="campo">
-      <span class="etiqueta">Sobremesa:</span>
-      <span id="sobremesaPrato">—</span>
-    </div>
-  </div>
+    <label>Data:</label>
+    <input type="date" id="dataSelect">
 
-  <!-- IMAXE DO SELLO PARA O TRIPLE TAP -->
-  <img src="img/foto-colexio.jpg"
-       alt="Foto do colexio"
-       id="selo"
-       style="width:100%; max-width:700px; height:auto; display:block; margin:20px auto; cursor:pointer;">
+    <label>Tipo de menú:</label>
+    <select id="tipoAdmin">
+        <option value="basal">Basal</option>
+        <option value="lactosa">Sen lactosa</option>
+        <option value="glute">Sen glute</option>
+        <option value="musulman">Musulmán</option>
+        <option value="marisco">Sen marisco</option>
+    </select>
 
-  <!-- PANEL ADMIN OCULTO -->
-  <div id="panelAdmin" class="panel-oculto" style="
-      position:fixed;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      background:white;
-      padding:20px;
-      border:2px solid #333;
-      border-radius:10px;
+    <label>Primeiro prato:</label>
+    <input type="text" id="primeiroInput">
 
-      /* Panel máis grande e adaptable no móbil */
-      width:90%;
-      max-width:450px;
+    <label>Segundo prato:</label>
+    <input type="text" id="segundoInput">
 
-      z-index:999;
-  ">
-      <button id="pecharAdmin" style="float:right;">X</button>
-      <h3>Panel de administración</h3>
+    <label>Sobremesa:</label>
+    <input type="text" id="sobremesaInput">
 
-      <!-- ⭐ SELECTOR DE TIPO DE MENÚ -->
-      <label for="tipoAdmin">Tipo de menú:</label>
-      <select id="tipoAdmin">
-          <option value="basal">Basal</option>
-          <option value="glute">Sen glute</option>
-          <option value="musulman">Musulmán</option>
-          <option value="lactosa">Sen lactosa</option>
-          <option value="marisco">Sen marisco</option>
-      </select>
+    <button id="gardarBtn">Gardar</button>
+</div>
 
-      <label>Data:</label>
-      <input type="date" id="dataSelect">
+<div class="menu-dia">
+    <h1>Menú de hoxe</h1>
+    <p id="primeiroPrato"></p>
+    <p id="segundoPrato"></p>
+    <p id="sobremesaPrato"></p>
+</div>
 
-      <label>Primeiro:</label>
-      <input type="text" id="primeiroInput">
-
-      <label>Segundo:</label>
-      <input type="text" id="segundoInput">
-
-      <label>Sobremesa:</label>
-      <input type="text" id="sobremesaInput">
-
-      <button id="gardarBtn" style="margin-top:10px;">Gardar</button>
-  </div>
-
-  <!-- Carga dos menús -->
-  <script src="menus.js"></script>
-
-  <!-- Script do triple tap + panel admin + botóns -->
-  <script src="scripts.js"></script>
-
-  <!-- ⭐ SCRIPT QUE OCULTA ELEMENTOS — AGORA NO SITIO CORRECTO -->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-
-    // Ocultar botóns azuis da Xunta
-    document.querySelectorAll("a, button").forEach(el => {
-      const texto = el.textContent.trim();
-
-      if (
-        texto === "Abrir App do Menú do Comedor" ||
-        texto === "Abrir app do menú do comedor"
-      ) {
-        el.style.display = "none";
-      }
-    });
-
-    // Ocultar enlaces externos (bit.ly ou github.io que non son teus)
-    document.querySelectorAll("a").forEach(el => {
-      if (
-        (el.href && el.href.includes("bit.ly")) ||
-        (el.href && el.href.includes("github.io"))
-      ) {
-        el.style.display = "none";
-      }
-    });
-
-    // Ocultar o texto "Menú do comedor"
-    document.querySelectorAll("p, div, span, h2, h3").forEach(el => {
-      if (el.textContent.trim() === "Menú do comedor") {
-        el.style.display = "none";
-      }
-    });
-
-  });
-  </script>
+<script src="menus.js"></script>
+<script src="admin.js"></script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
