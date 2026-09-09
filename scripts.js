@@ -9,14 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const selo = document.querySelector(".selo");
     if (!selo) return;
 
-    // Aseguramos que a imaxe é clicable
     selo.style.cursor = "pointer";
 
     selo.addEventListener("click", () => {
         taps++;
         clearTimeout(tapTimer);
 
-        // Drupal ás veces mete capas → damos máis tempo
         tapTimer = setTimeout(() => taps = 0, 800);
 
         if (taps === 3) {
@@ -56,7 +54,6 @@ const coleccions = {
     sen_marisco: MENUS_SEN_MARISCO
 };
 
-// Tipo actual por defecto
 let tipoActual = "basal";
 
 // ===============================
@@ -74,8 +71,10 @@ function cambiarMenu(tipo) {
 
 function mostrarMenuHoxe() {
 
-    // ⭐ DATA LOCAL REAL EN FORMATO YYYY-MM-DD
-    const dataHoxe = new Date().toLocaleDateString("sv-SE");
+    // ⭐ DATA LOCAL REAL SEN ERROS DE UTC
+    const agora = new Date();
+    const local = new Date(agora.getTime() - agora.getTimezoneOffset() * 60000);
+    const dataHoxe = local.toISOString().split("T")[0];
 
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
@@ -108,10 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!data) return;
 
         const coleccion = coleccions[tipoActual];
-        const menu = coleccion[data];
+        const menu = coleccion[data] || {};
 
-        document.getElementById("adminPrimeiro").value = menu?.primeiro || "";
-        document.getElementById("adminSegundo").value = menu?.segundo || "";
-        document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
+        document.getElementById("adminPrimeiro").value = menu.primeiro || "";
+        document.getElementById("adminSegundo").value = menu.segundo || "";
+        document.getElementById("adminSobremesa").value = menu.sobremesa || "";
     });
 });
