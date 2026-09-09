@@ -29,6 +29,20 @@ document.getElementById("pecharAdmin").addEventListener("click", () => {
 });
 
 // ===============================
+// FORMATO DATA GALEGO
+// ===============================
+
+function formatoDataGalego(ano, mes, dia) {
+    const meses = [
+        "xaneiro","febreiro","marzo","abril","maio","xuño",
+        "xullo","agosto","setembro","outubro","novembro","decembro"
+    ];
+
+    const mesNome = meses[parseInt(mes, 10) - 1];
+    return `${parseInt(dia, 10)} de ${mesNome} de ${ano}`;
+}
+
+// ===============================
 // COLECCIÓNS DE MENÚS
 // ===============================
 
@@ -67,8 +81,9 @@ function mostrarMenuHoxe() {
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
 
-    // ⭐ MOSTRAR DATA ACTUAL
-    document.getElementById("dataHoxe").textContent = `Menú do día ${dia}/${mes}/${ano}`;
+    // ⭐ MOSTRAR DATA ACTUAL EN GALEGO
+    document.getElementById("dataHoxe").textContent =
+        `Menú do día ${formatoDataGalego(ano, mes, dia)}`;
 
     // ⭐ MOSTRAR PRATOS
     document.getElementById("primeiro").textContent = menu?.primeiro || "Sen rexistro";
@@ -94,3 +109,4 @@ document.getElementById("adminData").addEventListener("change", () => {
     document.getElementById("adminSegundo").value = menu?.segundo || "";
     document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
 });
+⭐ Este scripts.js é EXACTAMENTE o
