@@ -9,6 +9,8 @@ function cargarMenusGardados() {
     if (gardado) {
         return JSON.parse(gardado);
     }
+
+    // Se non hai nada gardado → devolver menús reais
     return {
         basal: MENUS_BASAL,
         sen_lactosa: MENUS_SEN_LACTOSA,
@@ -32,13 +34,13 @@ document.getElementById("adminData").addEventListener("change", () => {
     if (!data) return;
 
     const menus = cargarMenusGardados();
-    const tipo = tipoActual; // o tipo actual seleccionado cos botóns
+    const tipo = tipoActual;
 
-    const menu = menus[tipo][data];
+    const menu = menus[tipo]?.[data] || {};
 
-    document.getElementById("adminPrimeiro").value = menu?.primeiro || "";
-    document.getElementById("adminSegundo").value = menu?.segundo || "";
-    document.getElementById("adminSobremesa").value = menu?.sobremesa || "";
+    document.getElementById("adminPrimeiro").value = menu.primeiro || "";
+    document.getElementById("adminSegundo").value = menu.segundo || "";
+    document.getElementById("adminSobremesa").value = menu.sobremesa || "";
 });
 
 /* ============================================================
@@ -60,19 +62,16 @@ document.getElementById("gardarMenu").addEventListener("click", () => {
     const menus = cargarMenusGardados();
     const tipo = tipoActual;
 
-    // Crear o menú se non existe
     menus[tipo][data] = {
-        primeiro: primeiro,
-        segundo: segundo,
-        sobremesa: sobremesa
+        primeiro,
+        segundo,
+        sobremesa
     };
 
-    // Gardar en localStorage
     gardarMenus(menus);
 
     alert("Menú gardado correctamente ✔");
 
-    // Limpar campos
     document.getElementById("adminPrimeiro").value = "";
     document.getElementById("adminSegundo").value = "";
     document.getElementById("adminSobremesa").value = "";
