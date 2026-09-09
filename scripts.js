@@ -1,57 +1,49 @@
-// Carga os menús base + cambios gardados polo panel admin
-function obterMenus() {
-    if (typeof cargarMenus === "function") {
-        return cargarMenus(); // admin.js
+// TRIPLE TAP NO SELLO
+let taps = 0;
+let timeout;
+
+document.getElementById("selo").addEventListener("click", () => {
+    taps++;
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => { taps = 0; }, 500);
+
+    if (taps === 3) {
+        document.getElementById("panelAdmin").classList.remove("panel-oculto");
+        document.getElementById("panelAdmin").classList.add("panel-visible");
+        taps = 0;
     }
-    return {
-        basal: MENUS_BASAL,
-        lactosa: MENUS_SEN_LACTOSA,
-        glute: MENUS_SEN_GLUTE,
-        musulman: MENUS_MUSULMAN,
-        marisco: MENUS_SEN_MARISCO
-    };
-}
+});
 
-// Devolve o tipo de menú seleccionado polo usuario
-function tipoSeleccionado() {
-    return localStorage.getItem("tipoMenuSeleccionado") || "basal";
-}
+// PECHAR PANEL
+document.getElementById("pecharAdmin").addEventListener("click", () => {
+    document.getElementById("panelAdmin").classList.remove("panel-visible");
+    document.getElementById("panelAdmin").classList.add("panel-oculto");
+});
 
-// Garda o tipo de menú seleccionado
-function seleccionarTipo(tipo) {
-    localStorage.setItem("tipoMenuSeleccionado", tipo);
-    mostrarMenu();
-}
-
-// Mostra o menú correspondente á data actual
+// CARGAR MENÚ DO DÍA
 function mostrarMenu() {
     const menus = obterMenus();
-    const tipo = tipoSeleccionado();
+    const tipo = localStorage.getItem("tipoMenuSeleccionado") || "basal";
 
     const hoxe = new Date();
     const ano = hoxe.getFullYear();
     const mes = String(hoxe.getMonth() + 1).padStart(2, "0");
     const dia = String(hoxe.getDate()).padStart(2, "0");
-
     const claveData = `${ano}-${mes}-${dia}`;
 
-    const menuTipo = menus[tipo];
+    const menu = menus[tipo][claveData];
 
-    if (!menuTipo || !menuTipo[claveData]) {
-        document.getElementById("primeiro").textContent = "Sen datos";
-        document.getElementById("segundo").textContent = "Sen datos";
-        document.getElementById("postre").textContent = "Sen datos";
+    if (!menu) {
+        document.getElementById("primeiroPrato").textContent = "Sen menú rexistrado";
+        document.getElementById("segundoPrato").textContent = "—";
+        document.getElementById("sobremesaPrato").textContent = "—";
         return;
     }
 
-    const menu = menuTipo[claveData];
-
-    document.getElementById("primeiro").textContent = menu.primeiro;
-    document.getElementById("segundo").textContent = menu.segundo;
-    document.getElementById("postre").textContent = menu.sobremesa;
+    document.getElementById("primeiroPrato").textContent = menu.primeiro;
+    document.getElementById("segundoPrato").textContent = menu.segundo;
+    document.getElementById("sobremesaPrato").textContent = menu.sobremesa;
 }
 
-// Cargar ao iniciar
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarMenu();
-});
+document.addEventListener("DOMContentLoaded", mostrarMenu);
