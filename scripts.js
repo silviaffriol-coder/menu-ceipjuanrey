@@ -7,7 +7,6 @@ let tapTimer = null;
 
 document.querySelector(".selo").addEventListener("click", () => {
     taps++;
-
     clearTimeout(tapTimer);
     tapTimer = setTimeout(() => taps = 0, 500);
 
@@ -41,17 +40,17 @@ const coleccions = {
     sen_marisco: MENUS_SEN_MARISCO
 };
 
-// Tipo actual seleccionado polo usuario
+// Tipo actual por defecto
 let tipoActual = "basal";
 
 // ===============================
-// CAMBIO DE TIPO DE MENÚ
+// CAMBIAR MENÚ (BOTÓNS)
 // ===============================
 
-document.getElementById("tipoMenu").addEventListener("change", () => {
-    tipoActual = document.getElementById("tipoMenu").value;
+function cambiarMenu(tipo) {
+    tipoActual = tipo;
     mostrarMenuHoxe();
-});
+}
 
 // ===============================
 // MOSTRAR MENÚ DE HOXE
@@ -68,8 +67,10 @@ function mostrarMenuHoxe() {
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
 
+    // ⭐ MOSTRAR DATA ACTUAL
     document.getElementById("dataHoxe").textContent = `Menú do día ${dia}/${mes}/${ano}`;
 
+    // ⭐ MOSTRAR PRATOS
     document.getElementById("primeiro").textContent = menu?.primeiro || "Sen rexistro";
     document.getElementById("segundo").textContent = menu?.segundo || "—";
     document.getElementById("sobremesa").textContent = menu?.sobremesa || "—";
