@@ -1,3 +1,5 @@
+/* ======== ESTILO XERAL ======== */
+
 body {
     font-family: Arial, sans-serif;
     background: #f4f7fb;
@@ -6,49 +8,101 @@ body {
     text-align: center;
 }
 
+/* ======== CABECEIRA ======== */
+
 header {
     background: #0054a6;
     color: white;
     padding: 20px;
 }
 
-.logo {
-    width: 80px;
+.selo {
+    width: 120px;
     margin-bottom: 10px;
+    border-radius: 8px;
 }
 
-nav {
+/* ======== SELECTOR DE MENÚ ======== */
+
+.selector {
     margin: 20px 0;
 }
 
-nav button {
+.selector select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ======== MENÚ DO DÍA ======== */
+
+.menu {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.menu h2 {
+    margin-bottom: 20px;
+}
+
+.prato {
+    margin-bottom: 20px;
+}
+
+.prato h3 {
+    color: #0054a6;
+    margin-bottom: 8px;
+}
+
+/* ======== PANEL ADMIN ======== */
+
+.admin {
+    width: 90%;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.admin label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.admin input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.admin button {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
     background: #0054a6;
     color: white;
     border: none;
-    padding: 12px 20px;
-    margin: 5px;
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
 }
 
-nav button:hover {
+.admin button:hover {
     background: #003f7d;
 }
 
-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: white;
-}
+/* ======== OCULTAR PANEL ======== */
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-th {
-    background: #0054a6;
-    color: white;
+.oculto {
+    display: none;
 }
