@@ -45,20 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===============================
-// FORMATO DATA GALEGO
-// ===============================
-
-function formatoDataGalego(ano, mes, dia) {
-    const meses = [
-        "xaneiro","febreiro","marzo","abril","maio","xuño",
-        "xullo","agosto","setembro","outubro","novembro","decembro"
-    ];
-
-    const mesNome = meses[parseInt(mes, 10) - 1];
-    return `${parseInt(dia, 10)} de ${mesNome} de ${ano}`;
-}
-
-// ===============================
 // COLECCIÓNS DE MENÚS
 // ===============================
 
@@ -97,9 +83,9 @@ function mostrarMenuHoxe() {
     const coleccion = coleccions[tipoActual];
     const menu = coleccion[dataHoxe];
 
-    // ⭐ DATA EN GALEGO
-    const dataTexto = formatoDataGalego(ano, mes, dia);
-    document.getElementById("dataHoxe").textContent = `Menú do día ${dataTexto}`;
+    // ⭐ DATA EN FORMATO 09/09/2026
+    document.getElementById("dataHoxe").textContent =
+        `Menú do día ${dia}/${mes}/${ano}`;
 
     // ⭐ PRATOS
     document.getElementById("primeiro").textContent = menu?.primeiro || "Sen rexistro";
