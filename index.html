@@ -109,40 +109,42 @@
 
   <!-- Script do triple tap + panel admin + botóns -->
   <script src="scripts.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
 
-  // Ocultar botóns azuis da Xunta
-  document.querySelectorAll("a, button").forEach(el => {
-    const texto = el.textContent.trim();
+  <!-- ⭐ SCRIPT QUE OCULTA ELEMENTOS — AGORA NO SITIO CORRECTO -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
 
-    if (
-      texto === "Abrir App do Menú do Comedor" ||
-      texto === "Abrir app do menú do comedor"
-    ) {
-      el.style.display = "none";
-    }
+    // Ocultar botóns azuis da Xunta
+    document.querySelectorAll("a, button").forEach(el => {
+      const texto = el.textContent.trim();
+
+      if (
+        texto === "Abrir App do Menú do Comedor" ||
+        texto === "Abrir app do menú do comedor"
+      ) {
+        el.style.display = "none";
+      }
+    });
+
+    // Ocultar enlaces externos (bit.ly ou github.io que non son teus)
+    document.querySelectorAll("a").forEach(el => {
+      if (
+        (el.href && el.href.includes("bit.ly")) ||
+        (el.href && el.href.includes("github.io"))
+      ) {
+        el.style.display = "none";
+      }
+    });
+
+    // Ocultar o texto "Menú do comedor"
+    document.querySelectorAll("p, div, span, h2, h3").forEach(el => {
+      if (el.textContent.trim() === "Menú do comedor") {
+        el.style.display = "none";
+      }
+    });
+
   });
-
-  // Ocultar enlaces externos (bit.ly ou github.io que non son teus)
-  document.querySelectorAll("a").forEach(el => {
-    if (
-      (el.href && el.href.includes("bit.ly")) ||
-      (el.href && el.href.includes("github.io"))
-    ) {
-      el.style.display = "none";
-    }
-  });
-
-  // Ocultar o texto "Menú do comedor"
-  document.querySelectorAll("p, div, span, h2, h3").forEach(el => {
-    if (el.textContent.trim() === "Menú do comedor") {
-      el.style.display = "none";
-    }
-  });
-
-});
-</script>
+  </script>
 
 </body>
 </html>
