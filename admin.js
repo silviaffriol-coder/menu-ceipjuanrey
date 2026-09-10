@@ -78,6 +78,7 @@ function cargarMenuAdmin() {
     const adminData =
         document.getElementById("adminData");
 
+
     if (!adminTipo || !adminData) {
         return;
     }
@@ -158,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* --------------------------------------------------------
-       CAMBIO DE TIPO DE MENÚ
+       CAMBIO DE TIPO
        -------------------------------------------------------- */
 
     if (adminTipo) {
@@ -167,17 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
             "change",
             () => {
 
-                const tipo =
-                    adminTipo.value;
-
-
                 /*
-                   Sincronizamos o tipo seleccionado
-                   co resto da aplicación.
+                   Sincronizamos o selector do panel
+                   coa aplicación principal.
                 */
 
                 tipoActual =
-                    tipo;
+                    adminTipo.value;
 
 
                 cargarMenuAdmin();
@@ -199,8 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
             () => {
 
                 /*
-                   Mantemos sincronizado tipoActual
-                   co selector do panel.
+                   Mantemos tipoActual sincronizado
+                   co tipo seleccionado no panel.
                 */
 
                 if (adminTipo) {
@@ -267,10 +264,6 @@ document.getElementById("gardarMenu").addEventListener(
                 .trim();
 
 
-        /* ----------------------------------------------------
-           COMPROBAR CAMPOS
-           ---------------------------------------------------- */
-
         if (
             !tipo ||
             !data ||
@@ -287,10 +280,6 @@ document.getElementById("gardarMenu").addEventListener(
         }
 
 
-        /* ----------------------------------------------------
-           CARGAR MENÚS GARDADOS
-           ---------------------------------------------------- */
-
         const menus =
             cargarMenusGardados();
 
@@ -301,10 +290,6 @@ document.getElementById("gardarMenu").addEventListener(
 
         }
 
-
-        /* ----------------------------------------------------
-           GARDAR MENÚ
-           ---------------------------------------------------- */
 
         menus[tipo][data] = {
 
@@ -416,10 +401,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 adminData.value;
 
 
-            /* ------------------------------------------------
-               COMPROBAR SELECCIÓN
-               ------------------------------------------------ */
-
             if (!tipo || !data) {
 
                 alert(
@@ -429,10 +410,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-
-            /* ------------------------------------------------
-               OBTER MENÚ ORIXINAL
-               ------------------------------------------------ */
 
             const orixinal =
                 obterColeccionOrixinal(tipo);
@@ -451,10 +428,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /* ------------------------------------------------
-               ELIMINAR MODIFICACIÓN GARDADA
-               ------------------------------------------------ */
-
             const menus =
                 cargarMenusGardados();
 
@@ -470,7 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /* ------------------------------------------------
-               VOLVER POÑER O MENÚ ORIXINAL NO PANEL
+               VOLVER CARGAR O MENÚ ORIXINAL
                ------------------------------------------------ */
 
             document
@@ -531,10 +504,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* --------------------------------------------------------
-       BASAL
-       -------------------------------------------------------- */
-
     if (menus.basal) {
 
         Object.assign(
@@ -544,10 +513,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    /* --------------------------------------------------------
-       SEN LACTOSA
-       -------------------------------------------------------- */
 
     if (menus.sen_lactosa) {
 
@@ -559,10 +524,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* --------------------------------------------------------
-       SEN GLUTE
-       -------------------------------------------------------- */
-
     if (menus.sen_glute) {
 
         Object.assign(
@@ -573,10 +534,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* --------------------------------------------------------
-       MUSULMÁN
-       -------------------------------------------------------- */
-
     if (menus.musulman) {
 
         Object.assign(
@@ -586,10 +543,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    /* --------------------------------------------------------
-       SEN MARISCO
-       -------------------------------------------------------- */
 
     if (menus.sen_marisco) {
 
