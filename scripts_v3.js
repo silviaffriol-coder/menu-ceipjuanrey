@@ -1,4 +1,3 @@
-```javascript
 // ===============================
 // TRIPLE TAP PARA ABRIR PANEL ADMIN
 // ===============================
