@@ -224,6 +224,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===============================
+// CAMBIO AUTOMÁTICO DE DÍA
+// ===============================
+
+let dataUltimaComprobada = "";
+
+
+function obterDataActual() {
+
+    const agora = new Date();
+
+    const ano =
+        agora.getFullYear();
+
+    const mes =
+        String(
+            agora.getMonth() + 1
+        ).padStart(2, "0");
+
+    const dia =
+        String(
+            agora.getDate()
+        ).padStart(2, "0");
+
+    return `${ano}-${mes}-${dia}`;
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    dataUltimaComprobada =
+        obterDataActual();
+
+    setInterval(() => {
+
+        const dataActual =
+            obterDataActual();
+
+        if (dataActual !== dataUltimaComprobada) {
+
+            dataUltimaComprobada =
+                dataActual;
+
+            mostrarMenuHoxe();
+        }
+
+    }, 30000);
+
+});
+
+
+// ===============================
 // CARGAR MENÚ NO PANEL ADMIN
 // ===============================
 
