@@ -98,6 +98,36 @@ function gardarMenusLocalStorage() {
 
 
 // ============================================================
+// OBTENER COLECCIÓN SEGUNDO O TIPO
+// ============================================================
+
+function obterColeccion(tipo) {
+
+    if (tipo === "basal") {
+        return MENUS_BASAL;
+    }
+
+    if (tipo === "sen_lactosa") {
+        return MENUS_SEN_LACTOSA;
+    }
+
+    if (tipo === "sen_glute") {
+        return MENUS_SEN_GLUTE;
+    }
+
+    if (tipo === "musulman") {
+        return MENUS_MUSULMAN;
+    }
+
+    if (tipo === "sen_marisco") {
+        return MENUS_SEN_MARISCO;
+    }
+
+    return null;
+}
+
+
+// ============================================================
 // CARGAR UN MENÚ NO PANEL
 // ============================================================
 
@@ -121,22 +151,35 @@ function cargarMenuAdmin() {
 
     if (!tipo || !data) return;
 
+
     if (!data.value) {
 
-        if (primeiro) primeiro.value = "";
-        if (segundo) segundo.value = "";
-        if (sobremesa) sobremesa.value = "";
+        if (primeiro) {
+            primeiro.value = "";
+        }
+
+        if (segundo) {
+            segundo.value = "";
+        }
+
+        if (sobremesa) {
+            sobremesa.value = "";
+        }
 
         return;
     }
 
 
-    // Sincronizamos o tipo co resto da aplicación
+    // Sincronizamos o tipo coa aplicación
     tipoActual = tipo.value;
 
 
     const coleccion =
-        coleccions[tipo.value] || {};
+        obterColeccion(tipo.value);
+
+
+    if (!coleccion) return;
+
 
     const menu =
         coleccion[data.value] || {};
@@ -170,7 +213,7 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        // Primeiro cargamos as modificacións gardadas
+        // Cargamos primeiro as modificacións gardadas
         cargarMenusGardados();
 
 
@@ -246,7 +289,10 @@ document.addEventListener(
                 "click",
                 () => {
 
-                    if (!tipo || !data) return;
+                    if (!tipo || !data) {
+                        return;
+                    }
+
 
                     const tipoSeleccionado =
                         tipo.value;
@@ -265,52 +311,20 @@ document.addEventListener(
                     }
 
 
-                    let coleccion;
+                    const coleccion =
+                        obterColeccion(
+                            tipoSeleccionado
+                        );
 
 
-                    if (
-                        tipoSeleccionado ===
-                        "basal"
-                    ) {
+                    if (!coleccion) {
 
-                        coleccion =
-                            MENUS_BASAL;
+                        alert(
+                            "Tipo de menú non válido."
+                        );
 
-                    } else if (
-                        tipoSeleccionado ===
-                        "sen_lactosa"
-                    ) {
-
-                        coleccion =
-                            MENUS_SEN_LACTOSA;
-
-                    } else if (
-                        tipoSeleccionado ===
-                        "sen_glute"
-                    ) {
-
-                        coleccion =
-                            MENUS_SEN_GLUTE;
-
-                    } else if (
-                        tipoSeleccionado ===
-                        "musulman"
-                    ) {
-
-                        coleccion =
-                            MENUS_MUSULMAN;
-
-                    } else if (
-                        tipoSeleccionado ===
-                        "sen_marisco"
-                    ) {
-
-                        coleccion =
-                            MENUS_SEN_MARISCO;
+                        return;
                     }
-
-
-                    if (!coleccion) return;
 
 
                     coleccion[dataSeleccionada] = {
@@ -369,7 +383,10 @@ document.addEventListener(
                 "click",
                 () => {
 
-                    if (!tipo || !data) return;
+                    if (!tipo || !data) {
+                        return;
+                    }
+
 
                     const tipoSeleccionado =
                         tipo.value;
@@ -388,74 +405,80 @@ document.addEventListener(
                     }
 
 
-                    let coleccionOriginal;
+                    const gardados =
+                        localStorage.getItem(
+                            CLAVE_STORAGE
+                        );
 
 
-                    if (
-                        tipoSeleccionado ===
-                        "basal"
-                    ) {
+                    if (!gardados) {
 
-                        coleccionOriginal =
-                            MENUS_BASAL;
+                        alert(
+                            "Non hai modificacións gardadas para restaurar."
+                        );
 
-                    } else if (
-                        tipoSeleccionado ===
-                        "sen_lactosa"
-                    ) {
-
-                        coleccionOriginal =
-                            MENUS_SEN_LACTOSA;
-
-                    } else if (
-                        tipoSeleccionado ===
-                        "sen_glute"
-                    ) {
-
-                        coleccionOriginal =
-                            MENUS_SEN_GLUTE;
-
-                    } else if (
-                        tipoSeleccionado ===
-                        "musulman"
-                    ) {
-
-                        coleccionOriginal =
-                            MENUS_MUSULMAN;
-
-                    } else if (
-                        tipoSeleccionado ===
-                        "sen_marisco"
-                    ) {
-
-                        coleccionOriginal =
-                            MENUS_SEN_MARISCO;
+                        return;
                     }
 
 
-                    if (!coleccionOriginal) return;
+                    try {
+
+                        const datos =
+                            JSON.parse(gardados);
 
 
-                    // Eliminamos o menú gardado
-                    // para esa data
-                    delete coleccionOriginal[
-                        dataSeleccionada
-                    ];
+                        // Eliminamos SÓ a data seleccionada
+                        // do tipo de menú seleccionado
+
+                        if (
+                            datos[tipoSeleccionado] &&
+                            datos[tipoSeleccionado][
+                                dataSeleccionada
+                            ]
+                        ) {
+
+                            delete datos[
+                                tipoSeleccionado
+                            ][
+                                dataSeleccionada
+                            ];
+
+                        } else {
+
+                            alert(
+                                "Non hai unha modificación gardada para esta data."
+                            );
+
+                            return;
+                        }
 
 
-                    // Eliminamos os datos gardados
-                    // de localStorage e reconstruímos
-                    // a partir dos menús orixinais
+                        // Gardamos de novo as modificacións
+                        // dos demais menús e datas
 
-                    localStorage.removeItem(
-                        CLAVE_STORAGE
-                    );
+                        localStorage.setItem(
+                            CLAVE_STORAGE,
+                            JSON.stringify(datos)
+                        );
 
 
-                    // Volvemos cargar a páxina
-                    // para recuperar os datos orixinais
+                        // Volvemos cargar os menús orixinais
+                        // antes de aplicar as modificacións
+                        // que aínda quedan gardadas
 
-                    location.reload();
+                        location.reload();
+
+                    } catch (erro) {
+
+                        console.error(
+                            "Erro ao restaurar o menú:",
+                            erro
+                        );
+
+                        alert(
+                            "Produciuse un erro ao restaurar o menú."
+                        );
+                    }
                 }
             );
         }
