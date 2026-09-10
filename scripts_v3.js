@@ -1,4 +1,3 @@
-```javascript
 // ===============================
 // TRIPLE TAP PARA ABRIR PANEL ADMIN
 // ===============================
@@ -222,4 +221,58 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarMenuHoxe();
 
 });
-```
+
+
+// ===============================
+// CARGAR MENÚ NO PANEL ADMIN
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const adminData =
+        document.getElementById("adminData");
+
+    if (!adminData) return;
+
+    adminData.addEventListener("change", () => {
+
+        const data =
+            adminData.value;
+
+        if (!data) return;
+
+        const coleccion =
+            coleccions[tipoActual] || {};
+
+        const menu =
+            coleccion[data] || {};
+
+        const primeiro =
+            document.getElementById("adminPrimeiro");
+
+        const segundo =
+            document.getElementById("adminSegundo");
+
+        const sobremesa =
+            document.getElementById("adminSobremesa");
+
+
+        if (primeiro) {
+
+            primeiro.value =
+                menu.primeiro || "";
+        }
+
+        if (segundo) {
+
+            segundo.value =
+                menu.segundo || "";
+        }
+
+        if (sobremesa) {
+
+            sobremesa.value =
+                menu.sobremesa || "";
+        }
+    });
+});
