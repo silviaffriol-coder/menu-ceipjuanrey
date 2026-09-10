@@ -1,3 +1,4 @@
+```javascript
 // ===============================
 // TRIPLE TAP PARA ABRIR PANEL ADMIN
 // ===============================
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===============================
-// ABRIR PANEL ADMIN
+// ABRIR / PECHAR PANEL ADMIN
 // ===============================
 
 function abrirPanelAdmin() {
@@ -48,10 +49,6 @@ function abrirPanelAdmin() {
     }
 }
 
-
-// ===============================
-// PECHAR PANEL ADMIN
-// ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -154,7 +151,6 @@ function mostrarMenuHoxe() {
 
     const coleccion =
         coleccions[tipoActual] || {};
-
 
     const menu =
         coleccion[dataHoxe] || {};
