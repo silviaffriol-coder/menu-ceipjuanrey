@@ -1,4 +1,3 @@
-```javascript
 /* ============================================================
    PANEL DE ADMINISTRACIÓN – CEIP JUAN REY
    Selección de tipo de menú + data
@@ -73,15 +72,28 @@ function gardarMenus(menus) {
 
 function cargarMenuAdmin() {
 
+    const adminTipo =
+        document.getElementById("adminTipo");
+
+    const adminData =
+        document.getElementById("adminData");
+
+    if (!adminTipo || !adminData) {
+        return;
+    }
+
+
     const tipo =
-        document.getElementById("adminTipo").value;
+        adminTipo.value;
 
     const data =
-        document.getElementById("adminData").value;
+        adminData.value;
+
 
     if (!tipo || !data) {
         return;
     }
+
 
     const orixinal =
         obterColeccionOrixinal(tipo);
@@ -96,14 +108,39 @@ function cargarMenuAdmin() {
         modificacion || orixinal[data] || {};
 
 
-    document.getElementById("adminPrimeiro").value =
-        menu.primeiro || "";
+    const primeiro =
+        document.getElementById("adminPrimeiro");
 
-    document.getElementById("adminSegundo").value =
-        menu.segundo || "";
+    const segundo =
+        document.getElementById("adminSegundo");
 
-    document.getElementById("adminSobremesa").value =
-        menu.sobremesa || "";
+    const sobremesa =
+        document.getElementById("adminSobremesa");
+
+
+    if (primeiro) {
+
+        primeiro.value =
+            menu.primeiro || "";
+
+    }
+
+
+    if (segundo) {
+
+        segundo.value =
+            menu.segundo || "";
+
+    }
+
+
+    if (sobremesa) {
+
+        sobremesa.value =
+            menu.sobremesa || "";
+
+    }
+
 }
 
 
@@ -120,21 +157,63 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("adminData");
 
 
+    /* --------------------------------------------------------
+       CAMBIO DE TIPO DE MENÚ
+       -------------------------------------------------------- */
+
     if (adminTipo) {
 
         adminTipo.addEventListener(
             "change",
-            cargarMenuAdmin
+            () => {
+
+                const tipo =
+                    adminTipo.value;
+
+
+                /*
+                   Sincronizamos o tipo seleccionado
+                   co resto da aplicación.
+                */
+
+                tipoActual =
+                    tipo;
+
+
+                cargarMenuAdmin();
+
+            }
         );
 
     }
 
 
+    /* --------------------------------------------------------
+       CAMBIO DE DATA
+       -------------------------------------------------------- */
+
     if (adminData) {
 
         adminData.addEventListener(
             "change",
-            cargarMenuAdmin
+            () => {
+
+                /*
+                   Mantemos sincronizado tipoActual
+                   co selector do panel.
+                */
+
+                if (adminTipo) {
+
+                    tipoActual =
+                        adminTipo.value;
+
+                }
+
+
+                cargarMenuAdmin();
+
+            }
         );
 
     }
@@ -150,21 +229,47 @@ document.getElementById("gardarMenu").addEventListener(
     "click",
     () => {
 
+        const adminTipo =
+            document.getElementById("adminTipo");
+
+        const adminData =
+            document.getElementById("adminData");
+
+
+        if (!adminTipo || !adminData) {
+            return;
+        }
+
+
         const tipo =
-            document.getElementById("adminTipo").value;
+            adminTipo.value;
 
         const data =
-            document.getElementById("adminData").value;
+            adminData.value;
+
 
         const primeiro =
-            document.getElementById("adminPrimeiro").value.trim();
+            document
+                .getElementById("adminPrimeiro")
+                .value
+                .trim();
 
         const segundo =
-            document.getElementById("adminSegundo").value.trim();
+            document
+                .getElementById("adminSegundo")
+                .value
+                .trim();
 
         const sobremesa =
-            document.getElementById("adminSobremesa").value.trim();
+            document
+                .getElementById("adminSobremesa")
+                .value
+                .trim();
 
+
+        /* ----------------------------------------------------
+           COMPROBAR CAMPOS
+           ---------------------------------------------------- */
 
         if (
             !tipo ||
@@ -182,22 +287,35 @@ document.getElementById("gardarMenu").addEventListener(
         }
 
 
+        /* ----------------------------------------------------
+           CARGAR MENÚS GARDADOS
+           ---------------------------------------------------- */
+
         const menus =
             cargarMenusGardados();
 
 
         if (!menus[tipo]) {
+
             menus[tipo] = {};
+
         }
 
 
+        /* ----------------------------------------------------
+           GARDAR MENÚ
+           ---------------------------------------------------- */
+
         menus[tipo][data] = {
 
-            primeiro: primeiro,
+            primeiro:
+                primeiro,
 
-            segundo: segundo,
+            segundo:
+                segundo,
 
-            sobremesa: sobremesa
+            sobremesa:
+                sobremesa
 
         };
 
@@ -205,28 +323,31 @@ document.getElementById("gardarMenu").addEventListener(
         gardarMenus(menus);
 
 
-        /*
-           Actualizamos tamén a colección en memoria.
-        */
+        /* ----------------------------------------------------
+           ACTUALIZAR COLECCIÓN ORIXINAL EN MEMORIA
+           ---------------------------------------------------- */
 
         const orixinal =
             obterColeccionOrixinal(tipo);
 
+
         orixinal[data] = {
 
-            primeiro: primeiro,
+            primeiro:
+                primeiro,
 
-            segundo: segundo,
+            segundo:
+                segundo,
 
-            sobremesa: sobremesa
+            sobremesa:
+                sobremesa
 
         };
 
 
-        /*
-           Actualizamos a colección utilizada
-           pola aplicación, se existe.
-        */
+        /* ----------------------------------------------------
+           ACTUALIZAR COLECCIÓN DA APLICACIÓN
+           ---------------------------------------------------- */
 
         if (
             typeof coleccions !== "undefined" &&
@@ -235,11 +356,14 @@ document.getElementById("gardarMenu").addEventListener(
 
             coleccions[tipo][data] = {
 
-                primeiro: primeiro,
+                primeiro:
+                    primeiro,
 
-                segundo: segundo,
+                segundo:
+                    segundo,
 
-                sobremesa: sobremesa
+                sobremesa:
+                    sobremesa
 
             };
 
@@ -273,12 +397,28 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
 
+            const adminTipo =
+                document.getElementById("adminTipo");
+
+            const adminData =
+                document.getElementById("adminData");
+
+
+            if (!adminTipo || !adminData) {
+                return;
+            }
+
+
             const tipo =
-                document.getElementById("adminTipo").value;
+                adminTipo.value;
 
             const data =
-                document.getElementById("adminData").value;
+                adminData.value;
 
+
+            /* ------------------------------------------------
+               COMPROBAR SELECCIÓN
+               ------------------------------------------------ */
 
             if (!tipo || !data) {
 
@@ -289,6 +429,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+
+            /* ------------------------------------------------
+               OBTER MENÚ ORIXINAL
+               ------------------------------------------------ */
 
             const orixinal =
                 obterColeccionOrixinal(tipo);
@@ -307,6 +451,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
+            /* ------------------------------------------------
+               ELIMINAR MODIFICACIÓN GARDADA
+               ------------------------------------------------ */
+
             const menus =
                 cargarMenusGardados();
 
@@ -321,31 +469,39 @@ document.addEventListener("DOMContentLoaded", () => {
             gardarMenus(menus);
 
 
-            /*
-               Volvemos cargar o menú orixinal
-               nos campos do panel.
-            */
+            /* ------------------------------------------------
+               VOLVER POÑER O MENÚ ORIXINAL NO PANEL
+               ------------------------------------------------ */
 
-            document.getElementById("adminPrimeiro").value =
+            document
+                .getElementById("adminPrimeiro")
+                .value =
                 menuOriginal.primeiro || "";
 
-            document.getElementById("adminSegundo").value =
+
+            document
+                .getElementById("adminSegundo")
+                .value =
                 menuOriginal.segundo || "";
 
-            document.getElementById("adminSobremesa").value =
+
+            document
+                .getElementById("adminSobremesa")
+                .value =
                 menuOriginal.sobremesa || "";
 
 
-            /*
-               Actualizamos a colección en memoria.
-            */
+            /* ------------------------------------------------
+               ACTUALIZAR COLECCIÓN EN MEMORIA
+               ------------------------------------------------ */
 
             if (
                 typeof coleccions !== "undefined" &&
                 coleccions[tipo]
             ) {
 
-                coleccions[tipo][data] = menuOriginal;
+                coleccions[tipo][data] =
+                    menuOriginal;
 
             }
 
@@ -375,6 +531,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* --------------------------------------------------------
+       BASAL
+       -------------------------------------------------------- */
+
     if (menus.basal) {
 
         Object.assign(
@@ -384,6 +544,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* --------------------------------------------------------
+       SEN LACTOSA
+       -------------------------------------------------------- */
 
     if (menus.sen_lactosa) {
 
@@ -395,6 +559,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* --------------------------------------------------------
+       SEN GLUTE
+       -------------------------------------------------------- */
+
     if (menus.sen_glute) {
 
         Object.assign(
@@ -405,6 +573,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* --------------------------------------------------------
+       MUSULMÁN
+       -------------------------------------------------------- */
+
     if (menus.musulman) {
 
         Object.assign(
@@ -414,6 +586,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* --------------------------------------------------------
+       SEN MARISCO
+       -------------------------------------------------------- */
 
     if (menus.sen_marisco) {
 
@@ -459,4 +635,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-```
