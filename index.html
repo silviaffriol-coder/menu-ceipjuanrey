@@ -25,6 +25,7 @@
 
     <!-- MENÚ DO DÍA -->
     <section id="menuHoxe" class="menu">
+
         <h2 id="dataHoxe"></h2>
 
         <div class="prato">
@@ -41,58 +42,56 @@
             <h3>Sobremesa</h3>
             <p id="sobremesa"></p>
         </div>
+
     </section>
 
-   ```html
-<!-- PANEL ADMIN OCULTO -->
-<section id="adminPanel" class="admin oculto">
+    <!-- PANEL ADMIN OCULTO -->
+    <section id="adminPanel" class="admin oculto">
 
-    <h2>Panel de administración</h2>
+        <h2>Panel de administración</h2>
 
-    <!-- TIPO DE MENÚ -->
-    <label for="adminTipo">Tipo de menú:</label>
-    <select id="adminTipo">
-        <option value="basal">Basal</option>
-        <option value="sen_lactosa">Sen lactosa</option>
-        <option value="sen_glute">Sen glute</option>
-        <option value="musulman">Musulmán</option>
-        <option value="sen_marisco">Sen marisco</option>
-    </select>
+        <label for="adminTipo">Tipo de menú:</label>
 
-    <!-- DATA -->
-    <label for="adminData">Data:</label>
-    <input type="date" id="adminData">
+        <select id="adminTipo">
+            <option value="basal">Basal</option>
+            <option value="sen_lactosa">Sen lactosa</option>
+            <option value="sen_glute">Sen glute</option>
+            <option value="musulman">Musulmán</option>
+            <option value="sen_marisco">Sen marisco</option>
+        </select>
 
-    <!-- PRIMEIRO PRATO -->
-    <label for="adminPrimeiro">Primeiro prato:</label>
-    <input type="text" id="adminPrimeiro">
+        <label for="adminData">Data:</label>
 
-    <!-- SEGUNDO PRATO -->
-    <label for="adminSegundo">Segundo prato:</label>
-    <input type="text" id="adminSegundo">
+        <input type="date" id="adminData">
 
-    <!-- SOBREMESA -->
-    <label for="adminSobremesa">Sobremesa:</label>
-    <input type="text" id="adminSobremesa">
+        <label for="adminPrimeiro">Primeiro prato:</label>
 
-    <!-- BOTÓNS -->
-    <button id="gardarMenu">Gardar menú</button>
+        <input type="text" id="adminPrimeiro">
 
-    <button id="restaurarMenu">
-        Restaurar menú orixinal
-    </button>
+        <label for="adminSegundo">Segundo prato:</label>
 
-    <button id="pecharAdmin">
-        Pechar
-    </button>
+        <input type="text" id="adminSegundo">
 
-</section>
-```
+        <label for="adminSobremesa">Sobremesa:</label>
+
+        <input type="text" id="adminSobremesa">
+
+        <button id="gardarMenu">Gardar menú</button>
+
+        <button id="restaurarMenu">
+            Restaurar menú orixinal
+        </button>
+
+        <button id="pecharAdmin">
+            Pechar
+        </button>
+
+    </section>
 
     <!-- SCRIPTS -->
- <script src="menus_v2.js"></script>
-<script src="admin.js"></script>
-<script src="scripts_v3.js"></script>
+    <script src="menus_v2.js"></script>
+    <script src="admin.js"></script>
+    <script src="scripts_v3.js"></script>
 
 </body>
 </html>
