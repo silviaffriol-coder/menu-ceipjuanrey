@@ -43,26 +43,51 @@
         </div>
     </section>
 
-    <!-- PANEL ADMIN OCULTO -->
-    <section id="adminPanel" class="admin oculto">
-        <h2>Panel de administración</h2>
+   ```html
+<!-- PANEL ADMIN OCULTO -->
+<section id="adminPanel" class="admin oculto">
 
-        <label for="adminData">Data:</label>
-        <input type="date" id="adminData">
+    <h2>Panel de administración</h2>
 
-        <label for="adminPrimeiro">Primeiro prato:</label>
-        <input type="text" id="adminPrimeiro">
+    <!-- TIPO DE MENÚ -->
+    <label for="adminTipo">Tipo de menú:</label>
+    <select id="adminTipo">
+        <option value="basal">Basal</option>
+        <option value="sen_lactosa">Sen lactosa</option>
+        <option value="sen_glute">Sen glute</option>
+        <option value="musulman">Musulmán</option>
+        <option value="sen_marisco">Sen marisco</option>
+    </select>
 
-        <label for="adminSegundo">Segundo prato:</label>
-        <input type="text" id="adminSegundo">
+    <!-- DATA -->
+    <label for="adminData">Data:</label>
+    <input type="date" id="adminData">
 
-        <label for="adminSobremesa">Sobremesa:</label>
-        <input type="text" id="adminSobremesa">
+    <!-- PRIMEIRO PRATO -->
+    <label for="adminPrimeiro">Primeiro prato:</label>
+    <input type="text" id="adminPrimeiro">
 
-        <button id="gardarMenu">Gardar menú</button>
-        <button id="restaurarMenu">Restaurar menú orixinal</button>
-        <button id="pecharAdmin">Pechar</button>
-    </section>
+    <!-- SEGUNDO PRATO -->
+    <label for="adminSegundo">Segundo prato:</label>
+    <input type="text" id="adminSegundo">
+
+    <!-- SOBREMESA -->
+    <label for="adminSobremesa">Sobremesa:</label>
+    <input type="text" id="adminSobremesa">
+
+    <!-- BOTÓNS -->
+    <button id="gardarMenu">Gardar menú</button>
+
+    <button id="restaurarMenu">
+        Restaurar menú orixinal
+    </button>
+
+    <button id="pecharAdmin">
+        Pechar
+    </button>
+
+</section>
+```
 
     <!-- SCRIPTS -->
  <script src="menus_v2.js"></script>
