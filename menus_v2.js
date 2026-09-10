@@ -1403,14 +1403,4 @@ const MENUS_SEN_MARISCO = {
     "2027-06-21": { primeiro:"", segundo:"", sobremesa:"" }
 
 }; // FIN DO MENUS_SEN_MARISCO COMPLETO
-   // Último día lectivo
-    "2027-06-21": { primeiro:"", segundo:"", sobremesa:"" }
-}; // ← PECHA O OBXECTO COMPLETO
-
-export {
-    MENUS_BASAL,
-    MENUS_SEN_LACTOSA,
-    MENUS_SEN_GLUTE,
-    MENUS_MUSULMAN,
-    MENUS_SEN_MARISCO
-};
+   
