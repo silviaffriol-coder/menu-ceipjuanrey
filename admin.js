@@ -1,113 +1,113 @@
-/* ============================================================
-   PANEL DE ADMINISTRACIÓN – CEIP JUAN REY
-   Selección de tipo de menú + data
-   ============================================================ */
+// ============================================================
+// ADMINISTRACIÓN DO COMEDOR – CEIP JUAN REY
+// ============================================================
 
-const CHAVE_MENUS = "menusCEIPJuanRey_v2";
-
-
-/* ============================================================
-   OBTENER A COLECCIÓN ORIXINAL
-   ============================================================ */
-
-function obterColeccionOrixinal(tipo) {
-
-    if (tipo === "basal") {
-        return MENUS_BASAL;
-    }
-
-    if (tipo === "sen_lactosa") {
-        return MENUS_SEN_LACTOSA;
-    }
-
-    if (tipo === "sen_glute") {
-        return MENUS_SEN_GLUTE;
-    }
-
-    if (tipo === "musulman") {
-        return MENUS_MUSULMAN;
-    }
-
-    if (tipo === "sen_marisco") {
-        return MENUS_SEN_MARISCO;
-    }
-
-    return {};
-}
+const CLAVE_STORAGE = "menusCEIPJuanRey_v2";
 
 
-/* ============================================================
-   CARGAR MODIFICACIÓNS GARDADAS
-   ============================================================ */
+// ============================================================
+// CARGAR MENÚS GARDADOS EN LOCALSTORAGE
+// ============================================================
 
 function cargarMenusGardados() {
 
-    const gardado =
-        localStorage.getItem(CHAVE_MENUS);
+    try {
 
-    if (gardado) {
-        return JSON.parse(gardado);
+        const gardados =
+            localStorage.getItem(CLAVE_STORAGE);
+
+        if (!gardados) return;
+
+        const datos =
+            JSON.parse(gardados);
+
+        if (!datos || typeof datos !== "object") {
+            return;
+        }
+
+        if (datos.basal) {
+            Object.assign(MENUS_BASAL, datos.basal);
+        }
+
+        if (datos.sen_lactosa) {
+            Object.assign(
+                MENUS_SEN_LACTOSA,
+                datos.sen_lactosa
+            );
+        }
+
+        if (datos.sen_glute) {
+            Object.assign(
+                MENUS_SEN_GLUTE,
+                datos.sen_glute
+            );
+        }
+
+        if (datos.musulman) {
+            Object.assign(
+                MENUS_MUSULMAN,
+                datos.musulman
+            );
+        }
+
+        if (datos.sen_marisco) {
+            Object.assign(
+                MENUS_SEN_MARISCO,
+                datos.sen_marisco
+            );
+        }
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao cargar os menús gardados:",
+            erro
+        );
     }
-
-    return {};
 }
 
 
-/* ============================================================
-   GARDAR MODIFICACIÓNS
-   ============================================================ */
+// ============================================================
+// GARDAR MENÚS EN LOCALSTORAGE
+// ============================================================
 
-function gardarMenus(menus) {
+function gardarMenusLocalStorage() {
+
+    const datos = {
+
+        basal: MENUS_BASAL,
+
+        sen_lactosa:
+            MENUS_SEN_LACTOSA,
+
+        sen_glute:
+            MENUS_SEN_GLUTE,
+
+        musulman:
+            MENUS_MUSULMAN,
+
+        sen_marisco:
+            MENUS_SEN_MARISCO
+    };
 
     localStorage.setItem(
-        CHAVE_MENUS,
-        JSON.stringify(menus)
+        CLAVE_STORAGE,
+        JSON.stringify(datos)
     );
 }
 
 
-/* ============================================================
-   CARGAR MENÚ SEGUNDO TIPO + DATA
-   ============================================================ */
+// ============================================================
+// CARGAR UN MENÚ NO PANEL
+// ============================================================
 
 function cargarMenuAdmin() {
 
-    const adminTipo =
+    const tipo =
         document.getElementById("adminTipo");
 
-    const adminData =
-        document.getElementById("adminData");
-
-
-    if (!adminTipo || !adminData) {
-        return;
-    }
-
-
-    const tipo =
-        adminTipo.value;
-
     const data =
-        adminData.value;
-
-
-    if (!tipo || !data) {
-        return;
-    }
-
-
-    const orixinal =
-        obterColeccionOrixinal(tipo);
-
-    const gardados =
-        cargarMenusGardados();
-
-    const modificacion =
-        gardados[tipo]?.[data];
-
-    const menu =
-        modificacion || orixinal[data] || {};
-
+        document.getElementById("adminData");
 
     const primeiro =
         document.getElementById("adminPrimeiro");
@@ -119,472 +119,346 @@ function cargarMenuAdmin() {
         document.getElementById("adminSobremesa");
 
 
+    if (!tipo || !data) return;
+
+    if (!data.value) {
+
+        if (primeiro) primeiro.value = "";
+        if (segundo) segundo.value = "";
+        if (sobremesa) sobremesa.value = "";
+
+        return;
+    }
+
+
+    // Sincronizamos o tipo co resto da aplicación
+    tipoActual = tipo.value;
+
+
+    const coleccion =
+        coleccions[tipo.value] || {};
+
+    const menu =
+        coleccion[data.value] || {};
+
+
     if (primeiro) {
 
         primeiro.value =
             menu.primeiro || "";
-
     }
-
 
     if (segundo) {
 
         segundo.value =
             menu.segundo || "";
-
     }
-
 
     if (sobremesa) {
 
         sobremesa.value =
             menu.sobremesa || "";
-
     }
-
 }
 
 
-/* ============================================================
-   CAMBIAR TIPO DE MENÚ
-   ============================================================ */
+// ============================================================
+// INICIALIZACIÓN DO PANEL ADMIN
+// ============================================================
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const adminTipo =
-        document.getElementById("adminTipo");
-
-    const adminData =
-        document.getElementById("adminData");
-
-
-    /* --------------------------------------------------------
-       CAMBIO DE TIPO
-       -------------------------------------------------------- */
-
-    if (adminTipo) {
-
-        adminTipo.addEventListener(
-            "change",
-            () => {
-
-                /*
-                   Sincronizamos o selector do panel
-                   coa aplicación principal.
-                */
-
-                tipoActual =
-                    adminTipo.value;
-
-
-                cargarMenuAdmin();
-
-            }
-        );
-
-    }
-
-
-    /* --------------------------------------------------------
-       CAMBIO DE DATA
-       -------------------------------------------------------- */
-
-    if (adminData) {
-
-        adminData.addEventListener(
-            "change",
-            () => {
-
-                /*
-                   Mantemos tipoActual sincronizado
-                   co tipo seleccionado no panel.
-                */
-
-                if (adminTipo) {
-
-                    tipoActual =
-                        adminTipo.value;
-
-                }
-
-
-                cargarMenuAdmin();
-
-            }
-        );
-
-    }
-
-});
-
-
-/* ============================================================
-   GARDAR MENÚ EDITADO
-   ============================================================ */
-
-document.getElementById("gardarMenu").addEventListener(
-    "click",
+document.addEventListener(
+    "DOMContentLoaded",
     () => {
 
-        const adminTipo =
-            document.getElementById("adminTipo");
-
-        const adminData =
-            document.getElementById("adminData");
-
-
-        if (!adminTipo || !adminData) {
-            return;
-        }
-
-
-        const tipo =
-            adminTipo.value;
-
-        const data =
-            adminData.value;
-
-
-        const primeiro =
-            document
-                .getElementById("adminPrimeiro")
-                .value
-                .trim();
-
-        const segundo =
-            document
-                .getElementById("adminSegundo")
-                .value
-                .trim();
-
-        const sobremesa =
-            document
-                .getElementById("adminSobremesa")
-                .value
-                .trim();
-
-
-        if (
-            !tipo ||
-            !data ||
-            !primeiro ||
-            !segundo ||
-            !sobremesa
-        ) {
-
-            alert(
-                "Todos os campos deben estar cubertos."
-            );
-
-            return;
-        }
-
-
-        const menus =
-            cargarMenusGardados();
-
-
-        if (!menus[tipo]) {
-
-            menus[tipo] = {};
-
-        }
-
-
-        menus[tipo][data] = {
-
-            primeiro:
-                primeiro,
-
-            segundo:
-                segundo,
-
-            sobremesa:
-                sobremesa
-
-        };
-
-
-        gardarMenus(menus);
-
-
-        /* ----------------------------------------------------
-           ACTUALIZAR COLECCIÓN ORIXINAL EN MEMORIA
-           ---------------------------------------------------- */
-
-        const orixinal =
-            obterColeccionOrixinal(tipo);
-
-
-        orixinal[data] = {
-
-            primeiro:
-                primeiro,
-
-            segundo:
-                segundo,
-
-            sobremesa:
-                sobremesa
-
-        };
-
-
-        /* ----------------------------------------------------
-           ACTUALIZAR COLECCIÓN DA APLICACIÓN
-           ---------------------------------------------------- */
-
-        if (
-            typeof coleccions !== "undefined" &&
-            coleccions[tipo]
-        ) {
-
-            coleccions[tipo][data] = {
-
-                primeiro:
-                    primeiro,
-
-                segundo:
-                    segundo,
-
-                sobremesa:
-                    sobremesa
-
-            };
-
-        }
-
-
-        alert(
-            "Menú gardado correctamente ✔"
-        );
-
-    }
-);
-
-
-/* ============================================================
-   RESTAURAR MENÚ ORIXINAL
-   ============================================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const botonRestaurar =
-        document.getElementById("restaurarMenu");
-
-
-    if (!botonRestaurar) {
-        return;
-    }
-
-
-    botonRestaurar.addEventListener(
-        "click",
-        () => {
-
-            const adminTipo =
-                document.getElementById("adminTipo");
-
-            const adminData =
-                document.getElementById("adminData");
-
-
-            if (!adminTipo || !adminData) {
-                return;
-            }
-
-
-            const tipo =
-                adminTipo.value;
-
-            const data =
-                adminData.value;
-
-
-            if (!tipo || !data) {
-
-                alert(
-                    "Primeiro selecciona o tipo de menú e a data."
-                );
-
-                return;
-            }
-
-
-            const orixinal =
-                obterColeccionOrixinal(tipo);
-
-            const menuOriginal =
-                orixinal[data];
-
-
-            if (!menuOriginal) {
-
-                alert(
-                    "Non existe un menú orixinal para esta data."
-                );
-
-                return;
-            }
-
-
-            const menus =
-                cargarMenusGardados();
-
-
-            if (menus[tipo]) {
-
-                delete menus[tipo][data];
-
-            }
-
-
-            gardarMenus(menus);
-
-
-            /* ------------------------------------------------
-               VOLVER CARGAR O MENÚ ORIXINAL
-               ------------------------------------------------ */
-
-            document
-                .getElementById("adminPrimeiro")
-                .value =
-                menuOriginal.primeiro || "";
-
-
-            document
-                .getElementById("adminSegundo")
-                .value =
-                menuOriginal.segundo || "";
-
-
-            document
-                .getElementById("adminSobremesa")
-                .value =
-                menuOriginal.sobremesa || "";
-
-
-            /* ------------------------------------------------
-               ACTUALIZAR COLECCIÓN EN MEMORIA
-               ------------------------------------------------ */
-
-            if (
-                typeof coleccions !== "undefined" &&
-                coleccions[tipo]
-            ) {
-
-                coleccions[tipo][data] =
-                    menuOriginal;
-
-            }
-
-
-            alert(
-                "Menú orixinal restaurado correctamente ✔"
-            );
-
-        }
-    );
-
-});
-
-
-/* ============================================================
-   APLICAR MODIFICACIÓNS GARDADAS AO INICIAR
-   ============================================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const menus =
+        // Primeiro cargamos as modificacións gardadas
         cargarMenusGardados();
 
 
-    if (!menus) {
-        return;
-    }
+        const tipo =
+            document.getElementById("adminTipo");
+
+        const data =
+            document.getElementById("adminData");
+
+        const primeiro =
+            document.getElementById("adminPrimeiro");
+
+        const segundo =
+            document.getElementById("adminSegundo");
+
+        const sobremesa =
+            document.getElementById("adminSobremesa");
+
+        const gardar =
+            document.getElementById("gardarMenu");
+
+        const restaurar =
+            document.getElementById("restaurarMenu");
 
 
-    if (menus.basal) {
+        // ====================================================
+        // CAMBIAR TIPO DE MENÚ
+        // ====================================================
 
-        Object.assign(
-            MENUS_BASAL,
-            menus.basal
-        );
+        if (tipo) {
 
-    }
+            tipo.addEventListener(
+                "change",
+                () => {
 
+                    tipoActual =
+                        tipo.value;
 
-    if (menus.sen_lactosa) {
-
-        Object.assign(
-            MENUS_SEN_LACTOSA,
-            menus.sen_lactosa
-        );
-
-    }
-
-
-    if (menus.sen_glute) {
-
-        Object.assign(
-            MENUS_SEN_GLUTE,
-            menus.sen_glute
-        );
-
-    }
-
-
-    if (menus.musulman) {
-
-        Object.assign(
-            MENUS_MUSULMAN,
-            menus.musulman
-        );
-
-    }
-
-
-    if (menus.sen_marisco) {
-
-        Object.assign(
-            MENUS_SEN_MARISCO,
-            menus.sen_marisco
-        );
-
-    }
-
-});
-
-
-/* ============================================================
-   PECHAR PANEL
-   ============================================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const pechar =
-        document.getElementById("pecharAdmin");
-
-
-    if (pechar) {
-
-        pechar.addEventListener(
-            "click",
-            () => {
-
-                const panel =
-                    document.getElementById("adminPanel");
-
-
-                if (panel) {
-
-                    panel.classList.add("oculto");
-
+                    cargarMenuAdmin();
                 }
+            );
+        }
 
-            }
-        );
+
+        // ====================================================
+        // CAMBIAR DATA
+        // ====================================================
+
+        if (data) {
+
+            data.addEventListener(
+                "change",
+                () => {
+
+                    tipoActual =
+                        tipo
+                            ? tipo.value
+                            : "basal";
+
+                    cargarMenuAdmin();
+                }
+            );
+        }
+
+
+        // ====================================================
+        // GARDAR MENÚ
+        // ====================================================
+
+        if (gardar) {
+
+            gardar.addEventListener(
+                "click",
+                () => {
+
+                    if (!tipo || !data) return;
+
+                    const tipoSeleccionado =
+                        tipo.value;
+
+                    const dataSeleccionada =
+                        data.value;
+
+
+                    if (!dataSeleccionada) {
+
+                        alert(
+                            "Selecciona unha data."
+                        );
+
+                        return;
+                    }
+
+
+                    let coleccion;
+
+
+                    if (
+                        tipoSeleccionado ===
+                        "basal"
+                    ) {
+
+                        coleccion =
+                            MENUS_BASAL;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "sen_lactosa"
+                    ) {
+
+                        coleccion =
+                            MENUS_SEN_LACTOSA;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "sen_glute"
+                    ) {
+
+                        coleccion =
+                            MENUS_SEN_GLUTE;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "musulman"
+                    ) {
+
+                        coleccion =
+                            MENUS_MUSULMAN;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "sen_marisco"
+                    ) {
+
+                        coleccion =
+                            MENUS_SEN_MARISCO;
+                    }
+
+
+                    if (!coleccion) return;
+
+
+                    coleccion[dataSeleccionada] = {
+
+                        primeiro:
+                            primeiro
+                                ? primeiro.value
+                                : "",
+
+                        segundo:
+                            segundo
+                                ? segundo.value
+                                : "",
+
+                        sobremesa:
+                            sobremesa
+                                ? sobremesa.value
+                                : ""
+                    };
+
+
+                    // Gardar permanentemente
+                    gardarMenusLocalStorage();
+
+
+                    // Actualizar tipo actual
+                    tipoActual =
+                        tipoSeleccionado;
+
+
+                    // Actualizar menú público
+                    if (
+                        typeof mostrarMenuHoxe ===
+                        "function"
+                    ) {
+
+                        mostrarMenuHoxe();
+                    }
+
+
+                    alert(
+                        "Menú gardado correctamente."
+                    );
+                }
+            );
+        }
+
+
+        // ====================================================
+        // RESTAURAR MENÚ ORIXINAL
+        // ====================================================
+
+        if (restaurar) {
+
+            restaurar.addEventListener(
+                "click",
+                () => {
+
+                    if (!tipo || !data) return;
+
+                    const tipoSeleccionado =
+                        tipo.value;
+
+                    const dataSeleccionada =
+                        data.value;
+
+
+                    if (!dataSeleccionada) {
+
+                        alert(
+                            "Selecciona unha data."
+                        );
+
+                        return;
+                    }
+
+
+                    let coleccionOriginal;
+
+
+                    if (
+                        tipoSeleccionado ===
+                        "basal"
+                    ) {
+
+                        coleccionOriginal =
+                            MENUS_BASAL;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "sen_lactosa"
+                    ) {
+
+                        coleccionOriginal =
+                            MENUS_SEN_LACTOSA;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "sen_glute"
+                    ) {
+
+                        coleccionOriginal =
+                            MENUS_SEN_GLUTE;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "musulman"
+                    ) {
+
+                        coleccionOriginal =
+                            MENUS_MUSULMAN;
+
+                    } else if (
+                        tipoSeleccionado ===
+                        "sen_marisco"
+                    ) {
+
+                        coleccionOriginal =
+                            MENUS_SEN_MARISCO;
+                    }
+
+
+                    if (!coleccionOriginal) return;
+
+
+                    // Eliminamos o menú gardado
+                    // para esa data
+                    delete coleccionOriginal[
+                        dataSeleccionada
+                    ];
+
+
+                    // Eliminamos os datos gardados
+                    // de localStorage e reconstruímos
+                    // a partir dos menús orixinais
+
+                    localStorage.removeItem(
+                        CLAVE_STORAGE
+                    );
+
+
+                    // Volvemos cargar a páxina
+                    // para recuperar os datos orixinais
+
+                    location.reload();
+                }
+            );
+        }
 
     }
-
-});
+);
