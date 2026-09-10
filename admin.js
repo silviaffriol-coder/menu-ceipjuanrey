@@ -1,132 +1,147 @@
 /* ============================================================
-PANEL DE ADMINISTRACIÓN – CEIP JUAN REY
-============================================================ */
+   PANEL DE ADMINISTRACIÓN – CEIP JUAN REY
+   ============================================================ */
 
-/*
-Gardamos as modificacións nunha nova memoria.
-Así ignoramos os datos antigos que quedaron gardados
-no navegador e conservamos os menús orixinais.
-*/
 const CHAVE_MENUS = "menusCEIPJuanRey_v2";
 
+
 /* ============================================================
-CARGAR MENÚS
-============================================================ */
+   OBTENER A COLECCIÓN ORIXINAL
+   ============================================================ */
+
+function obterColeccionOrixinal(tipo) {
+
+    if (tipo === "basal") {
+        return MENUS_BASAL;
+    }
+
+    if (tipo === "sen_lactosa") {
+        return MENUS_SEN_LACTOSA;
+    }
+
+    if (tipo === "sen_glute") {
+        return MENUS_SEN_GLUTE;
+    }
+
+    if (tipo === "musulman") {
+        return MENUS_MUSULMAN;
+    }
+
+    if (tipo === "sen_marisco") {
+        return MENUS_SEN_MARISCO;
+    }
+
+    return {};
+}
+
+
+/* ============================================================
+   CARGAR MODIFICACIÓNS GARDADAS
+   ============================================================ */
 
 function cargarMenusGardados() {
 
-const gardado = localStorage.getItem(CHAVE_MENUS);
+    const gardado =
+        localStorage.getItem(CHAVE_MENUS);
 
-if (gardado) {
-    return JSON.parse(gardado);
+    if (gardado) {
+        return JSON.parse(gardado);
+    }
+
+    return {};
 }
 
-return {
-    basal: MENUS_BASAL,
-    sen_lactosa: MENUS_SEN_LACTOSA,
-    sen_glute: MENUS_SEN_GLUTE,
-    musulman: MENUS_MUSULMAN,
-    sen_marisco: MENUS_SEN_MARISCO
-};
-
-}
 
 /* ============================================================
-GARDAR MENÚS
-============================================================ */
+   GARDAR MODIFICACIÓNS
+   ============================================================ */
 
 function gardarMenus(menus) {
 
-localStorage.setItem(
-    CHAVE_MENUS,
-    JSON.stringify(menus)
-);
-
+    localStorage.setItem(
+        CHAVE_MENUS,
+        JSON.stringify(menus)
+    );
 }
 
+
 /* ============================================================
-CARGAR MENÚ AO ESCOLLER DATA
-============================================================ */
+   CARGAR UN MENÚ NO PANEL
+   ============================================================ */
 
 document.getElementById("adminData").addEventListener("change", () => {
 
-const data =
-    document.getElementById("adminData").value;
+    const data =
+        document.getElementById("adminData").value;
 
-if (!data) return;
+    if (!data) return;
 
-const menus = cargarMenusGardados();
+    const tipo = tipoActual;
 
-const tipo = tipoActual;
+    const orixinal =
+        obterColeccionOrixinal(tipo);
 
-const menu =
-    menus[tipo]?.[data] || {};
+    const gardados =
+        cargarMenusGardados();
 
-document.getElementById("adminPrimeiro").value =
-    menu.primeiro || "";
+    const modificacion =
+        gardados[tipo]?.[data];
 
-document.getElementById("adminSegundo").value =
-    menu.segundo || "";
+    const menu =
+        modificacion || orixinal[data] || {};
 
-document.getElementById("adminSobremesa").value =
-    menu.sobremesa || "";
+    document.getElementById("adminPrimeiro").value =
+        menu.primeiro || "";
+
+    document.getElementById("adminSegundo").value =
+        menu.segundo || "";
+
+    document.getElementById("adminSobremesa").value =
+        menu.sobremesa || "";
 
 });
 
+
 /* ============================================================
-GARDAR MENÚ EDITADO
-============================================================ */
+   GARDAR MENÚ EDITADO
+   ============================================================ */
 
 document.getElementById("gardarMenu").addEventListener("click", () => {
 
-const data =
-    document.getElementById("adminData").value;
+    const data =
+        document.getElementById("adminData").value;
 
-const primeiro =
-    document.getElementById("adminPrimeiro").value.trim();
+    const primeiro =
+        document.getElementById("adminPrimeiro").value.trim();
 
-const segundo =
-    document.getElementById("adminSegundo").value.trim();
+    const segundo =
+        document.getElementById("adminSegundo").value.trim();
 
-const sobremesa =
-    document.getElementById("adminSobremesa").value.trim();
-
-
-if (!data || !primeiro || !segundo || !sobremesa) {
-
-    alert("Todos os campos deben estar cubertos.");
-
-    return;
-}
+    const sobremesa =
+        document.getElementById("adminSobremesa").value.trim();
 
 
-const menus = cargarMenusGardados();
+    if (!data || !primeiro || !segundo || !sobremesa) {
 
-const tipo = tipoActual;
+        alert("Todos os campos deben estar cubertos.");
 
-
-menus[tipo][data] = {
-
-    primeiro: primeiro,
-
-    segundo: segundo,
-
-    sobremesa: sobremesa
-
-};
+        return;
+    }
 
 
-gardarMenus(menus);
+    const menus =
+        cargarMenusGardados();
+
+    const tipo =
+        tipoActual;
 
 
-/*
-   Actualizamos tamén o menú que se está mostrando
-   neste momento.
-*/
+    if (!menus[tipo]) {
+        menus[tipo] = {};
+    }
 
-if (typeof coleccions !== "undefined") {
 
-    coleccions[tipo][data] = {
+    menus[tipo][data] = {
 
         primeiro: primeiro,
 
@@ -136,116 +151,25 @@ if (typeof coleccions !== "undefined") {
 
     };
 
-}
-
-
-mostrarMenuHoxe();
-
-
-alert("Menú gardado correctamente ✔");
-
-});
-
-/* ============================================================
-BOTÓN RESTAURAR MENÚ ORIXINAL
-============================================================ */
-
-const botonRestaurar =
-document.getElementById("restaurarMenu");
-
-if (botonRestaurar) {
-
-botonRestaurar.addEventListener("click", () => {
-
-    const data =
-        document.getElementById("adminData").value;
-
-    if (!data) {
-
-        alert("Primeiro selecciona unha data.");
-
-        return;
-    }
-
-
-    const tipo = tipoActual;
-
-
-    let menuOriginal = null;
-
-
-    if (tipo === "basal") {
-
-        menuOriginal = MENUS_BASAL[data];
-
-    } else if (tipo === "sen_lactosa") {
-
-        menuOriginal = MENUS_SEN_LACTOSA[data];
-
-    } else if (tipo === "sen_glute") {
-
-        menuOriginal = MENUS_SEN_GLUTE[data];
-
-    } else if (tipo === "musulman") {
-
-        menuOriginal = MENUS_MUSULMAN[data];
-
-    } else if (tipo === "sen_marisco") {
-
-        menuOriginal = MENUS_SEN_MARISCO[data];
-
-    }
-
-
-    if (!menuOriginal) {
-
-        alert(
-            "Non existe un menú orixinal para esta data."
-        );
-
-        return;
-    }
-
-
-    /*
-       Poñemos novamente os datos orixinais
-       nos campos do panel.
-    */
-
-    document.getElementById("adminPrimeiro").value =
-        menuOriginal.primeiro || "";
-
-    document.getElementById("adminSegundo").value =
-        menuOriginal.segundo || "";
-
-    document.getElementById("adminSobremesa").value =
-        menuOriginal.sobremesa || "";
-
-
-    /*
-       Eliminamos a modificación gardada
-       para esa data.
-    */
-
-    const menus = cargarMenusGardados();
-
-    if (menus[tipo]) {
-
-        delete menus[tipo][data];
-
-    }
-
 
     gardarMenus(menus);
 
 
     /*
-       Volvemos ao menú orixinal na aplicación.
+       Actualizamos o menú que está na pantalla.
     */
 
     if (typeof coleccions !== "undefined") {
 
-        coleccions[tipo][data] = menuOriginal;
+        coleccions[tipo][data] = {
+
+            primeiro: primeiro,
+
+            segundo: segundo,
+
+            sobremesa: sobremesa
+
+        };
 
     }
 
@@ -253,38 +177,195 @@ botonRestaurar.addEventListener("click", () => {
     mostrarMenuHoxe();
 
 
-    alert(
-        "Menú orixinal restaurado correctamente ✔"
-    );
+    alert("Menú gardado correctamente ✔");
 
 });
 
-}
 
 /* ============================================================
-PECHAR PANEL
-============================================================ */
+   RESTAURAR MENÚ ORIXINAL
+   ============================================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+const botonRestaurar =
+    document.getElementById("restaurarMenu");
 
-const pechar =
-    document.getElementById("pecharAdmin");
 
-if (pechar) {
+if (botonRestaurar) {
 
-    pechar.addEventListener("click", () => {
+    botonRestaurar.addEventListener("click", () => {
 
-        const panel =
-            document.getElementById("adminPanel");
+        const data =
+            document.getElementById("adminData").value;
 
-        if (panel) {
+        if (!data) {
 
-            panel.classList.add("oculto");
+            alert("Primeiro selecciona unha data.");
+
+            return;
+        }
+
+
+        const tipo =
+            tipoActual;
+
+        const orixinal =
+            obterColeccionOrixinal(tipo);
+
+        const menuOriginal =
+            orixinal[data];
+
+
+        if (!menuOriginal) {
+
+            alert(
+                "Non existe un menú orixinal para esta data."
+            );
+
+            return;
+        }
+
+
+        /*
+           Eliminamos a modificación gardada.
+        */
+
+        const menus =
+            cargarMenusGardados();
+
+        if (menus[tipo]) {
+
+            delete menus[tipo][data];
 
         }
+
+
+        gardarMenus(menus);
+
+
+        /*
+           Poñemos novamente o menú orixinal.
+        */
+
+        document.getElementById("adminPrimeiro").value =
+            menuOriginal.primeiro || "";
+
+        document.getElementById("adminSegundo").value =
+            menuOriginal.segundo || "";
+
+        document.getElementById("adminSobremesa").value =
+            menuOriginal.sobremesa || "";
+
+
+        if (typeof coleccions !== "undefined") {
+
+            coleccions[tipo][data] = menuOriginal;
+
+        }
+
+
+        mostrarMenuHoxe();
+
+
+        alert(
+            "Menú orixinal restaurado correctamente ✔"
+        );
 
     });
 
 }
+
+
+/* ============================================================
+   APLICAR MODIFICACIÓNS AO INICIAR
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menus =
+        cargarMenusGardados();
+
+
+    if (!menus) return;
+
+
+    if (menus.basal) {
+
+        Object.assign(
+            MENUS_BASAL,
+            menus.basal
+        );
+
+    }
+
+
+    if (menus.sen_lactosa) {
+
+        Object.assign(
+            MENUS_SEN_LACTOSA,
+            menus.sen_lactosa
+        );
+
+    }
+
+
+    if (menus.sen_glute) {
+
+        Object.assign(
+            MENUS_SEN_GLUTE,
+            menus.sen_glute
+        );
+
+    }
+
+
+    if (menus.musulman) {
+
+        Object.assign(
+            MENUS_MUSULMAN,
+            menus.musulman
+        );
+
+    }
+
+
+    if (menus.sen_marisco) {
+
+        Object.assign(
+            MENUS_SEN_MARISCO,
+            menus.sen_marisco
+        );
+
+    }
+
+});
+
+
+/* ============================================================
+   PECHAR PANEL
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const pechar =
+        document.getElementById("pecharAdmin");
+
+
+    if (pechar) {
+
+        pechar.addEventListener("click", () => {
+
+            const panel =
+                document.getElementById("adminPanel");
+
+
+            if (panel) {
+
+                panel.classList.add("oculto");
+
+            }
+
+        });
+
+    }
 
 });
