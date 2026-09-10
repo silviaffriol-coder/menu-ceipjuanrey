@@ -9,23 +9,23 @@ let tapTimer = null;
 document.addEventListener("DOMContentLoaded", () => {
     const selo = document.querySelector(".selo");
 
-    if (selo) {
-        selo.style.cursor = "pointer";
+    if (!selo) return;
 
-        selo.addEventListener("click", () => {
-            taps++;
-            clearTimeout(tapTimer);
+    selo.style.cursor = "pointer";
 
-            tapTimer = setTimeout(() => {
-                taps = 0;
-            }, 800);
+    selo.addEventListener("click", () => {
+        taps++;
+        clearTimeout(tapTimer);
 
-            if (taps === 3) {
-                abrirPanelAdmin();
-                taps = 0;
-            }
-        });
-    }
+        tapTimer = setTimeout(() => {
+            taps = 0;
+        }, 800);
+
+        if (taps === 3) {
+            abrirPanelAdmin();
+            taps = 0;
+        }
+    });
 });
 
 // ===============================
@@ -98,7 +98,7 @@ function mostrarMenuHoxe() {
     const coleccion = coleccions[tipoActual] || {};
     const menu = coleccion[dataHoxe] || {};
 
-    // Data visible
+    // DATA
     const elementoData = document.getElementById("dataHoxe");
 
     if (elementoData) {
@@ -106,25 +106,28 @@ function mostrarMenuHoxe() {
             `Menú do día ${dia}/${mes}/${ano}`;
     }
 
-    // Primeiro prato
-    const primeiro = document.getElementById("primeiro");
+    // PRIMEIRO PRATO
+    const elementoPrimeiro = document.getElementById("primeiro");
 
-    if (primeiro) {
-        primeiro.textContent = menu.primeiro || "Sen rexistro";
+    if (elementoPrimeiro) {
+        elementoPrimeiro.textContent =
+            menu.primeiro || "Sen rexistro";
     }
 
-    // Segundo prato
-    const segundo = document.getElementById("segundo");
+    // SEGUNDO PRATO
+    const elementoSegundo = document.getElementById("segundo");
 
-    if (segundo) {
-        segundo.textContent = menu.segundo || "—";
+    if (elementoSegundo) {
+        elementoSegundo.textContent =
+            menu.segundo || "—";
     }
 
-    // Sobremesa
-    const sobremesa = document.getElementById("sobremesa");
+    // SOBREMESA
+    const elementoSobremesa = document.getElementById("sobremesa");
 
-    if (sobremesa) {
-        sobremesa.textContent = menu.sobremesa || "—";
+    if (elementoSobremesa) {
+        elementoSobremesa.textContent =
+            menu.sobremesa || "—";
     }
 }
 
@@ -144,28 +147,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const adminData = document.getElementById("adminData");
 
-    if (!adminData) {
-        return;
-    }
+    if (!adminData) return;
 
     adminData.addEventListener("change", () => {
 
         const data = adminData.value;
 
-        if (!data) {
-            return;
-        }
+        if (!data) return;
 
         const coleccion = coleccions[tipoActual] || {};
         const menu = coleccion[data] || {};
 
-        const primeiro = document.getElementById("adminPrimeiro");
-        const segundo = document.getElementById("adminSegundo");
-        const sobremesa = document.getElementById("adminSobremesa");
+        const primeiro =
+            document.getElementById("adminPrimeiro");
 
-        if (primeiro) primeiro.value = menu.primeiro || "";
-        if (segundo) segundo.value = menu.segundo || "";
-        if (sobremesa) sobremesa.value = menu.sobremesa || "";
+        const segundo =
+            document.getElementById("adminSegundo");
+
+        const sobremesa =
+            document.getElementById("adminSobremesa");
+
+        if (primeiro) {
+            primeiro.value = menu.primeiro || "";
+        }
+
+        if (segundo) {
+            segundo.value = menu.segundo || "";
+        }
+
+        if (sobremesa) {
+            sobremesa.value = menu.sobremesa || "";
+        }
     });
 });
 ```
