@@ -1241,7 +1241,6 @@ const MENUS_SEN_LACTOSA = {
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
 };
 const MENUS_MUSULMAN = {
- const MENUS_MUSULMAN = {
     // ============================================================
     // SETEMBRO 2026
     // ============================================================
