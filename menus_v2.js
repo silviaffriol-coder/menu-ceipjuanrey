@@ -1,12 +1,23 @@
+// ============================================================
+// MENUS CEIP JUAN REY
+// Curso 2026-2027
+// ============================================================
+
+// ============================================================
+// MENÚ BASAL
+// Datos oficiais do esquema de setembro-outubro 2026
+// Sen números de alérxenos
+// ============================================================
+
 const MENUS_BASAL = {
 
     // ========================================================
-    // SETEMBRO 2026 - SEMANA 1
+    // SETEMBRO 2026
     // ========================================================
 
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
-        segundo: "Arroz á cubana – arroz integral cocido con salsa de tomate e ovo",
+        segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita, pan integral e auga"
     },
 
@@ -21,11 +32,6 @@ const MENUS_BASAL = {
         segundo: "Arroz integral con lentellas",
         sobremesa: "Froita, pan integral e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 2
-    // ========================================================
 
     "2026-09-14": {
         primeiro: "Coliflor con allada",
@@ -57,11 +63,6 @@ const MENUS_BASAL = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 3
-    // ========================================================
-
     "2026-09-21": {
         primeiro: "Ensalada completa – leituga, tomate, queixo fresco, olivas",
         segundo: "Raxo de pavo e arroz integral con pisto",
@@ -92,11 +93,6 @@ const MENUS_BASAL = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 4
-    // ========================================================
-
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
         segundo: "Lombo ao forno con salsa de verduras",
@@ -115,7 +111,6 @@ const MENUS_BASAL = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
     // ========================================================
     // OUTUBRO 2026
     // ========================================================
@@ -132,9 +127,9 @@ const MENUS_BASAL = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
     // ========================================================
-    // NOVEMBRO 2026
+    // RESTO DO CURSO
+    // Datas preparadas para introducir os menús oficiais
     // ========================================================
 
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -163,11 +158,6 @@ const MENUS_BASAL = {
 
     "2026-11-30": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // DECEMBRO 2026
-    // ========================================================
-
     "2026-12-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -184,11 +174,6 @@ const MENUS_BASAL = {
     "2026-12-16": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-18": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // XANEIRO 2027
-    // ========================================================
 
     "2027-01-08": { primeiro: "", segundo: "", sobremesa: "" },
 
@@ -209,11 +194,6 @@ const MENUS_BASAL = {
     "2027-01-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-29": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // FEBREIRO 2027
-    // ========================================================
 
     "2027-02-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -239,11 +219,6 @@ const MENUS_BASAL = {
     "2027-02-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // MARZO 2027
-    // ========================================================
-
     "2027-03-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -268,11 +243,6 @@ const MENUS_BASAL = {
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // ABRIL 2027
-    // ========================================================
-
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-07": { primeiro: "", segundo: "", sobremesa: "" },
@@ -296,11 +266,6 @@ const MENUS_BASAL = {
     "2027-04-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-29": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-30": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // MAIO 2027
-    // ========================================================
 
     "2027-05-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -327,11 +292,6 @@ const MENUS_BASAL = {
     "2027-05-28": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-05-31": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // XUÑO 2027
-    // ========================================================
 
     "2027-06-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -361,13 +321,9 @@ const MENUS_BASAL = {
 
 const MENUS_SEN_LACTOSA = {
 
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 1
-    // ========================================================
-
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
-        segundo: "Arroz á cubana – arroz integral cocido con salsa de tomate e ovo",
+        segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita, pan integral e auga"
     },
 
@@ -383,11 +339,6 @@ const MENUS_SEN_LACTOSA = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 2
-    // ========================================================
-
     "2026-09-14": {
         primeiro: "Coliflor con allada",
         segundo: "Guiso de tenreira con patacas cocidas",
@@ -401,7 +352,7 @@ const MENUS_SEN_LACTOSA = {
     },
 
     "2026-09-16": {
-        primeiro: "Ensalada de tomate, queixo fresco sen lactosa e olivas",
+        primeiro: "Ensalada caprese – tomate, queixo fresco sen lactosa, olivas",
         segundo: "Potaxe de garavanzos con verduras",
         sobremesa: "Iogur sen lactosa, pan integral e auga"
     },
@@ -417,11 +368,6 @@ const MENUS_SEN_LACTOSA = {
         segundo: "Pasta integral con bonito e salsa de tomate",
         sobremesa: "Froita, pan integral e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 3
-    // ========================================================
 
     "2026-09-21": {
         primeiro: "Ensalada completa – leituga, tomate, queixo fresco sen lactosa, olivas",
@@ -453,11 +399,6 @@ const MENUS_SEN_LACTOSA = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 4
-    // ========================================================
-
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
         segundo: "Lombo ao forno con salsa de verduras",
@@ -488,11 +429,7 @@ const MENUS_SEN_LACTOSA = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // NOVEMBRO 2026
-    // ========================================================
-
+    // Datas posteriores pendentes de menú oficial
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -519,193 +456,136 @@ const MENUS_SEN_LACTOSA = {
 
     "2026-11-30": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // DECEMBRO 2026
-    // ========================================================
-
     "2026-12-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-04": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2026-12-07": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2026-12-09": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-11": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2026-12-14": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-15": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-16": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-18": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // XANEIRO 2027
-    // ========================================================
-
     "2027-01-08": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-01-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-12": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-13": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-14": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-15": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-01-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-19": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-20": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-21": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-22": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-01-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-26": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-29": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // FEBREIRO 2027
-    // ========================================================
-
     "2027-02-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-04": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-05": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-02-08": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-09": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-12": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-02-15": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-16": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-19": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-02-22": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-23": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-24": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // MARZO 2027
-    // ========================================================
-
     "2027-03-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-04": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-05": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-03-08": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-09": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-12": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-03-15": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-16": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-19": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-03-22": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-23": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-24": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // ABRIL 2027
-    // ========================================================
-
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-07": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-08": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-09": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-04-12": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-13": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-14": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-15": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-16": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-04-19": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-20": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-21": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-22": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-23": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-04-26": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-29": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-30": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // MAIO 2027
-    // ========================================================
-
     "2027-05-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-04": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-07": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-05-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-12": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-13": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-14": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-05-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-19": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-20": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-21": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-05-24": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-26": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-28": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-05-31": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // XUÑO 2027
-    // ========================================================
 
     "2027-06-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-04": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-06-07": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-08": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-09": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-11": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-06-14": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-15": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-16": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-18": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
 };
 
@@ -717,13 +597,9 @@ const MENUS_SEN_LACTOSA = {
 
 const MENUS_SEN_GLUTE = {
 
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 1
-    // ========================================================
-
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
-        segundo: "Arroz á cubana – arroz integral cocido con salsa de tomate e ovo",
+        segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita e auga"
     },
 
@@ -738,11 +614,6 @@ const MENUS_SEN_GLUTE = {
         segundo: "Arroz integral con lentellas",
         sobremesa: "Froita e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 2
-    // ========================================================
 
     "2026-09-14": {
         primeiro: "Coliflor con allada",
@@ -774,11 +645,6 @@ const MENUS_SEN_GLUTE = {
         sobremesa: "Froita e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 3
-    // ========================================================
-
     "2026-09-21": {
         primeiro: "Ensalada completa – leituga, tomate, queixo fresco, olivas",
         segundo: "Raxo de pavo e arroz integral con pisto",
@@ -808,11 +674,6 @@ const MENUS_SEN_GLUTE = {
         segundo: "Ensaladilla rusa",
         sobremesa: "Froita e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 4
-    // ========================================================
 
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
@@ -844,9 +705,8 @@ const MENUS_SEN_GLUTE = {
         sobremesa: "Froita e auga"
     },
 
-
     // ========================================================
-    // NOVEMBRO 2026
+    // RESTO DO CURSO
     // ========================================================
 
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -875,11 +735,6 @@ const MENUS_SEN_GLUTE = {
 
     "2026-11-30": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // DECEMBRO 2026
-    // ========================================================
-
     "2026-12-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -893,11 +748,6 @@ const MENUS_SEN_GLUTE = {
     "2026-12-16": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-18": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // XANEIRO 2027
-    // ========================================================
 
     "2027-01-08": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-11": { primeiro: "", segundo: "", sobremesa: "" },
@@ -915,11 +765,6 @@ const MENUS_SEN_GLUTE = {
     "2027-01-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-29": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // FEBREIRO 2027
-    // ========================================================
 
     "2027-02-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -942,11 +787,6 @@ const MENUS_SEN_GLUTE = {
     "2027-02-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // MARZO 2027
-    // ========================================================
-
     "2027-03-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -968,11 +808,6 @@ const MENUS_SEN_GLUTE = {
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // ABRIL 2027
-    // ========================================================
-
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-07": { primeiro: "", segundo: "", sobremesa: "" },
@@ -993,11 +828,6 @@ const MENUS_SEN_GLUTE = {
     "2027-04-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-29": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-30": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // MAIO 2027
-    // ========================================================
 
     "2027-05-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1021,11 +851,6 @@ const MENUS_SEN_GLUTE = {
     "2027-05-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-31": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // XUÑO 2027
-    // ========================================================
-
     "2027-06-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1041,14 +866,7 @@ const MENUS_SEN_GLUTE = {
     "2027-06-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
-};  
-// ============================================================
-// MENUS CEIP JUAN REY - CURSO 2026/2027
-// PARTE 2
-// MUSULMÁN + SEN MARISCO
-// ============================================================
-
-
+};
 // ============================================================
 // MENÚ MUSULMÁN
 // Adaptación do menú basal
@@ -1057,12 +875,12 @@ const MENUS_SEN_GLUTE = {
 const MENUS_MUSULMAN = {
 
     // ========================================================
-    // SETEMBRO 2026 - SEMANA 1
+    // SETEMBRO 2026
     // ========================================================
 
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
-        segundo: "Arroz á cubana – arroz integral cocido con salsa de tomate e ovo",
+        segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita, pan integral e auga"
     },
 
@@ -1077,11 +895,6 @@ const MENUS_MUSULMAN = {
         segundo: "Arroz integral con lentellas",
         sobremesa: "Froita, pan integral e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 2
-    // ========================================================
 
     "2026-09-14": {
         primeiro: "Coliflor con allada",
@@ -1112,11 +925,6 @@ const MENUS_MUSULMAN = {
         segundo: "Pasta integral con bonito e salsa de tomate",
         sobremesa: "Froita, pan integral e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 3
-    // ========================================================
 
     "2026-09-21": {
         primeiro: "Ensalada completa – leituga, tomate, queixo fresco, olivas",
@@ -1148,11 +956,6 @@ const MENUS_MUSULMAN = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 4
-    // ========================================================
-
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
         segundo: "Pavo ao forno con salsa de verduras",
@@ -1171,6 +974,10 @@ const MENUS_MUSULMAN = {
         sobremesa: "Froita, pan integral e auga"
     },
 
+    // ========================================================
+    // OUTUBRO 2026
+    // ========================================================
+
     "2026-10-01": {
         primeiro: "Crema de cabaza",
         segundo: "Polo guisado e patacas ao forno con ensalada de cenoria – leituga, cenoria, millo, cebola",
@@ -1183,9 +990,8 @@ const MENUS_MUSULMAN = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
     // ========================================================
-    // NOVEMBRO 2026
+    // RESTO DO CURSO
     // ========================================================
 
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1214,16 +1020,10 @@ const MENUS_MUSULMAN = {
 
     "2026-11-30": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // DECEMBRO 2026
-    // ========================================================
-
     "2026-12-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-04": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2026-12-07": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2026-12-09": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1236,13 +1036,7 @@ const MENUS_MUSULMAN = {
     "2026-12-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-18": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // XANEIRO 2027
-    // ========================================================
-
     "2027-01-08": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-01-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-12": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-13": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1260,11 +1054,6 @@ const MENUS_MUSULMAN = {
     "2027-01-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-29": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // FEBREIRO 2027
-    // ========================================================
 
     "2027-02-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1290,11 +1079,6 @@ const MENUS_MUSULMAN = {
     "2027-02-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // MARZO 2027
-    // ========================================================
-
     "2027-03-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1319,11 +1103,6 @@ const MENUS_MUSULMAN = {
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // ABRIL 2027
-    // ========================================================
-
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-07": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1347,11 +1126,6 @@ const MENUS_MUSULMAN = {
     "2027-04-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-29": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-30": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // MAIO 2027
-    // ========================================================
 
     "2027-05-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1378,11 +1152,6 @@ const MENUS_MUSULMAN = {
     "2027-05-28": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-05-31": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // XUÑO 2027
-    // ========================================================
 
     "2027-06-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1413,12 +1182,12 @@ const MENUS_MUSULMAN = {
 const MENUS_SEN_MARISCO = {
 
     // ========================================================
-    // SETEMBRO 2026 - SEMANA 1
+    // SETEMBRO 2026
     // ========================================================
 
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
-        segundo: "Arroz á cubana – arroz integral cocido con salsa de tomate e ovo",
+        segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita, pan integral e auga"
     },
 
@@ -1433,11 +1202,6 @@ const MENUS_SEN_MARISCO = {
         segundo: "Arroz integral con lentellas",
         sobremesa: "Froita, pan integral e auga"
     },
-
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 2
-    // ========================================================
 
     "2026-09-14": {
         primeiro: "Coliflor con allada",
@@ -1469,11 +1233,6 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 3
-    // ========================================================
-
     "2026-09-21": {
         primeiro: "Ensalada completa – leituga, tomate, queixo fresco, olivas",
         segundo: "Raxo de pavo e arroz integral con pisto",
@@ -1504,11 +1263,6 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
-    // ========================================================
-    // SETEMBRO 2026 - SEMANA 4
-    // ========================================================
-
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
         segundo: "Lombo ao forno con salsa de verduras",
@@ -1527,6 +1281,10 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita, pan integral e auga"
     },
 
+    // ========================================================
+    // OUTUBRO 2026
+    // ========================================================
+
     "2026-10-01": {
         primeiro: "Crema de cabaza",
         segundo: "Polo guisado e patacas ao forno con ensalada de cenoria – leituga, cenoria, millo, cebola",
@@ -1539,9 +1297,8 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita, pan integral e auga"
     },
 
-
     // ========================================================
-    // NOVEMBRO 2026
+    // RESTO DO CURSO
     // ========================================================
 
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1570,16 +1327,10 @@ const MENUS_SEN_MARISCO = {
 
     "2026-11-30": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // DECEMBRO 2026
-    // ========================================================
-
     "2026-12-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-04": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2026-12-07": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2026-12-09": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1592,13 +1343,7 @@ const MENUS_SEN_MARISCO = {
     "2026-12-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-18": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // XANEIRO 2027
-    // ========================================================
-
     "2027-01-08": { primeiro: "", segundo: "", sobremesa: "" },
-
     "2027-01-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-12": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-13": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1616,11 +1361,6 @@ const MENUS_SEN_MARISCO = {
     "2027-01-27": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-01-29": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // FEBREIRO 2027
-    // ========================================================
 
     "2027-02-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-02": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1646,11 +1386,6 @@ const MENUS_SEN_MARISCO = {
     "2027-02-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // MARZO 2027
-    // ========================================================
-
     "2027-03-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-03": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1675,11 +1410,6 @@ const MENUS_SEN_MARISCO = {
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-
-    // ========================================================
-    // ABRIL 2027
-    // ========================================================
-
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-07": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1703,11 +1433,6 @@ const MENUS_SEN_MARISCO = {
     "2027-04-28": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-29": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-30": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // MAIO 2027
-    // ========================================================
 
     "2027-05-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1734,11 +1459,6 @@ const MENUS_SEN_MARISCO = {
     "2027-05-28": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-05-31": { primeiro: "", segundo: "", sobremesa: "" },
-
-
-    // ========================================================
-    // XUÑO 2027
-    // ========================================================
 
     "2027-06-01": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-02": { primeiro: "", segundo: "", sobremesa: "" },
