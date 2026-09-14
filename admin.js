@@ -6,93 +6,32 @@ const CLAVE_STORAGE = "menusCEIPJuanRey_v2";
 
 
 // ============================================================
-// CARGAR MENÚS GARDADOS EN LOCALSTORAGE
+// MODIFICACIÓNS REALIZADAS DESDE O PANEL
 // ============================================================
 
-function cargarMenusGardados() {
+let modificacionsGardadas = {
+    basal: {},
+    sen_lactosa: {},
+    sen_glute: {},
+    musulman: {},
+    sen_marisco: {}
+};
 
-    try {
 
-        const gardados =
-            localStorage.getItem(CLAVE_STORAGE);
+// ============================================================
+// COMPARAR DOUS MENÚS
+// ============================================================
 
-        if (!gardados) return;
+function menusIguais(menu1, menu2) {
 
-        const datos =
-            JSON.parse(gardados);
-
-        if (!datos || typeof datos !== "object") {
-            return;
-        }
-
-        if (datos.basal) {
-            Object.assign(MENUS_BASAL, datos.basal);
-        }
-
-        if (datos.sen_lactosa) {
-            Object.assign(
-                MENUS_SEN_LACTOSA,
-                datos.sen_lactosa
-            );
-        }
-
-        if (datos.sen_glute) {
-            Object.assign(
-                MENUS_SEN_GLUTE,
-                datos.sen_glute
-            );
-        }
-
-        if (datos.musulman) {
-            Object.assign(
-                MENUS_MUSULMAN,
-                datos.musulman
-            );
-        }
-
-        if (datos.sen_marisco) {
-            Object.assign(
-                MENUS_SEN_MARISCO,
-                datos.sen_marisco
-            );
-        }
-
-    } catch (erro) {
-
-        console.error(
-            "Erro ao cargar os menús gardados:",
-            erro
-        );
+    if (!menu1 || !menu2) {
+        return false;
     }
-}
 
-
-// ============================================================
-// GARDAR MENÚS EN LOCALSTORAGE
-// ============================================================
-
-function gardarMenusLocalStorage() {
-
-    const datos = {
-
-        basal: MENUS_BASAL,
-
-        sen_lactosa:
-            MENUS_SEN_LACTOSA,
-
-        sen_glute:
-            MENUS_SEN_GLUTE,
-
-        musulman:
-            MENUS_MUSULMAN,
-
-        sen_marisco:
-            MENUS_SEN_MARISCO
-    };
-
-    localStorage.setItem(
-        CLAVE_STORAGE,
-        JSON.stringify(datos)
+    return (
+        (menu1.primeiro || "") === (menu2.primeiro || "") &&
+        (menu1.segundo || "") === (menu2.segundo || "") &&
+        (menu1.sobremesa || "") === (menu2.sobremesa || "")
     );
 }
 
@@ -128,6 +67,153 @@ function obterColeccion(tipo) {
 
 
 // ============================================================
+// CARGAR MODIFICACIÓNS GARDADAS EN LOCALSTORAGE
+// ============================================================
+
+function cargarMenusGardados() {
+
+    try {
+
+        const gardados =
+            localStorage.getItem(CLAVE_STORAGE);
+
+        if (!gardados) {
+            return;
+        }
+
+        const datos =
+            JSON.parse(gardados);
+
+        if (!datos || typeof datos !== "object") {
+            return;
+        }
+
+
+        // --------------------------------------------------------
+        // IMPORTANTE:
+        // Só recuperamos modificacións que realmente existan
+        // no almacenamento.
+        //
+        // Non substituímos os MENUS_* completos.
+        // --------------------------------------------------------
+
+        const tipos = [
+            "basal",
+            "sen_lactosa",
+            "sen_glute",
+            "musulman",
+            "sen_marisco"
+        ];
+
+
+        tipos.forEach((tipo) => {
+
+            const gardadosTipo =
+                datos[tipo];
+
+            if (
+                !gardadosTipo ||
+                typeof gardadosTipo !== "object"
+            ) {
+                return;
+            }
+
+
+            const coleccion =
+                obterColeccion(tipo);
+
+            if (!coleccion) {
+                return;
+            }
+
+
+            Object.keys(gardadosTipo).forEach((data) => {
+
+                const modificacion =
+                    gardadosTipo[data];
+
+                if (
+                    !modificacion ||
+                    typeof modificacion !== "object"
+                ) {
+                    return;
+                }
+
+
+                // Gardamos a modificación
+                modificacionsGardadas[tipo][data] = {
+
+                    primeiro:
+                        modificacion.primeiro || "",
+
+                    segundo:
+                        modificacion.segundo || "",
+
+                    sobremesa:
+                        modificacion.sobremesa || ""
+                };
+
+
+                // Aplicamos a modificación ao menú actual
+                coleccion[data] = {
+
+                    primeiro:
+                        modificacion.primeiro || "",
+
+                    segundo:
+                        modificacion.segundo || "",
+
+                    sobremesa:
+                        modificacion.sobremesa || ""
+                };
+
+            });
+
+        });
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao cargar os menús gardados:",
+            erro
+        );
+    }
+}
+
+
+// ============================================================
+// GARDAR SÓ AS MODIFICACIÓNS EN LOCALSTORAGE
+// ============================================================
+
+function gardarMenusLocalStorage() {
+
+    const datos = {
+
+        basal:
+            modificacionsGardadas.basal,
+
+        sen_lactosa:
+            modificacionsGardadas.sen_lactosa,
+
+        sen_glute:
+            modificacionsGardadas.sen_glute,
+
+        musulman:
+            modificacionsGardadas.musulman,
+
+        sen_marisco:
+            modificacionsGardadas.sen_marisco
+    };
+
+
+    localStorage.setItem(
+        CLAVE_STORAGE,
+        JSON.stringify(datos)
+    );
+}
+
+
+// ============================================================
 // CARGAR UN MENÚ NO PANEL
 // ============================================================
 
@@ -149,7 +235,9 @@ function cargarMenuAdmin() {
         document.getElementById("adminSobremesa");
 
 
-    if (!tipo || !data) return;
+    if (!tipo || !data) {
+        return;
+    }
 
 
     if (!data.value) {
@@ -171,14 +259,18 @@ function cargarMenuAdmin() {
 
 
     // Sincronizamos o tipo coa aplicación
-    tipoActual = tipo.value;
+
+    tipoActual =
+        tipo.value;
 
 
     const coleccion =
         obterColeccion(tipo.value);
 
 
-    if (!coleccion) return;
+    if (!coleccion) {
+        return;
+    }
 
 
     const menu =
@@ -191,11 +283,13 @@ function cargarMenuAdmin() {
             menu.primeiro || "";
     }
 
+
     if (segundo) {
 
         segundo.value =
             menu.segundo || "";
     }
+
 
     if (sobremesa) {
 
@@ -213,7 +307,11 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        // Cargamos primeiro as modificacións gardadas
+
+        // ----------------------------------------------------
+        // Primeiro cargamos as modificacións gardadas
+        // ----------------------------------------------------
+
         cargarMenusGardados();
 
 
@@ -327,7 +425,11 @@ document.addEventListener(
                     }
 
 
-                    coleccion[dataSeleccionada] = {
+                    // ------------------------------------------------
+                    // Creamos a modificación da data seleccionada
+                    // ------------------------------------------------
+
+                    const modificacion = {
 
                         primeiro:
                             primeiro
@@ -346,16 +448,53 @@ document.addEventListener(
                     };
 
 
+                    // Actualizamos o menú en memoria
+
+                    coleccion[dataSeleccionada] = {
+
+                        primeiro:
+                            modificacion.primeiro,
+
+                        segundo:
+                            modificacion.segundo,
+
+                        sobremesa:
+                            modificacion.sobremesa
+                    };
+
+
+                    // Gardamos SÓ esta modificación
+
+                    modificacionsGardadas[
+                        tipoSeleccionado
+                    ][
+                        dataSeleccionada
+                    ] = {
+
+                        primeiro:
+                            modificacion.primeiro,
+
+                        segundo:
+                            modificacion.segundo,
+
+                        sobremesa:
+                            modificacion.sobremesa
+                    };
+
+
                     // Gardar permanentemente
+
                     gardarMenusLocalStorage();
 
 
                     // Actualizar tipo actual
+
                     tipoActual =
                         tipoSeleccionado;
 
 
                     // Actualizar menú público
+
                     if (
                         typeof mostrarMenuHoxe ===
                         "function"
@@ -405,80 +544,59 @@ document.addEventListener(
                     }
 
 
-                    const gardados =
-                        localStorage.getItem(
-                            CLAVE_STORAGE
-                        );
+                    // ------------------------------------------------
+                    // Comprobamos se existe unha modificación
+                    // específica para esta data e este tipo
+                    // ------------------------------------------------
 
-
-                    if (!gardados) {
+                    if (
+                        !modificacionsGardadas[
+                            tipoSeleccionado
+                        ] ||
+                        !modificacionsGardadas[
+                            tipoSeleccionado
+                        ][
+                            dataSeleccionada
+                        ]
+                    ) {
 
                         alert(
-                            "Non hai modificacións gardadas para restaurar."
+                            "Non hai unha modificación gardada para esta data."
                         );
 
                         return;
                     }
 
 
-                    try {
+                    // ------------------------------------------------
+                    // Eliminamos SÓ esta modificación
+                    // ------------------------------------------------
 
-                        const datos =
-                            JSON.parse(gardados);
-
-
-                        // Eliminamos SÓ a data seleccionada
-                        // do tipo de menú seleccionado
-
-                        if (
-                            datos[tipoSeleccionado] &&
-                            datos[tipoSeleccionado][
-                                dataSeleccionada
-                            ]
-                        ) {
-
-                            delete datos[
-                                tipoSeleccionado
-                            ][
-                                dataSeleccionada
-                            ];
-
-                        } else {
-
-                            alert(
-                                "Non hai unha modificación gardada para esta data."
-                            );
-
-                            return;
-                        }
+                    delete modificacionsGardadas[
+                        tipoSeleccionado
+                    ][
+                        dataSeleccionada
+                    ];
 
 
-                        // Gardamos de novo as modificacións
-                        // dos demais menús e datas
+                    // ------------------------------------------------
+                    // Gardamos de novo só as modificacións restantes
+                    // ------------------------------------------------
 
-                        localStorage.setItem(
-                            CLAVE_STORAGE,
-                            JSON.stringify(datos)
-                        );
+                    gardarMenusLocalStorage();
 
 
-                        // Volvemos cargar os menús orixinais
-                        // antes de aplicar as modificacións
-                        // que aínda quedan gardadas
+                    // ------------------------------------------------
+                    // Recargamos a páxina.
+                    //
+                    // Ao recargar:
+                    // - MENUS_* volve cargar desde menus_v2.js
+                    // - aplícanse só as modificacións que quedan
+                    // - a data restaurada recupera o menú orixinal
+                    // ------------------------------------------------
 
-                        location.reload();
+                    location.reload();
 
-                    } catch (erro) {
-
-                        console.error(
-                            "Erro ao restaurar o menú:",
-                            erro
-                        );
-
-                        alert(
-                            "Produciuse un erro ao restaurar o menú."
-                        );
-                    }
                 }
             );
         }
