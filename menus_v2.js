@@ -1241,6 +1241,7 @@ const MENUS_SEN_LACTOSA = {
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
 };
 const MENUS_MUSULMAN = {
+ const MENUS_MUSULMAN = {
     // ============================================================
     // SETEMBRO 2026
     // ============================================================
@@ -1653,12 +1654,12 @@ const MENUS_MUSULMAN = {
     "2027-06-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
-};
+};  
+
 const MENUS_SEN_MARISCO = {
     // ============================================================
     // SETEMBRO 2026
     // ============================================================
-
     "2026-09-10": {
         primeiro: "Pasta con verduras",
         segundo: "Pescada ao forno",
@@ -2068,3 +2069,4 @@ const MENUS_SEN_MARISCO = {
     "2027-06-18": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-21": { primeiro: "", segundo: "", sobremesa: "" }
 };
+
