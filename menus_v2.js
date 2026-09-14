@@ -238,6 +238,7 @@ const MENUS_BASAL = {
     primeiro: "Arroz 3 verduras",
     segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
     sobremesa: "Froita, pan integral (2) e auga"
+},
     // ========================================================
     // RESTO DO CURSO
     // Datas preparadas para introducir os menús oficiais
