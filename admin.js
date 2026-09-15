@@ -314,6 +314,17 @@ document.addEventListener(
 
         cargarMenusGardados();
 
+        // ----------------------------------------------------
+        // Despois de aplicar as modificacións gardadas,
+        // actualizamos a pantalla pública mantendo BASAL
+        // como menú principal.
+        // ----------------------------------------------------
+        tipoActual = "basal";
+
+        if (typeof mostrarMenuHoxe === "function") {
+            mostrarMenuHoxe();
+        }
+
 
         const tipo =
             document.getElementById("adminTipo");
@@ -487,40 +498,29 @@ document.addEventListener(
                     gardarMenusLocalStorage();
 
 
-                    // Actualizar tipo actual
-
-                    tipoActual =
-                        tipoSeleccionado;
-
-
-                    // ====================================================
-                    // CORRECCIÓN:
-                    // Se modificamos BASAL, recargamos a pantalla principal
-                    // para que o cambio apareza inmediatamente.
-                    // ====================================================
+                    // ------------------------------------------------
+                    // O menú público principal é sempre BASAL.
+                    // Se modificamos BASAL, recargamos a páxina para
+                    // que o cambio quede reflectido inmediatamente.
+                    // Se modificamos un menú adaptado, a pantalla
+                    // pública non cambia de tipo.
+                    // ------------------------------------------------
+                    tipoActual = "basal";
 
                     if (tipoSeleccionado === "basal") {
-
                         alert(
                             "Menú gardado correctamente."
                         );
-
                         location.reload();
-
                         return;
                     }
-
-
-                    // Para os demais tipos mantemos o funcionamento actual
 
                     if (
                         typeof mostrarMenuHoxe ===
                         "function"
                     ) {
-
                         mostrarMenuHoxe();
                     }
-
 
                     alert(
                         "Menú gardado correctamente."
@@ -528,9 +528,7 @@ document.addEventListener(
                 }
             );
         }
-
-
-        // ====================================================
+                // ====================================================
         // RESTAURAR MENÚ ORIXINAL
         // ====================================================
 
