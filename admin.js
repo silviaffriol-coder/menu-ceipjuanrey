@@ -493,7 +493,25 @@ document.addEventListener(
                         tipoSeleccionado;
 
 
-                    // Actualizar menú público
+                    // ====================================================
+                    // CORRECCIÓN:
+                    // Se modificamos BASAL, recargamos a pantalla principal
+                    // para que o cambio apareza inmediatamente.
+                    // ====================================================
+
+                    if (tipoSeleccionado === "basal") {
+
+                        alert(
+                            "Menú gardado correctamente."
+                        );
+
+                        location.reload();
+
+                        return;
+                    }
+
+
+                    // Para os demais tipos mantemos o funcionamento actual
 
                     if (
                         typeof mostrarMenuHoxe ===
