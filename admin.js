@@ -19,24 +19,6 @@ let modificacionsGardadas = {
 
 
 // ============================================================
-// COMPARAR DOUS MENÚS
-// ============================================================
-
-function menusIguais(menu1, menu2) {
-
-    if (!menu1 || !menu2) {
-        return false;
-    }
-
-    return (
-        (menu1.primeiro || "") === (menu2.primeiro || "") &&
-        (menu1.segundo || "") === (menu2.segundo || "") &&
-        (menu1.sobremesa || "") === (menu2.sobremesa || "")
-    );
-}
-
-
-// ============================================================
 // OBTENER COLECCIÓN SEGUNDO O TIPO
 // ============================================================
 
@@ -67,7 +49,7 @@ function obterColeccion(tipo) {
 
 
 // ============================================================
-// CARGAR MODIFICACIÓNS GARDADAS EN LOCALSTORAGE
+// CARGAR MODIFICACIÓNS GARDADAS
 // ============================================================
 
 function cargarMenusGardados() {
@@ -88,15 +70,6 @@ function cargarMenusGardados() {
             return;
         }
 
-
-        // --------------------------------------------------------
-        // IMPORTANTE:
-        // Só recuperamos modificacións que realmente existan
-        // no almacenamento.
-        //
-        // Non substituímos os MENUS_* completos.
-        // --------------------------------------------------------
-
         const tipos = [
             "basal",
             "sen_lactosa",
@@ -104,7 +77,6 @@ function cargarMenusGardados() {
             "musulman",
             "sen_marisco"
         ];
-
 
         tipos.forEach((tipo) => {
 
@@ -118,14 +90,12 @@ function cargarMenusGardados() {
                 return;
             }
 
-
             const coleccion =
                 obterColeccion(tipo);
 
             if (!coleccion) {
                 return;
             }
-
 
             Object.keys(gardadosTipo).forEach((data) => {
 
@@ -139,8 +109,6 @@ function cargarMenusGardados() {
                     return;
                 }
 
-
-                // Gardamos a modificación
                 modificacionsGardadas[tipo][data] = {
 
                     primeiro:
@@ -153,8 +121,6 @@ function cargarMenusGardados() {
                         modificacion.sobremesa || ""
                 };
 
-
-                // Aplicamos a modificación ao menú actual
                 coleccion[data] = {
 
                     primeiro:
@@ -182,7 +148,7 @@ function cargarMenusGardados() {
 
 
 // ============================================================
-// GARDAR SÓ AS MODIFICACIÓNS EN LOCALSTORAGE
+// GARDAR MODIFICACIÓNS EN LOCALSTORAGE
 // ============================================================
 
 function gardarMenusLocalStorage() {
@@ -205,7 +171,6 @@ function gardarMenusLocalStorage() {
             modificacionsGardadas.sen_marisco
     };
 
-
     localStorage.setItem(
         CLAVE_STORAGE,
         JSON.stringify(datos)
@@ -214,7 +179,36 @@ function gardarMenusLocalStorage() {
 
 
 // ============================================================
-// CARGAR UN MENÚ NO PANEL
+// LIMPAR CAMPOS DO PANEL
+// ============================================================
+
+function limparCamposAdmin() {
+
+    const primeiro =
+        document.getElementById("adminPrimeiro");
+
+    const segundo =
+        document.getElementById("adminSegundo");
+
+    const sobremesa =
+        document.getElementById("adminSobremesa");
+
+    if (primeiro) {
+        primeiro.value = "";
+    }
+
+    if (segundo) {
+        segundo.value = "";
+    }
+
+    if (sobremesa) {
+        sobremesa.value = "";
+    }
+}
+
+
+// ============================================================
+// CARGAR MENÚ NO PANEL ADMIN
 // ============================================================
 
 function cargarMenuAdmin() {
@@ -234,48 +228,44 @@ function cargarMenuAdmin() {
     const sobremesa =
         document.getElementById("adminSobremesa");
 
-
     if (!tipo || !data) {
         return;
     }
 
-
     if (!data.value) {
 
-        if (primeiro) {
-            primeiro.value = "";
-        }
-
-        if (segundo) {
-            segundo.value = "";
-        }
-
-        if (sobremesa) {
-            sobremesa.value = "";
-        }
+        limparCamposAdmin();
 
         return;
     }
 
-
-    // Sincronizamos o tipo coa aplicación
-
-    tipoActual =
-        tipo.value;
-
+    // Mantemos sincronizado o tipo actual
+    tipoActual = tipo.value;
 
     const coleccion =
         obterColeccion(tipo.value);
 
-
     if (!coleccion) {
+
+        limparCamposAdmin();
+
         return;
     }
 
+    const dataSeleccionada =
+        data.value;
 
     const menu =
-        coleccion[data.value] || {};
+        coleccion[dataSeleccionada];
 
+    // Se non existe menú para esa data,
+    // deixamos os campos baleiros.
+    if (!menu) {
+
+        limparCamposAdmin();
+
+        return;
+    }
 
     if (primeiro) {
 
@@ -283,13 +273,11 @@ function cargarMenuAdmin() {
             menu.primeiro || "";
     }
 
-
     if (segundo) {
 
         segundo.value =
             menu.segundo || "";
     }
-
 
     if (sobremesa) {
 
@@ -307,21 +295,25 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-
         // ----------------------------------------------------
-        // Primeiro cargamos as modificacións gardadas
+        // Primeiro recuperamos as modificacións gardadas
         // ----------------------------------------------------
 
         cargarMenusGardados();
 
+
         // ----------------------------------------------------
-        // Despois de aplicar as modificacións gardadas,
-        // actualizamos a pantalla pública mantendo BASAL
-        // como menú principal.
+        // O menú público comeza sempre en BASAL
         // ----------------------------------------------------
+
         tipoActual = "basal";
 
-        if (typeof mostrarMenuHoxe === "function") {
+
+        if (
+            typeof mostrarMenuHoxe ===
+            "function"
+        ) {
+
             mostrarMenuHoxe();
         }
 
@@ -402,7 +394,6 @@ document.addEventListener(
                         return;
                     }
 
-
                     const tipoSeleccionado =
                         tipo.value;
 
@@ -436,10 +427,6 @@ document.addEventListener(
                     }
 
 
-                    // ------------------------------------------------
-                    // Creamos a modificación da data seleccionada
-                    // ------------------------------------------------
-
                     const modificacion = {
 
                         primeiro:
@@ -459,7 +446,9 @@ document.addEventListener(
                     };
 
 
+                    // ------------------------------------------------
                     // Actualizamos o menú en memoria
+                    // ------------------------------------------------
 
                     coleccion[dataSeleccionada] = {
 
@@ -474,7 +463,9 @@ document.addEventListener(
                     };
 
 
-                    // Gardamos SÓ esta modificación
+                    // ------------------------------------------------
+                    // Gardamos a modificación específica
+                    // ------------------------------------------------
 
                     modificacionsGardadas[
                         tipoSeleccionado
@@ -493,34 +484,28 @@ document.addEventListener(
                     };
 
 
-                    // Gardar permanentemente
+                    // ------------------------------------------------
+                    // Gardamos en LocalStorage
+                    // ------------------------------------------------
 
                     gardarMenusLocalStorage();
 
 
                     // ------------------------------------------------
-                    // O menú público principal é sempre BASAL.
-                    // Se modificamos BASAL, recargamos a páxina para
-                    // que o cambio quede reflectido inmediatamente.
-                    // Se modificamos un menú adaptado, a pantalla
-                    // pública non cambia de tipo.
+                    // O menú público segue sendo BASAL
                     // ------------------------------------------------
+
                     tipoActual = "basal";
 
-                    if (tipoSeleccionado === "basal") {
-                        alert(
-                            "Menú gardado correctamente."
-                        );
-                        location.reload();
-                        return;
-                    }
 
                     if (
                         typeof mostrarMenuHoxe ===
                         "function"
                     ) {
+
                         mostrarMenuHoxe();
                     }
+
 
                     alert(
                         "Menú gardado correctamente."
@@ -528,7 +513,9 @@ document.addEventListener(
                 }
             );
         }
-                // ====================================================
+
+
+        // ====================================================
         // RESTAURAR MENÚ ORIXINAL
         // ====================================================
 
@@ -561,8 +548,7 @@ document.addEventListener(
 
 
                     // ------------------------------------------------
-                    // Comprobamos se existe unha modificación
-                    // específica para esta data e este tipo
+                    // Comprobamos se existe modificación gardada
                     // ------------------------------------------------
 
                     if (
@@ -585,7 +571,7 @@ document.addEventListener(
 
 
                     // ------------------------------------------------
-                    // Eliminamos SÓ esta modificación
+                    // Eliminamos só esta modificación
                     // ------------------------------------------------
 
                     delete modificacionsGardadas[
@@ -596,19 +582,14 @@ document.addEventListener(
 
 
                     // ------------------------------------------------
-                    // Gardamos de novo só as modificacións restantes
+                    // Gardamos as modificacións restantes
                     // ------------------------------------------------
 
                     gardarMenusLocalStorage();
 
 
                     // ------------------------------------------------
-                    // Recargamos a páxina.
-                    //
-                    // Ao recargar:
-                    // - MENUS_* volve cargar desde menus_v2.js
-                    // - aplícanse só as modificacións que quedan
-                    // - a data restaurada recupera o menú orixinal
+                    // Recargamos para recuperar o menú orixinal
                     // ------------------------------------------------
 
                     location.reload();
