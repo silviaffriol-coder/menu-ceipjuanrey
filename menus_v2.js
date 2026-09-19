@@ -433,9 +433,9 @@ const MENUS_BASAL = {
 
 const MENUS_SEN_LACTOSA = {
 
-    // ========================================================
+    // ============================================================
     // SETEMBRO 2026
-    // ========================================================
+    // ============================================================
 
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
@@ -533,9 +533,10 @@ const MENUS_SEN_LACTOSA = {
         sobremesa: "Iogur sen lactosa ou froita"
     },
 
-    // ========================================================
+
+    // ============================================================
     // OUTUBRO 2026
-    // ========================================================
+    // ============================================================
 
     "2026-10-01": {
         primeiro: "Crema de cabaza",
@@ -562,8 +563,8 @@ const MENUS_SEN_LACTOSA = {
     },
 
     "2026-10-07": {
-        primeiro: "Crema de cenoria con pataca",
-        segundo: "Tortilla de champiñóns e ensalada de espárragos",
+        primeiro: "Crema de cabaciña",
+        segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita"
     },
 
@@ -586,9 +587,9 @@ const MENUS_SEN_LACTOSA = {
     },
 
     "2026-10-14": {
-        primeiro: "Crema de verduras de tempada",
-        segundo: "Arroz cocido con ovo á prancha e tomate aliñado",
-        sobremesa: "Iogur sen lactosa ou froita"
+        primeiro: "Crema de cenoria con pataca",
+        segundo: "Tortilla de champiñóns e ensalada de espárragos",
+        sobremesa: "Froita"
     },
 
     "2026-10-15": {
@@ -661,7 +662,9 @@ const MENUS_SEN_LACTOSA = {
         primeiro: "Crema de cabaza",
         segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
         sobremesa: "Froita"
-    },
+    }
+
+};
     // Datas posteriores pendentes de menú oficial
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-03": { primeiro: "", segundo: "", sobremesa: "" },
