@@ -357,6 +357,12 @@ const MENUS_BASAL = {
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
+    "2027-03-29": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-30": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-31": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-01": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-02": { primeiro: "", segundo: "", sobremesa: "" },
+
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-07": { primeiro: "", segundo: "", sobremesa: "" },
