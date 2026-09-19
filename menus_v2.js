@@ -771,6 +771,11 @@ const MENUS_SEN_LACTOSA = {
     "2027-03-24": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-29": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-30": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-31": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-01": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-02": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1172,6 +1177,11 @@ const MENUS_SEN_GLUTE = {
     "2027-03-24": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-29": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-30": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-03-31": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-01": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-02": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1590,6 +1600,9 @@ const MENUS_MUSULMAN = {
     // ============================================================
     // ABRIL 2027
     // ============================================================
+   
+    "2027-04-01": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-02": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
@@ -2017,6 +2030,8 @@ const MENUS_SEN_MARISCO = {
     // ============================================================
     // ABRIL 2027
     // ============================================================
+    "2027-04-01": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-04-02": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-04-05": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-04-06": { primeiro: "", segundo: "", sobremesa: "" },
