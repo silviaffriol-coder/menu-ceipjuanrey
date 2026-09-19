@@ -126,119 +126,121 @@ const MENUS_BASAL = {
         segundo: "Salmón á prancha con ensalada con froita de tempada – leituga, froita de tempada",
         sobremesa: "Froita"
     },
-"2026-10-05": {
-    primeiro: "Repolo con allada",
-    segundo: "Polo ao forno con verduras e patacas",
-    sobremesa: "Iogur (7), pan integral (2) e auga"
-},
 
-"2026-10-06": {
-    primeiro: "Sopa de verduras con fideos integrais e garavanzos",
-    segundo: "Luras á romana con ensalada de tomate, cebola e olivas",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-05": {
+        primeiro: "Repolo con allada",
+        segundo: "Polo ao forno con verduras e patacas",
+        sobremesa: "Iogur (7), pan integral (2) e auga"
+    },
 
-"2026-10-07": {
-    primeiro: "Crema de cabaciña",
-    segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-06": {
+        primeiro: "Sopa de verduras con fideos integrais e garavanzos",
+        segundo: "Luras á romana con ensalada de tomate, cebola e olivas",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-08": {
-    primeiro: "Pasta integral con salsa de verduras",
-    segundo: "Pescada ao forno con ensalada de leituga",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-07": {
+        primeiro: "Crema de cabaciña",
+        segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-09": {
-    primeiro: "Ensalada Arco Da Vella - leituga, tomate, lombarda, cenoria, millo, cebola",
-    segundo: "Arroz integral con lentellas",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-08": {
+        primeiro: "Pasta integral con salsa de verduras",
+        segundo: "Pescada ao forno con ensalada de leituga",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-13": {
-    primeiro: "Coliflor con allada",
-    segundo: "Guiso de tenreira con patacas cocidas",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-09": {
+        primeiro: "Ensalada Arco Da Vella - leituga, tomate, lombarda, cenoria, millo, cebola",
+        segundo: "Arroz integral con lentellas",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-14": {
-    primeiro: "Crema de cenoria e patacas",
-    segundo: "Tortilla de champiñóns e ensalada de espárragos - leituga, espárragos, olivas, tomate",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-13": {
+        primeiro: "Coliflor con allada",
+        segundo: "Guiso de tenreira con patacas cocidas",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-15": {
-    primeiro: "Ensalada caprese - tomate, queixo fresco, olivas",
-    segundo: "Potaxe de garavanzos con verduras",
-    sobremesa: "Iogur (7), pan integral (2) e auga"
-},
+    "2026-10-14": {
+        primeiro: "Crema de cenoria e patacas",
+        segundo: "Tortilla de champiñóns e ensalada de espárragos - leituga, espárragos, olivas, tomate",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-16": {
-    primeiro: "Paella de verduras",
-    segundo: "Peituga de polo ao limón con ensalada de cenoria, tomate, cebola",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-15": {
+        primeiro: "Ensalada caprese - tomate, queixo fresco, olivas",
+        segundo: "Potaxe de garavanzos con verduras",
+        sobremesa: "Iogur (7), pan integral (2) e auga"
+    },
 
-"2026-10-19": {
-    primeiro: "Ensalada completa - leituga, tomate, queixo fresco, olivas",
-    segundo: "Raxo de pavo e arroz integral con pisto",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-16": {
+        primeiro: "Paella de verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria, tomate, cebola",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-20": {
-    primeiro: "Sopa de polo con fideos integrais",
-    segundo: "Pescada en salsa verde con patacas cocidas e ensalada sinxela - leituga, tomate",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-19": {
+        primeiro: "Ensalada completa - leituga, tomate, queixo fresco, olivas",
+        segundo: "Raxo de pavo e arroz integral con pisto",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-21": {
-    primeiro: "Ensalada de garavanzos - leituga, tomate, garavanzos, cebola",
-    segundo: "Brócoli con pataca e ovo con allada",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-20": {
+        primeiro: "Sopa de polo con fideos integrais",
+        segundo: "Pescada en salsa verde con patacas cocidas e ensalada sinxela - leituga, tomate",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-22": {
-    primeiro: "Crema de verduras de temporada",
-    segundo: "Fideuá de marisco",
-    sobremesa: "Iogur (7), pan integral (2) e auga"
-},
+    "2026-10-21": {
+        primeiro: "Ensalada de garavanzos - leituga, tomate, garavanzos, cebola",
+        segundo: "Brócoli con pataca e ovo con allada",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-23": {
-    primeiro: "Salteado de verduras con fabas",
-    segundo: "Ensaladilla rusa",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-22": {
+        primeiro: "Crema de verduras de temporada",
+        segundo: "Fideuá de marisco",
+        sobremesa: "Iogur (7), pan integral (2) e auga"
+    },
 
-"2026-10-26": {
-    primeiro: "Xudías verdes con patacas",
-    segundo: "Lombo ao forno con salsa de verduras",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-23": {
+        primeiro: "Salteado de verduras con fabas",
+        segundo: "Ensaladilla rusa",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-27": {
-    primeiro: "Ensalada de tomate, olivas e sardiñas",
-    segundo: "Tortilla de patacas e cebola",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-26": {
+        primeiro: "Xudías verdes con patacas",
+        segundo: "Lombo ao forno con salsa de verduras",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-28": {
-    primeiro: "Garavanzos con espinacas",
-    segundo: "Ensalada de pasta",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-27": {
+        primeiro: "Ensalada de tomate, olivas e sardiñas",
+        segundo: "Tortilla de patacas e cebola",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-29": {
-    primeiro: "Crema de cabaza",
-    segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo, cebola",
-    sobremesa: "Iogur (7), pan integral (2) e auga"
-},
+    "2026-10-28": {
+        primeiro: "Garavanzos con espinacas",
+        segundo: "Ensalada de pasta",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
 
-"2026-10-30": {
-    primeiro: "Arroz 3 verduras",
-    segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-29": {
+        primeiro: "Crema de cabaza",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo, cebola",
+        sobremesa: "Iogur (7), pan integral (2) e auga"
+    },
+
+    "2026-10-30": {
+        primeiro: "Arroz 3 verduras",
+        segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
+        sobremesa: "Froita, pan integral (2) e auga"
+    },
+
     // ========================================================
     // RESTO DO CURSO
     // Datas preparadas para introducir os menús oficiais
@@ -533,7 +535,6 @@ const MENUS_SEN_LACTOSA = {
         sobremesa: "Iogur sen lactosa ou froita"
     },
 
-
     // ============================================================
     // OUTUBRO 2026
     // ============================================================
@@ -662,10 +663,10 @@ const MENUS_SEN_LACTOSA = {
         primeiro: "Crema de cabaza",
         segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
         sobremesa: "Froita"
-    }
+    },
 
-};
     // Datas posteriores pendentes de menú oficial
+
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -933,7 +934,6 @@ const MENUS_SEN_GLUTE = {
         sobremesa: "Froita"
     },
 
-
     // ============================================================
     // OUTUBRO 2026
     // ============================================================
@@ -1062,9 +1062,7 @@ const MENUS_SEN_GLUTE = {
         primeiro: "Arroz 3 verduras",
         segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
         sobremesa: "Froita"
-    }
-
-};
+    },
 
     // ========================================================
     // RESTO DO CURSO
@@ -1397,7 +1395,7 @@ const MENUS_MUSULMAN = {
     "2026-10-15": {
         primeiro: "Ensalada caprese - tomate, queixo fresco, olivas",
         segundo: "Potaxe de garavanzos con verduras",
-        sobremesa: "Iogur"
+        sobremesa: "Froita"
     },
 
     "2026-10-16": {
@@ -1426,7 +1424,7 @@ const MENUS_MUSULMAN = {
 
     "2026-10-22": {
         primeiro: "Crema de verduras de temporada",
-        segundo: "Fideuá de marisco",
+        segundo: "Fideuá de peixe",
         sobremesa: "Iogur"
     },
 
@@ -1438,7 +1436,7 @@ const MENUS_MUSULMAN = {
 
     "2026-10-26": {
         primeiro: "Xudías verdes con patacas",
-        segundo: "Pavo ao forno con salsa de verduras",
+        segundo: "Lombo ao forno con salsa de verduras",
         sobremesa: "Froita"
     },
 
@@ -1464,13 +1462,12 @@ const MENUS_MUSULMAN = {
         primeiro: "Arroz 3 verduras",
         segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
         sobremesa: "Froita"
-    }
+    },
 
-};
-
-     // ========================================================
+    // ========================================================
     // RESTO DO CURSO
     // ========================================================
+
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-03": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-04": { primeiro: "", segundo: "", sobremesa: "" },
@@ -1887,9 +1884,8 @@ const MENUS_SEN_MARISCO = {
         primeiro: "Arroz 3 verduras",
         segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
         sobremesa: "Froita"
-    }
+    },
 
-};
     // ========================================================
     // RESTO DO CURSO
     // ========================================================
@@ -1975,7 +1971,7 @@ const MENUS_SEN_MARISCO = {
 
     "2027-02-22": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-23": { primeiro: "", segundo: "", sobremesa: "" },
-    "2027-02-24": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-02-24": { primeiro: "", secondo: "", sobremesa: "" },
     "2027-02-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-02-26": { primeiro: "", segundo: "", sobremesa: "" },
 
@@ -2061,7 +2057,7 @@ const MENUS_SEN_MARISCO = {
     "2027-06-07": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-08": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-06-09": { primeiro: "", segundo: "", sobremesa: "" },
-    "2027-06-10": { primeiro: "", segundo: "", sobremesa: "" },
+    "2027-06-10": { primeiro: "", secondo: "", sobremesa: "" },
     "2027-06-11": { primeiro: "", segundo: "", sobremesa: "" },
 
     "2027-06-14": { primeiro: "", segundo: "", sobremesa: "" },
