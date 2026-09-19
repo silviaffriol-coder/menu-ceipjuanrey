@@ -1742,6 +1742,7 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita"
     },
 
+
     // ========================================================
     // OUTUBRO 2026
     // ========================================================
@@ -1757,131 +1758,120 @@ const MENUS_SEN_MARISCO = {
         segundo: "Salmón á prancha con ensalada con froita de tempada – leituga, froita de tempada",
         sobremesa: "Froita"
     },
-"2026-10-05": {
-    primeiro: "Repolo con allada",
-    segundo: "Polo ao forno con verduras e patacas",
-    sobremesa: "Iogur"
-},
 
-"2026-10-06": {
-    primeiro: "Sopa de verduras con fideos integrais e garavanzos",
-    segundo: "Peixe á romana con ensalada de tomate, cebola e olivas",
-    sobremesa: "Froita"
-},
+    "2026-10-05": {
+        primeiro: "Repolo con allada",
+        segundo: "Polo ao forno con verduras e patacas",
+        sobremesa: "Iogur ou froita"
+    },
 
-"2026-10-07": {
-    primeiro: "Crema de cabaciña",
-    segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
-    sobremesa: "Froita"
-},
+    "2026-10-06": {
+        primeiro: "Sopa de verduras con fideos integrais e garavanzos",
+        segundo: "Peixe á romana con ensalada de tomate, cebola e olivas",
+        sobremesa: "Froita"
+    },
 
-"2026-10-08": {
-    primeiro: "Pasta integral con salsa de verduras",
-    segundo: "Pescada ao forno con ensalada de leituga",
-    sobremesa: "Froita"
-},
+    "2026-10-07": {
+        primeiro: "Crema de cenoria con pataca",
+        segundo: "Tortilla de champiñóns e ensalada de espárragos",
+        sobremesa: "Froita"
+    },
 
-"2026-10-09": {
-    primeiro: "Ensalada Arco da Vella - leituga, tomate, lombarda, cenoria, millo e cebola",
-    segundo: "Arroz integral con lentellas",
-    sobremesa: "Froita"
-},
+    "2026-10-08": {
+        primeiro: "Pasta integral con salsa de verduras",
+        segundo: "Pescada ao forno con verduras",
+        sobremesa: "Froita"
+    },
 
-// ============================================================
-// SEMANA 2 — 13 ao 16 de outubro
-// ============================================================
+    "2026-10-09": {
+        primeiro: "Ensalada Arco da Vella",
+        segundo: "Arroz con lentellas",
+        sobremesa: "Froita"
+    },
 
-"2026-10-13": {
-    primeiro: "Coliflor con allada",
-    segundo: "Guiso de tenreira con patacas cocidas",
-    sobremesa: "Froita"
-},
+    "2026-10-13": {
+        primeiro: "Coliflor con allada",
+        segundo: "Guiso de tenreira con patacas cocidas",
+        sobremesa: "Froita"
+    },
 
-"2026-10-14": {
-    primeiro: "Crema de cenoria e patacas",
-    segundo: "Tortilla de champiñóns e ensalada de espárragos - leituga, espárragos, olivas e tomate",
-    sobremesa: "Froita"
-},
+    "2026-10-14": {
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz á cubana",
+        sobremesa: "Iogur ou froita"
+    },
 
-"2026-10-15": {
-    primeiro: "Ensalada caprese - tomate, queixo fresco e olivas",
-    segundo: "Potaxe de garavanzos con verduras",
-    sobremesa: "Iogur"
-},
+    "2026-10-15": {
+        primeiro: "Ensalada capresse",
+        segundo: "Potaxe de garavanzos con verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-16": {
-    primeiro: "Crema de cabaciña",
-    segundo: "Fideuá de peixe (sen marisco)",
-    sobremesa: "Froita"
-},
+    "2026-10-16": {
+        primeiro: "Guiso de patacas con verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate",
+        sobremesa: "Froita"
+    },
 
-// ============================================================
-// SEMANA 3 — 19 ao 23 de outubro
-// ============================================================
+    "2026-10-19": {
+        primeiro: "Menestra con allada",
+        segundo: "Pasta integral con bonito e salsa de tomate",
+        sobremesa: "Froita"
+    },
 
-"2026-10-19": {
-    primeiro: "Ensalada completa - leituga, tomate, queixo fresco e olivas",
-    segundo: "Raxo de pavo e arroz integral con pisto",
-    sobremesa: "Froita"
-},
+    "2026-10-20": {
+        primeiro: "Ensalada completa",
+        segundo: "Raxo de pavo e arroz con pisto",
+        sobremesa: "Froita"
+    },
 
-"2026-10-20": {
-    primeiro: "Sopa de polo con fideos integrais",
-    segundo: "Pescada en salsa verde con patacas cocidas e ensalada sinxela - leituga e tomate",
-    sobremesa: "Froita"
-},
+    "2026-10-21": {
+        primeiro: "Sopa de polo con fideos integrais",
+        segundo: "Pescada en salsa verde con patacas cocidas con ensalada sinxela",
+        sobremesa: "Froita"
+    },
 
-"2026-10-21": {
-    primeiro: "Ensalada de garavanzos - leituga, tomate, garavanzos e cebola",
-    segundo: "Brócoli con pataca e ovo con allada",
-    sobremesa: "Froita"
-},
+    "2026-10-22": {
+        primeiro: "Ensalada de garavanzos",
+        segundo: "Brócoli con pataca e ovo con allada",
+        sobremesa: "Froita"
+    },
 
-"2026-10-22": {
-    primeiro: "Crema de verduras de temporada",
-    segundo: "Fideuá de peixe (sen marisco)",
-    sobremesa: "Iogur"
-},
+    "2026-10-23": {
+        primeiro: "Crema de cabaciña",
+        segundo: "Fideuá de peixe",
+        sobremesa: "Froita"
+    },
 
-"2026-10-23": {
-    primeiro: "Salteado de verduras con fabas",
-    segundo: "Ensaladilla rusa",
-    sobremesa: "Froita"
-},
+    "2026-10-26": {
+        primeiro: "Salteado de verduras con fabas",
+        segundo: "Ensaladilla rusa",
+        sobremesa: "Iogur ou froita"
+    },
 
-// ============================================================
-// SEMANA 4 — 26 ao 30 de outubro
-// ============================================================
+    "2026-10-27": {
+        primeiro: "Xudías verdes con patacas",
+        segundo: "Lombo ao forno con salsa de verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-26": {
-    primeiro: "Xudías verdes con patacas",
-    segundo: "Lombo ao forno con salsa de verduras",
-    sobremesa: "Froita"
-},
+    "2026-10-28": {
+        primeiro: "Ensalada de tomate, olivas e sardiñas",
+        segundo: "Tortilla de patacas e cebola con cabaciña á prancha",
+        sobremesa: "Froita"
+    },
 
-"2026-10-27": {
-    primeiro: "Ensalada de tomate, olivas e sardiñas",
-    segundo: "Tortilla de patacas e cebola",
-    sobremesa: "Froita"
-},
+    "2026-10-29": {
+        primeiro: "Garavanzos con espinacas",
+        segundo: "Ensalada de pasta",
+        sobremesa: "Iogur ou froita"
+    },
 
-"2026-10-28": {
-    primeiro: "Garavanzos con espinacas",
-    segundo: "Ensalada de pasta",
-    sobremesa: "Froita"
-},
-
-"2026-10-29": {
-    primeiro: "Crema de cabaza",
-    segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo e cebola",
-    sobremesa: "Iogur"
-},
-
-"2026-10-30": {
-    primeiro: "Arroz 3 verduras",
-    segundo: "Salmón á prancha con ensalada con froita de temporada",
-    sobremesa: "Froita"
-},
+    "2026-10-30": {
+        primeiro: "Crema de cabaza",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        sobremesa: "Froita"
+    },
     // ========================================================
     // RESTO DO CURSO
     // ========================================================
