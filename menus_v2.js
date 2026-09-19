@@ -1239,7 +1239,7 @@ const MENUS_MUSULMAN = {
     // SETEMBRO 2026
     // ========================================================
 
-     "2026-09-09": {
+    "2026-09-09": {
         primeiro: "Crema de cabaciña",
         segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita"
@@ -1319,7 +1319,7 @@ const MENUS_MUSULMAN = {
 
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
-        segundo: "Lombo ao forno con salsa de verduras",
+        segundo: "Pavo ao forno con salsa de verduras",
         sobremesa: "Froita"
     },
 
@@ -1438,7 +1438,7 @@ const MENUS_MUSULMAN = {
 
     "2026-10-26": {
         primeiro: "Xudías verdes con patacas",
-        segundo: "Lombo ao forno con salsa de verduras",
+        segundo: "Pavo ao forno con salsa de verduras",
         sobremesa: "Froita"
     },
 
@@ -1464,7 +1464,9 @@ const MENUS_MUSULMAN = {
         primeiro: "Arroz 3 verduras",
         segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
         sobremesa: "Froita"
-    },
+    }
+
+};
 
      // ========================================================
     // RESTO DO CURSO
