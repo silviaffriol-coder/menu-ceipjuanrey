@@ -433,6 +433,10 @@ const MENUS_BASAL = {
 
 const MENUS_SEN_LACTOSA = {
 
+    // ========================================================
+    // SETEMBRO 2026
+    // ========================================================
+
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
         segundo: "ARROZ Á CUBANA – Arroz integral cocido con salsa de tomate e ovo",
@@ -440,14 +444,14 @@ const MENUS_SEN_LACTOSA = {
     },
 
     "2026-09-10": {
-        primeiro: "Pasta integral con salsa de verduras",
-        segundo: "Pescada ao forno con ensalada de leituga",
+        primeiro: "Pasta con salsa de verduras",
+        segundo: "Pescada ao forno con verduras",
         sobremesa: "Froita"
     },
 
     "2026-09-11": {
-        primeiro: "Ensalada Arco da Vella – leituga, tomate, lombarda, cenoria, millo, cebola",
-        segundo: "Arroz integral con lentellas",
+        primeiro: "Ensalada Arco da Vella",
+        segundo: "Arroz con lentellas con verduras",
         sobremesa: "Froita"
     },
 
@@ -458,201 +462,206 @@ const MENUS_SEN_LACTOSA = {
     },
 
     "2026-09-15": {
-        primeiro: "Crema de cenoria e patacas",
-        segundo: "Tortilla de champiñóns e ensalada de espárragos – leituga, espárragos, olivas, tomate",
+        primeiro: "Crema de cenoria con pataca",
+        segundo: "Tortilla de champiñóns e ensalada de espárragos",
         sobremesa: "Froita"
     },
 
     "2026-09-16": {
-        primeiro: "Ensalada caprese – tomate, queixo fresco sen lactosa, olivas",
+        primeiro: "Ensalada capresse con queixo sen lactosa",
         segundo: "Potaxe de garavanzos con verduras",
-        sobremesa: "Iogur sen lactosa"
+        sobremesa: "Froita"
     },
 
     "2026-09-17": {
-        primeiro: "Paella de verduras",
-        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate – tomate, cenoria, cebola",
+        primeiro: "Guiso de patacas con verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate",
         sobremesa: "Froita"
     },
 
     "2026-09-18": {
-        primeiro: "Espinacas á crema sen lactosa",
-        segundo: "Pasta integral con bonito e salsa de tomate",
+        primeiro: "Menestra con allada",
+        segundo: "Pasta con bonito e salsa de verduras",
         sobremesa: "Froita"
     },
 
     "2026-09-21": {
-        primeiro: "Ensalada completa – leituga, tomate, queixo fresco sen lactosa, olivas",
-        segundo: "Raxo de pavo e arroz integral con pisto",
+        primeiro: "Ensalada completa con queixo sen lactosa",
+        segundo: "Raxo de pavo e arroz con pisto de verduras",
         sobremesa: "Froita"
     },
 
     "2026-09-22": {
-        primeiro: "Sopa de polo con fideos integrais",
-        segundo: "Pescada en salsa verde con patacas cocidas con ensalada sinxela – leituga, tomate",
+        primeiro: "Sopa de polo con fideos",
+        segundo: "Pescada en salsa verde con patacas cocidas con ensalada sinxela",
         sobremesa: "Froita"
     },
 
     "2026-09-23": {
-        primeiro: "Ensalada de garavanzos – leituga, tomate, garavanzos, cebola",
+        primeiro: "Ensalada de garavanzos",
         segundo: "Brócoli con pataca e ovo con allada",
         sobremesa: "Froita"
     },
 
     "2026-09-24": {
-        primeiro: "Crema de verduras de tempada",
+        primeiro: "Crema de cabaciña",
         segundo: "Fideuá de marisco",
-        sobremesa: "Iogur sen lactosa"
+        sobremesa: "Froita"
     },
 
     "2026-09-25": {
         primeiro: "Salteado de verduras con fabas",
         segundo: "Ensaladilla rusa",
-        sobremesa: "Froita"
+        sobremesa: "Iogur sen lactosa ou froita"
     },
 
     "2026-09-28": {
         primeiro: "Xudías verdes con patacas",
-        segundo: "Lombo ao forno con salsa de verduras",
+        segundo: "Lombo ao forno con salsa de verduras segundo tolerancia",
         sobremesa: "Froita"
     },
 
     "2026-09-29": {
         primeiro: "Ensalada de tomate, olivas e sardiñas",
-        segundo: "Tortilla de patacas e cebola",
+        segundo: "Tortilla de patacas e cebola con cabaciña á prancha",
         sobremesa: "Froita"
     },
 
     "2026-09-30": {
         primeiro: "Garavanzos con espinacas",
-        segundo: "Ensalada de pasta",
-        sobremesa: "Froita"
+        segundo: "Ensalada de pasta con verduras",
+        sobremesa: "Iogur sen lactosa ou froita"
     },
+
+    // ========================================================
+    // OUTUBRO 2026
+    // ========================================================
 
     "2026-10-01": {
         primeiro: "Crema de cabaza",
-        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria – leituga, cenoria, millo, cebola",
-        sobremesa: "Iogur sen lactosa"
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        sobremesa: "Froita"
     },
 
     "2026-10-02": {
         primeiro: "Arroz 3 verduras",
-        segundo: "Salmón á prancha con ensalada con froita de tempada – leituga, froita de tempada",
+        segundo: "Salmón á prancha con ensalada con froita de tempada",
         sobremesa: "Froita"
     },
-"2026-10-05": {
-    primeiro: "Repolo con allada",
-    segundo: "Polo ao forno con verduras e patacas",
-    sobremesa: "Iogur sen lactosa ou froita"
-},
 
-"2026-10-06": {
-    primeiro: "Sopa de verduras con fideos integrais e garavanzos",
-    segundo: "Luras á romana con ensalada de tomate, cebola e olivas",
-    sobremesa: "Froita"
-},
+    "2026-10-05": {
+        primeiro: "Repolo con allada",
+        segundo: "Polo ao forno con verduras e patacas",
+        sobremesa: "Iogur sen lactosa ou froita"
+    },
 
-"2026-10-07": {
-    primeiro: "Crema de cabaciña",
-    segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
-    sobremesa: "Froita"
-},
+    "2026-10-06": {
+        primeiro: "Sopa de verduras con fideos e garavanzos",
+        segundo: "Luras á romana con ensalada de tomate, cebola e olivas",
+        sobremesa: "Froita"
+    },
 
-"2026-10-08": {
-    primeiro: "Pasta integral con salsa de verduras",
-    segundo: "Pescada ao forno con ensalada de leituga",
-    sobremesa: "Froita"
-},
+    "2026-10-07": {
+        primeiro: "Crema de cenoria con pataca",
+        segundo: "Tortilla de champiñóns e ensalada de espárragos",
+        sobremesa: "Froita"
+    },
 
-"2026-10-09": {
-    primeiro: "Ensalada Arco Da Vella - leituga, tomate, lombarda, cenoria, millo, cebola",
-    segundo: "Arroz integral con lentellas",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-08": {
+        primeiro: "Pasta con salsa de verduras",
+        segundo: "Pescada ao forno con verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-13": {
-    primeiro: "Coliflor con allada",
-    segundo: "Guiso de tenreira con patacas cocidas",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-09": {
+        primeiro: "Ensalada Arco da Vella",
+        segundo: "Arroz con lentellas con verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-14": {
-    primeiro: "Crema de cenoria e patacas",
-    segundo: "Tortilla de champiñóns e ensalada de espárragos - leituga, espárragos, olivas, tomate",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-13": {
+        primeiro: "Coliflor con allada",
+        segundo: "Guiso de tenreira con patacas cocidas",
+        sobremesa: "Froita"
+    },
 
-"2026-10-15": {
-    primeiro: "Ensalada caprese - tomate, queixo fresco sen lactosa, olivas",
-    segundo: "Potaxe de garavanzos con verduras",
-    sobremesa: "Iogur sen lactosa ou froita"
-},
+    "2026-10-14": {
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz cocido con ovo á prancha e tomate aliñado",
+        sobremesa: "Iogur sen lactosa ou froita"
+    },
 
-"2026-10-16": {
-    primeiro: "Paella de verduras",
-    segundo: "Peituga de polo ao limón con ensalada de cenoria, tomate, cebola",
-    sobremesa: "Froita, pan integral (2) e auga"
-},
+    "2026-10-15": {
+        primeiro: "Ensalada capresse con queixo sen lactosa",
+        segundo: "Potaxe de garavanzos con verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-19": {
-    primeiro: "Ensalada completa sen lactosa - leituga, tomate, queixo fresco sen lactosa e olivas",
-    segundo: "Raxo de pavo e arroz integral con pisto",
-    sobremesa: "Froita"
-},
+    "2026-10-16": {
+        primeiro: "Guiso de patacas con verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate",
+        sobremesa: "Froita"
+    },
 
-"2026-10-20": {
-    primeiro: "Sopa de polo con fideos integrais",
-    segundo: "Pescada en salsa verde con patacas cocidas e ensalada sinxela - leituga e tomate",
-    sobremesa: "Froita"
-},
+    "2026-10-19": {
+        primeiro: "Menestra con allada",
+        segundo: "Pasta con bonito e salsa de verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-21": {
-    primeiro: "Ensalada de garavanzos - leituga, tomate, garavanzos, cebola",
-    segundo: "Brócoli con pataca e ovo con allada",
-    sobremesa: "Froita"
-},
+    "2026-10-20": {
+        primeiro: "Ensalada completa con queixo sen lactosa",
+        segundo: "Raxo de pavo e arroz con pisto de verduras",
+        sobremesa: "Froita"
+    },
 
-"2026-10-22": {
-    primeiro: "Crema de verduras de temporada",
-    segundo: "Fideuá de marisco",
-    sobremesa: "Iogur sen lactosa ou froita"
-},
+    "2026-10-21": {
+        primeiro: "Sopa de polo con fideos",
+        segundo: "Pescada en salsa verde con patacas cocidas con ensalada sinxela",
+        sobremesa: "Froita"
+    },
 
-"2026-10-23": {
-    primeiro: "Salteado de verduras con fabas",
-    segundo: "Ensaladilla rusa sen lactosa",
-    sobremesa: "Froita"
-},
+    "2026-10-22": {
+        primeiro: "Ensalada de garavanzos",
+        segundo: "Brócoli con pataca e ovo con allada",
+        sobremesa: "Froita"
+    },
 
-"2026-10-26": {
-    primeiro: "Xudías verdes con patacas",
-    segundo: "Lombo ao forno con salsa de verduras",
-    sobremesa: "Froita"
-},
+    "2026-10-23": {
+        primeiro: "Crema de cabaciña",
+        segundo: "Fideuá de marisco",
+        sobremesa: "Froita"
+    },
 
-"2026-10-27": {
-    primeiro: "Ensalada de tomate, olivas e sardiñas",
-    segundo: "Tortilla de patacas e cebola",
-    sobremesa: "Froita"
-},
+    "2026-10-26": {
+        primeiro: "Salteado de verduras con fabas",
+        segundo: "Ensaladilla rusa",
+        sobremesa: "Iogur sen lactosa ou froita"
+    },
 
-"2026-10-28": {
-    primeiro: "Garavanzos con espinacas",
-    segundo: "Ensalada de pasta sen lactosa",
-    sobremesa: "Froita"
-},
+    "2026-10-27": {
+        primeiro: "Xudías verdes con patacas",
+        segundo: "Lombo ao forno con salsa de verduras segundo tolerancia",
+        sobremesa: "Froita"
+    },
 
-"2026-10-29": {
-    primeiro: "Crema de cabaza",
-    segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo e cebola",
-    sobremesa: "Iogur sen lactosa ou froita"
-},
+    "2026-10-28": {
+        primeiro: "Ensalada de tomate, olivas e sardiñas",
+        segundo: "Tortilla de patacas e cebola con cabaciña á prancha",
+        sobremesa: "Froita"
+    },
 
-"2026-10-30": {
-    primeiro: "Arroz 3 verduras",
-    segundo: "Salmón á prancha con ensalada con froita de temporada - leituga e froita de tempada",
-    sobremesa: "Froita"
-},
+    "2026-10-29": {
+        primeiro: "Garavanzos con espinacas",
+        segundo: "Ensalada de pasta con verduras",
+        sobremesa: "Iogur sen lactosa ou froita"
+    },
+
+    "2026-10-30": {
+        primeiro: "Crema de cabaza",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        sobremesa: "Froita"
+    },
     // Datas posteriores pendentes de menú oficial
     "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-03": { primeiro: "", segundo: "", sobremesa: "" },
