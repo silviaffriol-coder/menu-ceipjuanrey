@@ -2146,7 +2146,7 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita"
     },
     "2026-09-29": {
-        primeiro: "Ensalada de tomate, olivas e sardinas",
+        primeiro: "Ensalada de tomate, olivas e sardiñas",
         segundo: "Tortilla de patacas e cebola",
         sobremesa: "Froita"
     },
@@ -2265,7 +2265,7 @@ const MENUS_SEN_MARISCO = {
         sobremesa: "Froita"
     },
     "2026-10-27": {
-        primeiro: "Ensalada de tomate, olivas e sardinas",
+        primeiro: "Ensalada de tomate, olivas e sardiñas",
         segundo: "Tortilla de patacas e cebola",
         sobremesa: "Froita"
     },
