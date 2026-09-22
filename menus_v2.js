@@ -1236,13 +1236,10 @@ const MENUS_SEN_GLUTE = {
 // ============================================================
 // MENÚ MUSULMÁN
 // Adaptación do menú basal
+// SETEMBRO + OUTUBRO 2026
 // ============================================================
 
 const MENUS_MUSULMAN = {
-
-    // ============================================================
-    // SETEMBRO 2026
-    // ============================================================
 
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
@@ -1339,10 +1336,6 @@ const MENUS_MUSULMAN = {
         segundo: "Ensalada de pasta",
         sobremesa: "Froita"
     },
-
-    // ============================================================
-    // OUTUBRO 2026
-    // ============================================================
 
     "2026-10-01": {
         primeiro: "Crema de cabaza",
@@ -1468,7 +1461,9 @@ const MENUS_MUSULMAN = {
         primeiro: "Arroz 3 verduras",
         segundo: "Salmón á prancha con ensalada con froita de tempada - leituga, froita de tempada",
         sobremesa: "Froita"
-    },
+    }
+};
+
 
     // ============================================================
     // NOVEMBRO 2026
@@ -1666,13 +1661,11 @@ const MENUS_MUSULMAN = {
 
 // ============================================================
 // MENÚ SEN MARISCO
+// Adaptación do menú basal
+// SETEMBRO + OUTUBRO 2026
 // ============================================================
 
 const MENUS_SEN_MARISCO = {
-
-    // ============================================================
-    // SETEMBRO 2026
-    // ============================================================
 
     "2026-09-09": {
         primeiro: "Crema de cabaciña",
@@ -1769,10 +1762,6 @@ const MENUS_SEN_MARISCO = {
         segundo: "Ensalada de pasta",
         sobremesa: "Froita"
     },
-
-    // ============================================================
-    // OUTUBRO 2026
-    // ============================================================
 
     "2026-10-01": {
         primeiro: "Crema de cabaza",
@@ -1898,8 +1887,8 @@ const MENUS_SEN_MARISCO = {
         primeiro: "Arroz 3 verduras",
         segundo: "Salmón á prancha con ensalada con froita de tempada - leituga, froita de tempada",
         sobremesa: "Froita"
-    },
-
+    }
+};
     // ============================================================
     // NOVEMBRO 2026
     // ============================================================
