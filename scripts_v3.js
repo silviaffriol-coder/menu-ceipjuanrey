@@ -114,21 +114,22 @@ let tipoActual = "basal";
 // ============================================================
 // CLAVE DO LOCALSTORAGE
 // ============================================================
-
-const CLAVE_STORAGE =
-    "menusCEIPJuanRey_v2";
-
+// IMPORTANTE:
+// Non se declara CLAVE_STORAGE porque xa existe en admin.js.
+// Usamos directamente o mesmo nome de clave.
 
 // ============================================================
 // OBTENER MODIFICACIÓNS GARDADAS
 // ============================================================
 
-function obterModificacionsGardadas() {
+function obterModificacionsGardadasPublicas() {
 
     try {
 
         const gardadas =
-            localStorage.getItem(CLAVE_STORAGE);
+            localStorage.getItem(
+                "menusCEIPJuanRey_v2"
+            );
 
         if (!gardadas) {
 
@@ -174,12 +175,8 @@ function obterMenuParaData(
         coleccion[data] || {};
 
 
-    // --------------------------------------------------------
-    // Ler modificacións gardadas
-    // --------------------------------------------------------
-
     const modificacions =
-        obterModificacionsGardadas();
+        obterModificacionsGardadasPublicas();
 
 
     const modificacionsTipo =
@@ -191,7 +188,7 @@ function obterMenuParaData(
 
 
     // --------------------------------------------------------
-    // Se non hai modificación, devolver o oficial
+    // Se non hai modificación, devolver o menú oficial
     // --------------------------------------------------------
 
     if (!modificacion) {
@@ -201,9 +198,7 @@ function obterMenuParaData(
 
 
     // --------------------------------------------------------
-    // Se hai modificación, aplicala sobre o oficial
-    //
-    // Así pódese modificar só un campo se fose necesario.
+    // Aplicar a modificación sobre o menú oficial
     // --------------------------------------------------------
 
     return {
@@ -272,10 +267,6 @@ function mostrarMenuHoxe() {
     const dataHoxe =
         `${ano}-${mes}-${dia}`;
 
-
-    // --------------------------------------------------------
-    // OBTÉN O MENÚ OFICIAL OU A MODIFICACIÓN GARDADA
-    // --------------------------------------------------------
 
     const menu =
         obterMenuParaData(
