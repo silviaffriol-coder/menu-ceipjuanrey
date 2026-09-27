@@ -1,6 +1,11 @@
-// ===============================
+// ============================================================
+// SCRIPTS CEIP JUAN REY
+// ============================================================
+
+
+// ============================================================
 // TRIPLE TAP PARA ABRIR PANEL ADMIN
-// ===============================
+// ============================================================
 
 let taps = 0;
 let tapTimer = null;
@@ -33,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ===============================
+// ============================================================
 // ABRIR / PECHAR PANEL ADMIN
-// ===============================
+// ============================================================
 
 function abrirPanelAdmin() {
 
@@ -70,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ===============================
+// ============================================================
 // COLECCIÓNS DE MENÚS
-// ===============================
+// ============================================================
 
 const coleccions = {
 
@@ -106,13 +111,129 @@ const coleccions = {
 let tipoActual = "basal";
 
 
-// ===============================
+// ============================================================
+// CLAVE DO LOCALSTORAGE
+// ============================================================
+
+const CLAVE_STORAGE =
+    "menusCEIPJuanRey_v2";
+
+
+// ============================================================
+// OBTENER MODIFICACIÓNS GARDADAS
+// ============================================================
+
+function obterModificacionsGardadas() {
+
+    try {
+
+        const gardadas =
+            localStorage.getItem(CLAVE_STORAGE);
+
+        if (!gardadas) {
+
+            return {};
+        }
+
+        const datos =
+            JSON.parse(gardadas);
+
+        if (
+            datos &&
+            typeof datos === "object"
+        ) {
+
+            return datos;
+        }
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao ler as modificacións dos menús:",
+            erro
+        );
+    }
+
+    return {};
+}
+
+
+// ============================================================
+// OBTENER MENÚ OFICIAL + MODIFICACIÓN
+// ============================================================
+
+function obterMenuParaData(
+    tipo,
+    data
+) {
+
+    const coleccion =
+        coleccions[tipo] || {};
+
+    const menuOficial =
+        coleccion[data] || {};
+
+
+    // --------------------------------------------------------
+    // Ler modificacións gardadas
+    // --------------------------------------------------------
+
+    const modificacions =
+        obterModificacionsGardadas();
+
+
+    const modificacionsTipo =
+        modificacions[tipo] || {};
+
+
+    const modificacion =
+        modificacionsTipo[data];
+
+
+    // --------------------------------------------------------
+    // Se non hai modificación, devolver o oficial
+    // --------------------------------------------------------
+
+    if (!modificacion) {
+
+        return menuOficial;
+    }
+
+
+    // --------------------------------------------------------
+    // Se hai modificación, aplicala sobre o oficial
+    //
+    // Así pódese modificar só un campo se fose necesario.
+    // --------------------------------------------------------
+
+    return {
+
+        primeiro:
+            typeof modificacion.primeiro !== "undefined"
+                ? modificacion.primeiro
+                : (menuOficial.primeiro || ""),
+
+        segundo:
+            typeof modificacion.segundo !== "undefined"
+                ? modificacion.segundo
+                : (menuOficial.segundo || ""),
+
+        sobremesa:
+            typeof modificacion.sobremesa !== "undefined"
+                ? modificacion.sobremesa
+                : (menuOficial.sobremesa || "")
+    };
+}
+
+
+// ============================================================
 // CAMBIAR MENÚ
-// ===============================
+// ============================================================
 
 function cambiarMenu(tipo) {
 
     if (!coleccions[tipo]) {
+
         return;
     }
 
@@ -122,21 +243,25 @@ function cambiarMenu(tipo) {
 }
 
 
-// ===============================
+// ============================================================
 // MOSTRAR MENÚ DO DÍA
-// ===============================
+// ============================================================
 
 function mostrarMenuHoxe() {
 
-    const agora = new Date();
+    const agora =
+        new Date();
+
 
     const ano =
         agora.getFullYear();
+
 
     const mes =
         String(
             agora.getMonth() + 1
         ).padStart(2, "0");
+
 
     const dia =
         String(
@@ -148,16 +273,20 @@ function mostrarMenuHoxe() {
         `${ano}-${mes}-${dia}`;
 
 
-    const coleccion =
-        coleccions[tipoActual] || {};
+    // --------------------------------------------------------
+    // OBTÉN O MENÚ OFICIAL OU A MODIFICACIÓN GARDADA
+    // --------------------------------------------------------
 
     const menu =
-        coleccion[dataHoxe] || {};
+        obterMenuParaData(
+            tipoActual,
+            dataHoxe
+        );
 
 
-    // ===============================
+    // ========================================================
     // DATA
-    // ===============================
+    // ========================================================
 
     const elementoData =
         document.getElementById("dataHoxe");
@@ -169,9 +298,9 @@ function mostrarMenuHoxe() {
     }
 
 
-    // ===============================
+    // ========================================================
     // PRIMEIRO PRATO
-    // ===============================
+    // ========================================================
 
     const elementoPrimeiro =
         document.getElementById("primeiro");
@@ -183,9 +312,9 @@ function mostrarMenuHoxe() {
     }
 
 
-    // ===============================
+    // ========================================================
     // SEGUNDO PRATO
-    // ===============================
+    // ========================================================
 
     const elementoSegundo =
         document.getElementById("segundo");
@@ -197,9 +326,9 @@ function mostrarMenuHoxe() {
     }
 
 
-    // ===============================
+    // ========================================================
     // SOBREMESA
-    // ===============================
+    // ========================================================
 
     const elementoSobremesa =
         document.getElementById("sobremesa");
@@ -212,63 +341,80 @@ function mostrarMenuHoxe() {
 }
 
 
-// ===============================
+// ============================================================
 // MOSTRAR AUTOMATICAMENTE AO ABRIR
-// ===============================
+// ============================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    mostrarMenuHoxe();
+        mostrarMenuHoxe();
 
-});
+    }
+);
 
 
-// ===============================
+// ============================================================
 // CAMBIO AUTOMÁTICO DE DÍA
-// ===============================
+// ============================================================
 
 let dataUltimaComprobada = "";
 
 
 function obterDataActual() {
 
-    const agora = new Date();
+    const agora =
+        new Date();
+
 
     const ano =
         agora.getFullYear();
+
 
     const mes =
         String(
             agora.getMonth() + 1
         ).padStart(2, "0");
 
+
     const dia =
         String(
             agora.getDate()
         ).padStart(2, "0");
 
+
     return `${ano}-${mes}-${dia}`;
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    dataUltimaComprobada =
-        obterDataActual();
-
-    setInterval(() => {
-
-        const dataActual =
+        dataUltimaComprobada =
             obterDataActual();
 
-        if (dataActual !== dataUltimaComprobada) {
 
-            dataUltimaComprobada =
-                dataActual;
+        setInterval(() => {
 
-            mostrarMenuHoxe();
-        }
+            const dataActual =
+                obterDataActual();
 
-    }, 30000);
 
-});
+            if (
+                dataActual !==
+                dataUltimaComprobada
+            ) {
+
+                dataUltimaComprobada =
+                    dataActual;
+
+
+                mostrarMenuHoxe();
+            }
+
+        }, 30000);
+
+    }
+);
