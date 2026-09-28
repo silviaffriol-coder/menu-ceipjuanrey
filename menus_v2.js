@@ -244,7 +244,7 @@ const MENUS_BASAL = {
 
     // SEMANA 2 — 09 ao 13 de novembro
 
-    "2026-11-09": { primeiro: "Crema de cenoria", segundo: "Milanesa de polo e ensalada follas verdes, espárragos e millo", sobremesa: "Froita" },
+    "2026-11-09": { primeiro: "Crema de cenoria", segundo: "Milanesa de polo e ensalada follas verdes-espárragos-millo", sobremesa: "Froita" },
     "2026-11-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-12": { primeiro: "", segundo: "", sobremesa: "" },
