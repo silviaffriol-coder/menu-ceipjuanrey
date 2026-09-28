@@ -236,15 +236,15 @@ const MENUS_BASAL = {
 
     // SEMANA 1 — 02 ao 06 de novembro
 
-    "2026-11-02": { primeiro: "Pasta integral con salsa de calabaza", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
+    "2026-11-02": { primeiro: "Pasta integral ", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
     "2026-11-03": { primeiro: "Arroz tres delicias", segundo: "Peixe ao forno con cenorias", sobremesa: "Froita" },
-    "2026-11-04": { primeiro: "Crema de verduras de inverno", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Froita" },
+    "2026-11-04": { primeiro: "Crema de verduras", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Froita" },
     "2026-11-05": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas e ensalada con olivas-leituga-cebola-espinacas-olivas", sobremesa: "Iogur ou froita" },
     "2026-11-06": { primeiro: "Coliflor con bechamel", segundo: "Potaxe de lentellas con verduras", sobremesa: "Froita" },
 
     // SEMANA 2 — 09 ao 13 de novembro
 
-    "2026-11-09": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-11-09": { primeiro: "Crema de cenoria", segundo: "Milanesa de polo e ensalada follas verdes, espárragos e millo", sobremesa: "Froita" },
     "2026-11-10": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-11": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-12": { primeiro: "", segundo: "", sobremesa: "" },
