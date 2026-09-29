@@ -122,8 +122,8 @@ const MENUS_BASAL = {
     // SEMANA 2 — 05 ao 09 de outubro
 
     "2026-10-05": {
-        primeiro: "Repolo con allada",
-        segundo: "Polo ao forno con verduras e patacas",
+        primeiro: "Crema de cabaciña",
+        segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Iogur"
     },
     "2026-10-06": {
@@ -132,7 +132,7 @@ const MENUS_BASAL = {
         sobremesa: "Froita"
     },
     "2026-10-07": {
-        primeiro: "Crema de cabaciña",
+        primeiro: "Repolo con allada",
         segundo: "Arroz á cubana - arroz integral cocido con salsa de tomate e ovo",
         sobremesa: "Froita"
     },
