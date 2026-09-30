@@ -105,7 +105,7 @@ const MENUS_BASAL = {
     },
     "2026-10-01": {
         primeiro: "Arroz tres verduras",
-        segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempadaPolo guisado e patacas ao forno con ensalada de cenoria, millo, cebola",
+        segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
         sobremesa: "Froita"
     },
     "2026-10-02": {
