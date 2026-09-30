@@ -104,14 +104,14 @@ const MENUS_BASAL = {
         sobremesa: "Froita"
     },
     "2026-10-01": {
-        primeiro: "Crema de cabaza",
-        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo, cebola",
-        sobremesa: "Iogur"
+        primeiro: "Arroz tres verduras",
+        segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempadaPolo guisado e patacas ao forno con ensalada de cenoria, millo, cebola",
+        sobremesa: "Froita"
     },
     "2026-10-02": {
-        primeiro: "Arroz 3 verduras",
-        segundo: "Salmón á prancha con ensalada con froita de temporada - leituga, froita de tempada",
-        sobremesa: "Froita"
+        primeiro: "Crema de cabazaArroz 3 verduras",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo, cebola",
+        sobremesa: "Iogur ou froita"
     },
 
 
@@ -618,14 +618,14 @@ const MENUS_SEN_LACTOSA = {
         sobremesa: "Froita"
     },
     "2026-10-01": {
-        primeiro: "Crema de cabaza",
-        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo e cebola",
-        sobremesa: "Iogur sen lactosa ou froita"
-    },
-    "2026-10-02": {
-        primeiro: "Arroz 3 verduras",
+        primeiro: "Arroz tres verduras",
         segundo: "Salmón á prancha con ensalada con froita de temporada - leituga e froita de tempada",
         sobremesa: "Froita"
+    },
+    "2026-10-02": {
+        primeiro: "Crema de cabaza",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria, millo, cebolaSalmón á prancha con ensalada con froita de temporada - leituga e froita de tempada",
+        sobremesa: "Iogur sen lactosa ou froita"
     },
 
 
@@ -1130,14 +1130,14 @@ const MENUS_SEN_GLUTE = {
         sobremesa: "Iogur ou froita"
     },
     "2026-10-01": {
-        primeiro: "Crema de cabaza",
-        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        primeiro: "Arroz tres verduras",
+        segundo: "Salmón á prancha con ensalada con froita de tempada",
         sobremesa: "Froita"
     },
     "2026-10-02": {
-        primeiro: "Arroz 3 verduras",
-        segundo: "Salmón á prancha con ensalada con froita de tempada",
-        sobremesa: "Froita"
+        primeiro: "Crema de cabaza",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        sobremesa: "Iogur ou froita"
     },
 
 
@@ -1644,14 +1644,14 @@ const MENUS_MUSULMAN = {
         sobremesa: "Iogur ou froita"
     },
     "2026-10-01": {
-        primeiro: "Crema de cabaza",
-        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        primeiro: "Arroz tres verduras",
+        segundo: "Salmón á prancha con ensalada con froita de tempada",
         sobremesa: "Froita"
     },
     "2026-10-02": {
-        primeiro: "Arroz 3 verduras",
-        segundo: "Salmón á prancha con ensalada con froita de tempada",
-        sobremesa: "Froita"
+        primeiro: "Crema de cabaza",
+        segundo: "Polo guisado e patacas ao forno con ensalada de cenoria",
+        sobremesa: "Iogur ou froita"
     },
 
 
@@ -2164,14 +2164,14 @@ const MENUS_SEN_MARISCO = {
     // SEMANA 1 — 01 ao 02
 
     "2026-10-01": {
+        primeiro: "Arroz tres verduras",
+        segundo: "Salmón á prancha con ensalada",
+        sobremesa: "Froita"
+    },
+    "2026-10-02": {
         primeiro: "Crema de cabaza",
         segundo: "Polo guisado e patacas ao forno",
         sobremesa: "Iogur ou froita"
-    },
-    "2026-10-02": {
-        primeiro: "Arroz 3 verduras",
-        segundo: "Salmón á prancha con ensalada",
-        sobremesa: "Froita"
     },
 
 
