@@ -236,27 +236,27 @@ const MENUS_BASAL = {
 
     // SEMANA 1 — 02 ao 06 de novembro
 
-    "2026-11-02": { primeiro: "Pasta integral ", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
+    "2026-11-02": { primeiro: "Pasta integral con pisto ", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
     "2026-11-03": { primeiro: "Arroz tres delicias", segundo: "Peixe ao forno con cenorias", sobremesa: "Froita" },
-    "2026-11-04": { primeiro: "Crema de verduras", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Froita" },
-    "2026-11-05": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas e ensalada con olivas-leituga-cebola-espinacas-olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-04": { primeiro: "Crema de verduras de inverno", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Iogur ou froita" },
+    "2026-11-05": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas e ensalada con olivas", sobremesa: "Froita" },
     "2026-11-06": { primeiro: "Coliflor con bechamel", segundo: "Potaxe de lentellas con verduras", sobremesa: "Froita" },
 
     // SEMANA 2 — 09 ao 13 de novembro
 
-    "2026-11-09": { primeiro: "Crema de cenoria", segundo: "Milanesa de polo e ensalada follas verdes-espárragos-millo", sobremesa: "Froita" },
-    "2026-11-10": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-11": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-12": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-13": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-11-09": { primeiro: "Crema de cenoria e pataca", segundo: "Milanesa de polo e ensalada follas verdes con espárragos e millo", sobremesa: "Froita" },
+    "2026-11-10": { primeiro: "Repolo con patacas e allada", segundo: "Tortilla de champiñóns con ensalada sinxela", sobremesa: "Iogur ou froita" },
+    "2026-11-11": { primeiro: "Fideuá de verduras", segundo: "Garavanzos con espinacas e bacallau", sobremesa: "Froita" },
+    "2026-11-12": { primeiro: "Arroz tres verduras", segundo: "Costela de porco ao fornp con champiñóns", sobremesa: "Froita" },
+    "2026-11-13": { primeiro: "Brócoli con patacas gratinado con queixo", segundo: "Peixe en salsa de verduras con ensalada de cenoria", sobremesa: "Froita" },
 
     // SEMANA 3 — 16 ao 20 de novembro
 
-    "2026-11-16": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-17": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-18": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-19": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-20": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-11-16": { primeiro: "Arroz con pisto de verduras", segundo: "Raxo de pavo con champiñóns ao allo", sobremesa: "Froita" },
+    "2026-11-17": { primeiro: "Caldo galego", segundo: "Luras á romana con ensalada de leituga e cebola", sobremesa: "Froita" },
+    "2026-11-18": { primeiro: "Ensalada de leituga, cenoria, pementos asados e olivas", segundo: "Pasta integral con ovo cocido e salsa de verduras", sobremesa: "Froita" },
+    "2026-11-19": { primeiro: "Crema de allo porro", segundo: "Salmón ao forno con puré de pataca", sobremesa: "Iogur ou froita" },
+    "2026-11-20": { primeiro: "Ensalada de laranxa", segundo: "Potaxe de fabas con cabaza", sobremesa: "Froita" },
 
     // SEMANA 4 — 23 ao 27 de novembro
 
