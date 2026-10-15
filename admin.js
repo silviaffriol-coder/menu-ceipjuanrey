@@ -1,3 +1,4 @@
+
 // ============================================================
 // ADMINISTRACIÓN DOS MENÚS - CEIP JUAN REY
 // ============================================================
@@ -10,35 +11,24 @@ const CLAVE_STORAGE = "menusCEIPJuanRey_v2";
 // ============================================================
 
 function obterColeccion(tipo) {
-
     if (tipo === "basal") {
-        return typeof MENUS_BASAL !== "undefined"
-            ? MENUS_BASAL
-            : {};
+        return typeof MENUS_BASAL !== "undefined" ? MENUS_BASAL : {};
     }
 
     if (tipo === "sen_lactosa") {
-        return typeof MENUS_SEN_LACTOSA !== "undefined"
-            ? MENUS_SEN_LACTOSA
-            : {};
+        return typeof MENUS_SEN_LACTOSA !== "undefined" ? MENUS_SEN_LACTOSA : {};
     }
 
     if (tipo === "sen_glute") {
-        return typeof MENUS_SEN_GLUTE !== "undefined"
-            ? MENUS_SEN_GLUTE
-            : {};
+        return typeof MENUS_SEN_GLUTE !== "undefined" ? MENUS_SEN_GLUTE : {};
     }
 
     if (tipo === "musulman") {
-        return typeof MENUS_MUSULMAN !== "undefined"
-            ? MENUS_MUSULMAN
-            : {};
+        return typeof MENUS_MUSULMAN !== "undefined" ? MENUS_MUSULMAN : {};
     }
 
     if (tipo === "sen_marisco") {
-        return typeof MENUS_SEN_MARISCO !== "undefined"
-            ? MENUS_SEN_MARISCO
-            : {};
+        return typeof MENUS_SEN_MARISCO !== "undefined" ? MENUS_SEN_MARISCO : {};
     }
 
     return {};
@@ -59,21 +49,14 @@ let modificacionsGardadas = {
 
 
 function cargarModificacions() {
-
     try {
+        const gardadas = localStorage.getItem(CLAVE_STORAGE);
 
-        const gardadas =
-            localStorage.getItem(CLAVE_STORAGE);
+        if (!gardadas) return;
 
-        if (!gardadas) {
-            return;
-        }
-
-        const datos =
-            JSON.parse(gardadas);
+        const datos = JSON.parse(gardadas);
 
         if (datos && typeof datos === "object") {
-
             modificacionsGardadas = {
                 basal: datos.basal || {},
                 sen_lactosa: datos.sen_lactosa || {},
@@ -82,13 +65,8 @@ function cargarModificacions() {
                 sen_marisco: datos.sen_marisco || {}
             };
         }
-
     } catch (erro) {
-
-        console.error(
-            "Erro ao cargar os menús gardados:",
-            erro
-        );
+        console.error("Erro ao cargar os menús gardados:", erro);
     }
 }
 
@@ -98,20 +76,13 @@ function cargarModificacions() {
 // ============================================================
 
 function gardarModificacions() {
-
     try {
-
         localStorage.setItem(
             CLAVE_STORAGE,
             JSON.stringify(modificacionsGardadas)
         );
-
     } catch (erro) {
-
-        console.error(
-            "Erro ao gardar os menús:",
-            erro
-        );
+        console.error("Erro ao gardar os menús:", erro);
     }
 }
 
@@ -121,28 +92,13 @@ function gardarModificacions() {
 // ============================================================
 
 function limparCamposAdmin() {
+    const primeiro = document.getElementById("adminPrimeiro");
+    const segundo = document.getElementById("adminSegundo");
+    const sobremesa = document.getElementById("adminSobremesa");
 
-    const primeiro =
-        document.getElementById("adminPrimeiro");
-
-    const segundo =
-        document.getElementById("adminSegundo");
-
-    const sobremesa =
-        document.getElementById("adminSobremesa");
-
-
-    if (primeiro) {
-        primeiro.value = "";
-    }
-
-    if (segundo) {
-        segundo.value = "";
-    }
-
-    if (sobremesa) {
-        sobremesa.value = "";
-    }
+    if (primeiro) primeiro.value = "";
+    if (segundo) segundo.value = "";
+    if (sobremesa) sobremesa.value = "";
 }
 
 
@@ -151,114 +107,54 @@ function limparCamposAdmin() {
 // ============================================================
 
 function cargarMenuAdmin() {
+    const tipo = document.getElementById("adminTipo");
+    const data = document.getElementById("adminData");
+    const primeiro = document.getElementById("adminPrimeiro");
+    const segundo = document.getElementById("adminSegundo");
+    const sobremesa = document.getElementById("adminSobremesa");
 
-    const tipo =
-        document.getElementById("adminTipo");
-
-    const data =
-        document.getElementById("adminData");
-
-    const primeiro =
-        document.getElementById("adminPrimeiro");
-
-    const segundo =
-        document.getElementById("adminSegundo");
-
-    const sobremesa =
-        document.getElementById("adminSobremesa");
-
-
-    if (
-        !tipo ||
-        !data ||
-        !primeiro ||
-        !segundo ||
-        !sobremesa
-    ) {
+    if (!tipo || !data || !primeiro || !segundo || !sobremesa) {
         return;
     }
 
-
-    const tipoSeleccionado =
-        tipo.value;
-
-    const dataSeleccionada =
-        data.value;
-
+    const tipoSeleccionado = tipo.value;
+    const dataSeleccionada = data.value;
 
     if (!dataSeleccionada) {
-
         limparCamposAdmin();
-
         return;
     }
 
+    // Ler o menú oficial sen modificalo.
+    const coleccion = obterColeccion(tipoSeleccionado);
+    const menuOficial = coleccion[dataSeleccionada] || {};
 
-    // --------------------------------------------------------
-    // PRIMEIRO: buscar no menú oficial
-    // --------------------------------------------------------
+    // Ler a modificación gardada para esa data e menú.
+    const modificacion =
+        modificacionsGardadas[tipoSeleccionado]?.[dataSeleccionada];
 
-    const coleccion =
-        obterColeccion(tipoSeleccionado);
+    // Usar o menú oficial como base.
+    primeiro.value = menuOficial.primeiro || "";
+    segundo.value = menuOficial.segundo || "";
+    sobremesa.value = menuOficial.sobremesa || "";
 
+    // Aplicar só os campos gardados que teñan texto.
+    // Un campo baleiro non borra o menú oficial.
+    if (modificacion && typeof modificacion === "object") {
+        const primeiroGardado = String(modificacion.primeiro ?? "").trim();
+        const segundoGardado = String(modificacion.segundo ?? "").trim();
+        const sobremesaGardada = String(modificacion.sobremesa ?? "").trim();
 
-    let menu =
-        coleccion[dataSeleccionada];
-
-
-    // --------------------------------------------------------
-    // SE NON EXISTE, deixar campos baleiros
-    // --------------------------------------------------------
-
-    if (!menu) {
-
-        limparCamposAdmin();
-
-    } else {
-
-        primeiro.value =
-            menu.primeiro || "";
-
-        segundo.value =
-            menu.segundo || "";
-
-        sobremesa.value =
-            menu.sobremesa || "";
-    }
-
-
-    // --------------------------------------------------------
-    // APLICAR UNHA MODIFICACIÓN GARDADA, SE EXISTE
-    // --------------------------------------------------------
-
-    if (
-        modificacionsGardadas[tipoSeleccionado] &&
-        modificacionsGardadas[tipoSeleccionado][dataSeleccionada]
-    ) {
-
-        const modificacion =
-            modificacionsGardadas[tipoSeleccionado][dataSeleccionada];
-
-
-        if (
-            typeof modificacion.primeiro !== "undefined"
-        ) {
-            primeiro.value =
-                modificacion.primeiro;
+        if (primeiroGardado) {
+            primeiro.value = primeiroGardado;
         }
 
-        if (
-            typeof modificacion.segundo !== "undefined"
-        ) {
-            segundo.value =
-                modificacion.segundo;
+        if (segundoGardado) {
+            segundo.value = segundoGardado;
         }
 
-        if (
-            typeof modificacion.sobremesa !== "undefined"
-        ) {
-            sobremesa.value =
-                modificacion.sobremesa;
+        if (sobremesaGardada) {
+            sobremesa.value = sobremesaGardada;
         }
     }
 }
@@ -269,70 +165,35 @@ function cargarMenuAdmin() {
 // ============================================================
 
 function gardarMenuAdmin() {
+    const tipo = document.getElementById("adminTipo");
+    const data = document.getElementById("adminData");
+    const primeiro = document.getElementById("adminPrimeiro");
+    const segundo = document.getElementById("adminSegundo");
+    const sobremesa = document.getElementById("adminSobremesa");
 
-    const tipo =
-        document.getElementById("adminTipo");
-
-    const data =
-        document.getElementById("adminData");
-
-    const primeiro =
-        document.getElementById("adminPrimeiro");
-
-    const segundo =
-        document.getElementById("adminSegundo");
-
-    const sobremesa =
-        document.getElementById("adminSobremesa");
-
-
-    if (
-        !tipo ||
-        !data ||
-        !primeiro ||
-        !segundo ||
-        !sobremesa
-    ) {
+    if (!tipo || !data || !primeiro || !segundo || !sobremesa) {
         return;
     }
 
-
-    const tipoSeleccionado =
-        tipo.value;
-
-    const dataSeleccionada =
-        data.value;
-
+    const tipoSeleccionado = tipo.value;
+    const dataSeleccionada = data.value;
 
     if (!dataSeleccionada) {
-
         alert("Selecciona primeiro unha data.");
-
         return;
     }
 
-
     if (!modificacionsGardadas[tipoSeleccionado]) {
-
         modificacionsGardadas[tipoSeleccionado] = {};
     }
 
-
     modificacionsGardadas[tipoSeleccionado][dataSeleccionada] = {
-
-        primeiro:
-            primeiro.value,
-
-        segundo:
-            segundo.value,
-
-        sobremesa:
-            sobremesa.value
+        primeiro: primeiro.value.trim(),
+        segundo: segundo.value.trim(),
+        sobremesa: sobremesa.value.trim()
     };
 
-
     gardarModificacions();
-
 
     alert("Menú gardado correctamente.");
 
@@ -345,51 +206,29 @@ function gardarMenuAdmin() {
 // ============================================================
 
 function restaurarMenuAdmin() {
+    const tipo = document.getElementById("adminTipo");
+    const data = document.getElementById("adminData");
 
-    const tipo =
-        document.getElementById("adminTipo");
+    if (!tipo || !data) return;
 
-    const data =
-        document.getElementById("adminData");
-
-
-    if (!tipo || !data) {
-        return;
-    }
-
-
-    const tipoSeleccionado =
-        tipo.value;
-
-    const dataSeleccionada =
-        data.value;
-
+    const tipoSeleccionado = tipo.value;
+    const dataSeleccionada = data.value;
 
     if (!dataSeleccionada) {
-
         alert("Selecciona primeiro unha data.");
-
         return;
     }
 
-
-    // Eliminar só a modificación desta data
+    // Eliminar só a modificación da data e menú seleccionados.
     if (
         modificacionsGardadas[tipoSeleccionado] &&
         modificacionsGardadas[tipoSeleccionado][dataSeleccionada]
     ) {
-
-        delete modificacionsGardadas[
-            tipoSeleccionado
-        ][dataSeleccionada];
-
+        delete modificacionsGardadas[tipoSeleccionado][dataSeleccionada];
         gardarModificacions();
     }
 
-
-    // Volver cargar o menú oficial
     cargarMenuAdmin();
-
 
     alert("Restaurouse o menú orixinal.");
 }
@@ -399,88 +238,27 @@ function restaurarMenuAdmin() {
 // INICIALIZACIÓN
 // ============================================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
+    cargarModificacions();
 
-        cargarModificacions();
+    const tipo = document.getElementById("adminTipo");
+    const data = document.getElementById("adminData");
+    const gardar = document.getElementById("gardarMenu");
+    const restaurar = document.getElementById("restaurarMenu");
 
-
-        const tipo =
-            document.getElementById("adminTipo");
-
-        const data =
-            document.getElementById("adminData");
-
-        const gardar =
-            document.getElementById("gardarMenu");
-
-        const restaurar =
-            document.getElementById("restaurarMenu");
-
-
-        // ----------------------------------------------------
-        // CAMBIO DE TIPO DE MENÚ
-        // ----------------------------------------------------
-
-        if (tipo) {
-
-            tipo.addEventListener(
-                "change",
-                function () {
-
-                    cargarMenuAdmin();
-                }
-            );
-        }
-
-
-        // ----------------------------------------------------
-        // CAMBIO DE DATA
-        // ----------------------------------------------------
-
-        if (data) {
-
-            data.addEventListener(
-                "change",
-                function () {
-
-                    cargarMenuAdmin();
-                }
-            );
-        }
-
-
-        // ----------------------------------------------------
-        // GARDAR
-        // ----------------------------------------------------
-
-        if (gardar) {
-
-            gardar.addEventListener(
-                "click",
-                function () {
-
-                    gardarMenuAdmin();
-                }
-            );
-        }
-
-
-        // ----------------------------------------------------
-        // RESTAURAR
-        // ----------------------------------------------------
-
-        if (restaurar) {
-
-            restaurar.addEventListener(
-                "click",
-                function () {
-
-                    restaurarMenuAdmin();
-                }
-            );
-        }
-
+    if (tipo) {
+        tipo.addEventListener("change", cargarMenuAdmin);
     }
-);
+
+    if (data) {
+        data.addEventListener("change", cargarMenuAdmin);
+    }
+
+    if (gardar) {
+        gardar.addEventListener("click", gardarMenuAdmin);
+    }
+
+    if (restaurar) {
+        restaurar.addEventListener("click", restaurarMenuAdmin);
+    }
+});
