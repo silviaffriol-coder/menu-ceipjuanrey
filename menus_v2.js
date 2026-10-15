@@ -1414,4 +1414,3 @@ const MENUS_SEN_MARISCO = {
     "2027-06-21": { primeiro: "Arroz 3 verduras", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" }
 
 };
-
