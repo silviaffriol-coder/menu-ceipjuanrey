@@ -41,10 +41,10 @@ const MENUS_BASAL = {
     // 12/10/2026 — festivo
 
     // SEMANA DE 13/10/2026 — menú 3
-    "2026-10-13": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
-    "2026-10-14": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Froita" },
-    "2026-10-15": { primeiro: "Ensalada caprese", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
-    "2026-10-16": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón", sobremesa: "Froita" },
+    "2026-10-13": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
+    "2026-10-14": { primeiro: "Ensalada caprese", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
+    "2026-10-15": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón", sobremesa: "Froita" },
+    "2026-10-16": { primeiro: "Menestra con allada", segundo: "Pasta integral con bonito e salsa de tomate", sobremesa: "Froita" },
 
     // SEMANA DE 19/10/2026 — menú 4
     "2026-10-19": { primeiro: "Ensalada completa", segundo: "Raxo de pavo e arroz integral con pisto", sobremesa: "Froita" },
