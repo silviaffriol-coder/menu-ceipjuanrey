@@ -667,6 +667,74 @@ const MENUS_SEN_LACTOSA = {
 // ============================================================
 // MENUS_SEN_GLUTE — NOVEMBRO 2026 A ABRIL 2027
 // ============================================================
+  // ============================================================
+    // SETEMBRO 2026
+    // ============================================================
+
+    // SEMANA 2 — 09 ao 11 de setembro
+
+    "2026-09-09": { primeiro: "Crema de cabaciña", segundo: "Arroz á cubana", sobremesa: "Froita" },
+    "2026-09-10": { primeiro: "Pasta sen glute con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
+    "2026-09-11": { primeiro: "Ensalada Arco Da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },
+
+    // SEMANA 3 — 14 ao 18 de setembro
+
+    "2026-09-14": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
+    "2026-09-15": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-09-16": { primeiro: "Ensalada capresse", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
+    "2026-09-17": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate", sobremesa: "Froita" },
+    "2026-09-18": { primeiro: "Menestra con allada", segundo: "Pasta sen glute con bonito e salsa de tomate", sobremesa: "Froita" },
+
+    // SEMANA 4 — 21 ao 25 de setembro
+
+    "2026-09-21": { primeiro: "Ensalada completa", segundo: "Raxo de pavo e arroz con pisto", sobremesa: "Froita" },
+    "2026-09-22": { primeiro: "Sopa de polo con fideos sen glute", segundo: "Pescada en salsa verde con patacas cocidas con ensalada sinxela", sobremesa: "Froita" },
+    "2026-09-23": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
+    "2026-09-24": { primeiro: "Crema de cabaciña", segundo: "Fideuá sen glute de marisco", sobremesa: "Froita" },
+    "2026-09-25": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
+
+    // SEMANA 1 — 28 de setembro ao 02 de outubro
+
+    "2026-09-28": { primeiro: "Xudías verdes con patacas", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
+    "2026-09-29": { primeiro: "Ensalada de tomate, olivas e sardiñas", segundo: "Tortilla de patacas e cebola con cabaciña á prancha", sobremesa: "Froita" },
+    "2026-09-30": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta sen glute", sobremesa: "Iogur ou froita" },
+    "2026-10-01": { primeiro: "Arroz tres verduras", segundo: "Salmón á prancha con ensalada con froita de tempada", sobremesa: "Froita" },
+    "2026-10-02": { primeiro: "Crema de cabaza", segundo: "Polo guisado e patacas ao forno con ensalada de cenoria", sobremesa: "Iogur ou froita" },
+
+    // ============================================================
+    // OUTUBRO 2026
+    // ============================================================
+
+    // SEMANA 2 — 05 ao 09 de outubro
+
+    "2026-10-05": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
+    "2026-10-06": { primeiro: "Sopa de verduras con fideos sen glute e garavanzos", segundo: "Luras á romana sen glute con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
+    "2026-10-07": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
+    "2026-10-08": { primeiro: "Pasta sen glute con salsa de verduras", segundo: "Pescada ao forno con verduras", sobremesa: "Froita" },
+    "2026-10-09": { primeiro: "Ensalada Arco Da Vella", segundo: "Arroz con verduras e fabas pintas", sobremesa: "Froita" },
+
+    // SEMANA 3 — 13 ao 16 de outubro
+
+    "2026-10-13": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
+    "2026-10-14": { primeiro: "Ensalada capresse", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
+    "2026-10-15": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate", sobremesa: "Froita" },
+    "2026-10-16": { primeiro: "Menestra con allada", segundo: "Pasta sen glute con bonito e salsa de tomate", sobremesa: "Froita" },
+
+    // SEMANA 4 — 19 ao 23 de outubro
+
+    "2026-10-19": { primeiro: "Ensalada completa", segundo: "Raxo de pavo e arroz con pisto", sobremesa: "Froita" },
+    "2026-10-20": { primeiro: "Sopa de polo con fideos sen glute", segundo: "Pescada en salsa verde con patacas cocidas con ensalada sinxela", sobremesa: "Froita" },
+    "2026-10-21": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
+    "2026-10-22": { primeiro: "Crema de cabaciña", segundo: "Fideuá sen glute de marisco", sobremesa: "Froita" },
+    "2026-10-23": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
+
+    // SEMANA 1 — 26 ao 30 de outubro
+
+    "2026-10-26": { primeiro: "Xudías verdes con patacas", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
+    "2026-10-27": { primeiro: "Ensalada de tomate, olivas e sardiñas", segundo: "Tortilla de patacas e cebola con cabaciña á prancha", sobremesa: "Froita" },
+    "2026-10-28": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta sen glute", sobremesa: "Iogur ou froita" },
+    "2026-10-29": { primeiro: "Crema de cabaza", segundo: "Polo guisado e patacas ao forno con ensalada de cenoria", sobremesa: "Froita" },
+    "2026-10-30": { primeiro: "Arroz 3 verduras", segundo: "Salmón á prancha con ensalada con froita de tempada", sobremesa: "Froita" },
 
 // NOVEMBRO 2026
 
