@@ -1,4 +1,3 @@
-```javascript
 // ============================================================
 // ADMINISTRACIÓN DOS MENÚS - CEIP JUAN REY
 // ============================================================
@@ -335,4 +334,3 @@ document.addEventListener("DOMContentLoaded", function () {
         restaurar.addEventListener("click", restaurarMenuAdmin);
     }
 });
-```
