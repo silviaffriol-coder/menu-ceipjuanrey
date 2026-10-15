@@ -52,7 +52,7 @@ const MENUS_BASAL = {
     "2026-10-20": { primeiro: "Sopa de polo con fideos integrais", segundo: "Pescada en salsa verde", sobremesa: "Froita" },
     "2026-10-21": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
     "2026-10-22": { primeiro: "Crema de cabaciña", segundo: "Fideuá de marisco", sobremesa: "Froita" },
-    "2026-10-23": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Froita" },
+    "2026-10-23": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
 
     // SEMANA DE 26/10/2026 — menú 1
     "2026-10-26": { primeiro: "Xudías verdes con patacas", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
