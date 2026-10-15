@@ -151,23 +151,23 @@ const MENUS_BASAL = {
     // SEMANA 3 — 13 ao 16 de outubro
 
     "2026-10-13": {
-        primeiro: "Coliflor con allada",
-        segundo: "Guiso de tenreira con patacas cocidas",
-        sobremesa: "Froita"
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz á cubana",
+        sobremesa: "Iogur ou froita"
     },
     "2026-10-14": {
-        primeiro: "Crema de cenoria e patacas",
-        segundo: "Tortilla de champiñóns e ensalada de espárragos - leituga, espárragos, olivas, tomate",
+        primeiro: "Ensalada capresse",
+        segundo: "Potaxe de garavanzos con verduras",
         sobremesa: "Froita"
     },
     "2026-10-15": {
-        primeiro: "Ensalada capresse - tomate, queixo fresco, olivas",
-        segundo: "Potaxe de garavanzos con verduras",
-        sobremesa: "Iogur"
+        primeiro: "Guiso de patacas con verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate",
+        sobremesa: "Froita"
     },
     "2026-10-16": {
-        primeiro: "Paella de verduras",
-        segundo: "Peituga de polo ao limón con ensalada de cenoria, tomate, cebola",
+        primeiro: "Menestra con allada",
+        segundo: "Pasta integral con bonito e salsa de tomate",
         sobremesa: "Froita"
     },
 
@@ -666,28 +666,29 @@ const MENUS_SEN_LACTOSA = {
     },
 
 
-    // SEMANA 3 — 13 ao 16 de outubro
+      // SEMANA 3 — 13 ao 16 de outubro
 
     "2026-10-13": {
-        primeiro: "Coliflor con allada",
-        segundo: "Guiso de tenreira con patacas cocidas",
-        sobremesa: "Froita"
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz á cubana",
+        sobremesa: "Iogur sen lactosa ou froita"
     },
     "2026-10-14": {
-        primeiro: "Crema de cenoria e patacas",
-        segundo: "Tortilla de champiñóns e ensalada de espárragos - leituga, espárragos, olivas e tomate",
+        primeiro: "Ensalada capresse con queixo sen lactosa",
+        segundo: "Potaxe de garavanzos con verduras",
         sobremesa: "Froita"
     },
     "2026-10-15": {
-        primeiro: "Ensalada caprese sen lactosa - tomate, queixo fresco sen lactosa e olivas",
-        segundo: "Potaxe de garavanzos con verduras",
-        sobremesa: "Iogur sen lactosa ou froita"
-    },
-    "2026-10-16": {
-        primeiro: "Paella de verduras",
-        segundo: "Peituga de polo ao limón con ensalada de cenoria, tomate e cebola",
+        primeiro: "Guiso de patacas con verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate",
         sobremesa: "Froita"
     },
+    "2026-10-16": {
+        primeiro: "Menestra con allada",
+        segundo: "Pasta integral con bonito e salsa de tomate",
+        sobremesa: "Froita"
+    },
+
 
 
     // SEMANA 4 — 19 ao 23 de outubro
@@ -1183,12 +1184,12 @@ const MENUS_SEN_GLUTE = {
     },
 
 
-    // SEMANA 3 — 13 ao 16 de outubro
+       // SEMANA 3 — 13 ao 16 de outubro
 
     "2026-10-13": {
-        primeiro: "Crema de cenoria con pataca",
-        segundo: "Tortilla de champiñóns e ensalada de espárragos",
-        sobremesa: "Froita"
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz á cubana",
+        sobremesa: "Iogur ou froita"
     },
     "2026-10-14": {
         primeiro: "Ensalada capresse",
@@ -1205,6 +1206,7 @@ const MENUS_SEN_GLUTE = {
         segundo: "Pasta sen glute con bonito e salsa de tomate",
         sobremesa: "Froita"
     },
+
 
 
     // SEMANA 4 — 19 ao 23 de outubro
@@ -1700,9 +1702,9 @@ const MENUS_MUSULMAN = {
     // SEMANA 3 — 13 ao 16 de outubro
 
     "2026-10-13": {
-        primeiro: "Crema de cenoria con pataca",
-        segundo: "Tortilla de champiñóns e ensalada de espárragos",
-        sobremesa: "Froita"
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz á cubana",
+        sobremesa: "Iogur ou froita"
     },
     "2026-10-14": {
         primeiro: "Ensalada capresse",
@@ -1719,6 +1721,7 @@ const MENUS_MUSULMAN = {
         segundo: "Pasta integral con bonito e salsa de tomate",
         sobremesa: "Froita"
     },
+
 
 
     // SEMANA 4 — 19 ao 23 de outubro
@@ -2213,29 +2216,29 @@ const MENUS_SEN_MARISCO = {
     },
 
 
-    // SEMANA 3 — 13 ao 16
+      // SEMANA 3 — 13 ao 16 de outubro
 
     "2026-10-13": {
-        primeiro: "Crema de cenoria e patacas",
-        segundo: "Tortilla de champiñóns",
-        sobremesa: "Froita"
+        primeiro: "Crema de verduras de tempada",
+        segundo: "Arroz á cubana",
+        sobremesa: "Iogur ou froita"
     },
     "2026-10-14": {
-        primeiro: "Ensalada caprese",
+        primeiro: "Ensalada capresse",
         segundo: "Potaxe de garavanzos con verduras",
         sobremesa: "Froita"
     },
     "2026-10-15": {
-        primeiro: "Paella de verduras",
-        segundo: "Peituga de polo ao limón",
+        primeiro: "Guiso de patacas con verduras",
+        segundo: "Peituga de polo ao limón con ensalada de cenoria e tomate",
         sobremesa: "Froita"
     },
     "2026-10-16": {
-        primeiro: "Espinacas á crema",
+        primeiro: "Menestra con allada",
         segundo: "Pasta integral con bonito e salsa de tomate",
         sobremesa: "Froita"
     },
-
+ 
 
     // SEMANA 4 — 19 ao 23
 
