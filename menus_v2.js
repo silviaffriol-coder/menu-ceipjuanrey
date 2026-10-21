@@ -87,41 +87,41 @@ const MENUS_BASAL = {
     "2026-11-20": { primeiro: "Ensaladda de laranxa", segundo: "Potaxe de fabas con cabaza", sobremesa: "Froita" },
 
     // SEMANA DE 23/11/2026 — menú 4
-    "2026-11-23": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-24": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-25": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-26": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-11-27": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-11-23": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
+    "2026-11-24": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-25": { primeiro: "Brócoli con bechamel", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
+    "2026-11-26": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
+    "2026-11-27": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe e marisco", sobremesa: "Froita" },
 
     // SEMANA DE 30/11/2026 — menú 5
-    "2026-11-30": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-11-30": { primeiro: "Crema de coliflor", segundo: "Polo guisado con patacas ao forno", sobremesa: "Froita" },
 
     // ============================================================
     // DECEMBRO 2026
     // ============================================================
 
     // SEMANA DE 30/11/2026 — menú 5
-    "2026-12-01": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-02": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-03": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-04": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-12-01": { primeiro: "Sopa de hortalizas con fídeos integrais", segundo: "Pescada á romana con ensalada con queixo", sobremesa: "Froita" },
+    "2026-12-02": { primeiro: "Ensalada de garavanzos", segundo: "Tortilla de queixo e arroz con salsa de tomate", sobremesa: "Iogur ou froita" },
+    "2026-12-03": { primeiro: "Repolo con patacas e allada", segundo: "Salmón á laranxa con ensalada de leituga, cebola e cenoria", sobremesa: "Froita" },
+    "2026-12-04": { primeiro: "Pasta integral con salsa de cenoria", segundo: "Potaxe de fabas con verduras", sobremesa: "Froita" },
 
     // SEMANA DE 07/12/2026
     "2026-12-07": { primeiro: "", segundo: "", sobremesa: "" },
     // 08/12/2026 — festivo
-    "2026-12-09": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-10": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-11": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-12-09": { primeiro: "Ensalada con mazá e pasta integral", segundo: "Potaxe de garavanzos", sobremesa: "Froita" },
+    "2026-12-10": { primeiro: "Caldo galego", segundo: "Zorza de polo con ensalada con froita de tempada", sobremesa: "Iogur ou froita" },
+    "2026-12-11": { primeiro: "Ensalada completa con ovo", segundo: "Pizza de bonito", sobremesa: "Froita" },
 
     // SEMANA DE 14/12/2026
-    "2026-12-14": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-15": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-16": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-17": { primeiro: "", segundo: "", sobremesa: "" },
-    "2026-12-18": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-12-14": { primeiro: "Pasta integral con pisto", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
+    "2026-12-15": { primeiro: "Arroz tres delicias", segundo: "Peixe ao forno con cenorias", sobremesa: "Froita" },
+    "2026-12-16": { primeiro: "Crema de verduras de inverno", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Iogur ou froita" },
+    "2026-12-17": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas e ensalada con olivas", sobremesa: "Froita" },
+    "2026-12-18": { primeiro: "Coliflor con bechamel", segundo: "Potaxe de lentellas con verduras", sobremesa: "Froita" },
 
     // SEMANA DE 21/12/2026
-    "2026-12-21": { primeiro: "", segundo: "", sobremesa: "" },
+    "2026-12-21": { primeiro: "Crema de cenoria e pataca", segundo: "Milanesa de polo e ensalada de follas verdes con espárragos e millo", sobremesa: "Froita" },
 
     // Vacacións de Nadal a partir do 21/12/2026
 
@@ -129,7 +129,10 @@ const MENUS_BASAL = {
     // XANEIRO 2027
     // ============================================================
 
-    // SEMANA DE 11/01/2027 — menú 5
+  // SEMANA DE 08/01/2027 — menú 5
+    "2027-01-08": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe e marisco", sobremesa: "Froita" }, 
+ 
+ // SEMANA DE 11/01/2027 — menú 5
     "2027-01-11": { primeiro: "Crema de coliflor", segundo: "Polo guisado con patacas ao forno", sobremesa: "Froita" },
     "2027-01-12": { primeiro: "Sopa de hortalizas con fideos integrais", segundo: "Pescada á romana con ensalada con queixo", sobremesa: "Froita" },
     "2027-01-13": { primeiro: "Ensalada de garavanzos", segundo: "Tortilla de queixo e arroz con salsa de tomate", sobremesa: "Iogur ou froita" },
@@ -452,7 +455,10 @@ const MENUS_SEN_LACTOSA = {
     "2026-12-17": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas e ensalada con olivas", sobremesa: "Froita" },
     "2026-12-18": { primeiro: "Coliflor con bechamel sen lactosa", segundo: "Potaxe de lentellas con verduras", sobremesa: "Froita" },
 
-    // Do 22 de decembro de 2026 ao 07 de xaneiro de 2027 — sen menú
+    // SEMANA DE 21/12/2026
+    "2026-12-21": { primeiro: "Crema de cenoria e pataca", segundo: "Milanesa de polo e ensalada de follas verdes con espárragos e millo", sobremesa: "Froita" },
+ 
+ // Do 22 de decembro de 2026 ao 07 de xaneiro de 2027 — sen menú
 
     "2026-12-22": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-12-23": { primeiro: "", segundo: "", sobremesa: "" },
