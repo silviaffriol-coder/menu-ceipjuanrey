@@ -910,24 +910,24 @@ const MENUS_SEN_GLUTE = {
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-29": { primeiro: "", segundo: "", sobremesa: "" },
 
-    // SEMANA 5 — 30 e 31 de marzo
-    "2027-03-30": { primeiro: "Caldo galego", segundo: "Luras á romana sen glute con ensalada", sobremesa: "Froita" },
-    "2027-03-31": { primeiro: "Ensalada de leituga, cenoria e pementos", segundo: "Pasta sen glute con ovo cocido e salsa de verduras", sobremesa: "Froita" },
+      // SEMANA 5 — 30 e 31 de marzo
+    "2027-03-30": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2027-03-31": { primeiro: "Brócoli con bechamel sen glute", segundo: "Pescada á romana sen glute con ensalada con queixo", sobremesa: "Froita" },
 
     // ============================================================
     // ABRIL 2027
     // ============================================================
 
     // SEMANA 1 — 01 e 02 de abril
-    "2027-04-01": { primeiro: "Crema de allo porro", segundo: "Salmón á laranxa con ensalada", sobremesa: "Iogur ou froita" },
-    "2027-04-02": { primeiro: "Ensalada de laranxa", segundo: "Potaxe de fabas con verduras", sobremesa: "Froita" },
+    "2027-04-01": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
+    "2027-04-02": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe e marisco", sobremesa: "Froita" },
 
     // SEMANA 2 — 05 ao 09 de abril
     "2027-04-05": { primeiro: "Crema de coliflor", segundo: "Polo guisado con patacas ao forno", sobremesa: "Froita" },
     "2027-04-06": { primeiro: "Sopa de hortalizas con fideos sen glute", segundo: "Pescada con ensalada", sobremesa: "Froita" },
     "2027-04-07": { primeiro: "Ensalada de garavanzos", segundo: "Tortilla de pataca e arroz con salsa de tomate", sobremesa: "Iogur ou froita" },
     "2027-04-08": { primeiro: "Repolo con patacas e allada", segundo: "Salmón á laranxa con ensalada", sobremesa: "Froita" },
-    "2027-04-09": { primeiro: "Arroz con salsa de cenoria", segundo: "Potaxe de fabas con verduras", sobremesa: "Froita" },
+    "2027-04-09": { primeiro: "Pasta sen glute con salsa de cenoria", segundo: "Potaxe de fabas con verduras", sobremesa: "Froita" },
 
     // SEMANA 3 — 12 ao 16 de abril
     "2027-04-12": { primeiro: "Crema de cabaza e pataca", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
@@ -1000,7 +1000,7 @@ const MENUS_SEN_GLUTE = {
     "2027-06-08": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
     "2027-06-09": { primeiro: "Ensalada primavera", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
     "2027-06-10": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón con ensalada de leituga e cebola", sobremesa: "Froita" },
-    "2027-06-11": { primeiro: "Fideuá sen glute de marisco", segundo: "", sobremesa: "Froita" },
+    "2027-06-11": { primeiro: "Ensalada completa", segundo: "Fideuá sen glute de marisco", sobremesa: "Froita" },
 
     // SEMANA DE 14/06/2027
     "2027-06-14": { primeiro: "Crema de cenoria", segundo: "Raxo de pavo e arroz con pisto", sobremesa: "Froita" },
