@@ -6,33 +6,33 @@ q
 
 const MENUS_BASAL = {
 
-    // SEMANA DE 07/09/2026 — menú 2
+    // SEMANA DE 07/09/2026 — menú 1
     "2026-09-09": { primeiro: "Crema de cabaciña", segundo: "Arroz á cubana", sobremesa: "Froita" },
     "2026-09-10": { primeiro: "Pasta integral con salsa de verduras", segundo: "Pescada ao forno", sobremesa: "Froita" },
     "2026-09-11": { primeiro: "Ensalada Arco da Vella", segundo: "Arroz integral con lentellas", sobremesa: "Froita" },
 
-    // SEMANA DE 14/09/2026 — menú 3
+    // SEMANA DE 14/09/2026 — menú 2
     "2026-09-14": { primeiro: "Coliflor con allada", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
     "2026-09-15": { primeiro: "Crema de cenoria e patacas", segundo: "Tortilla de champiñóns", sobremesa: "Froita" },
     "2026-09-16": { primeiro: "Ensalada caprese", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
     "2026-09-17": { primeiro: "Paella de verduras", segundo: "Peituga de polo ao limón", sobremesa: "Froita" },
     "2026-09-18": { primeiro: "Espinacas á crema", segundo: "Pasta integral con bonito e salsa de tomate", sobremesa: "Froita" },
 
-    // SEMANA DE 21/09/2026 — menú 4
+    // SEMANA DE 21/09/2026 — menú 3
     "2026-09-21": { primeiro: "Ensalada completa", segundo: "Raxo de pavo e arroz integral con pisto", sobremesa: "Froita" },
     "2026-09-22": { primeiro: "Sopa de polo con fideos integrais", segundo: "Pescada en salsa verde", sobremesa: "Froita" },
     "2026-09-23": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
     "2026-09-24": { primeiro: "Crema de verduras de tempada", segundo: "Fideuá de marisco", sobremesa: "Iogur" },
     "2026-09-25": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Froita" },
 
-    // SEMANA DE 28/09/2026 — menú 1
+    // SEMANA DE 28/09/2026 — menú 4
     "2026-09-28": { primeiro: "Xudías verdes con patacas", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
     "2026-09-29": { primeiro: "Ensalada de tomate, olivas e sardinas", segundo: "Tortilla de patacas e cebola", sobremesa: "Froita" },
     "2026-09-30": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta", sobremesa: "Froita" },
     "2026-10-01": { primeiro: "Crema de cabaza", segundo: "Polo guisado con patacas ao forno", sobremesa: "Froita" },
     "2026-10-02": { primeiro: "Arroz 3 verduras", segundo: "Salmón á prancha con ensalada e froita de tempada", sobremesa: "Froita" },
 
-    // SEMANA DE 05/10/2026 — menú 2
+    // SEMANA DE 05/10/2026 — menú 1
     "2026-10-05": { primeiro: "Repolo con patacas e allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Froita" },
     "2026-10-06": { primeiro: "Sopa de verduras con fideos integrais e garavanzos", segundo: "Luras á romana con ensalada de tomate, cebola e olivas", sobremesa: "Froita" },
     "2026-10-07": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de champiñóns e ensalada de espárragos", sobremesa: "Froita" },
@@ -41,20 +41,20 @@ const MENUS_BASAL = {
 
     // 12/10/2026 — festivo
 
-    // SEMANA DE 13/10/2026 — menú 3
+    // SEMANA DE 13/10/2026 — menú 2
     "2026-10-13": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
     "2026-10-14": { primeiro: "Ensalada caprese", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
     "2026-10-15": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón", sobremesa: "Froita" },
     "2026-10-16": { primeiro: "Menestra con allada", segundo: "Pasta integral con bonito e salsa de tomate", sobremesa: "Froita" },
 
-    // SEMANA DE 19/10/2026 — menú 4
+    // SEMANA DE 19/10/2026 — menú 3
     "2026-10-19": { primeiro: "Ensalada completa", segundo: "Raxo de pavo e arroz integral con pisto", sobremesa: "Froita" },
     "2026-10-20": { primeiro: "Sopa de polo con fideos integrais", segundo: "Pescada en salsa verde", sobremesa: "Froita" },
     "2026-10-21": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
     "2026-10-22": { primeiro: "Crema de cabaciña", segundo: "Fideuá de marisco", sobremesa: "Froita" },
     "2026-10-23": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
 
-    // SEMANA DE 26/10/2026 — menú 1
+    // SEMANA DE 26/10/2026 — menú 4
     "2026-10-26": { primeiro: "Xudías verdes con patacas", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
     "2026-10-27": { primeiro: "Ensalada de tomate, olivas e sardinas", segundo: "Tortilla de patacas e cebola", sobremesa: "Froita" },
     "2026-10-28": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta", sobremesa: "Froita" },
@@ -106,21 +106,21 @@ const MENUS_BASAL = {
     "2026-12-03": { primeiro: "Repolo con patacas e allada", segundo: "Salmón á laranxa con ensalada de leituga, cebola e cenoria", sobremesa: "Froita" },
     "2026-12-04": { primeiro: "Pasta integral con salsa de cenoria", segundo: "Potaxe de fabas con verduras", sobremesa: "Froita" },
 
-    // SEMANA DE 07/12/2026
+    // SEMANA DE 07/12/2026 -menú 6
     "2026-12-07": { primeiro: "", segundo: "", sobremesa: "" },
     // 08/12/2026 — festivo
     "2026-12-09": { primeiro: "Ensalada con mazá e pasta integral", segundo: "Potaxe de garavanzos", sobremesa: "Froita" },
     "2026-12-10": { primeiro: "Caldo galego", segundo: "Zorza de polo con ensalada con froita de tempada", sobremesa: "Iogur ou froita" },
     "2026-12-11": { primeiro: "Ensalada completa con ovo", segundo: "Pizza de bonito", sobremesa: "Froita" },
 
-    // SEMANA DE 14/12/2026
+    // SEMANA DE 14/12/2026 -menú 1
     "2026-12-14": { primeiro: "Pasta integral con pisto", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
     "2026-12-15": { primeiro: "Arroz tres delicias", segundo: "Peixe ao forno con cenorias", sobremesa: "Froita" },
     "2026-12-16": { primeiro: "Crema de verduras de inverno", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Iogur ou froita" },
     "2026-12-17": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas e ensalada con olivas", sobremesa: "Froita" },
     "2026-12-18": { primeiro: "Coliflor con bechamel", segundo: "Potaxe de lentellas con verduras", sobremesa: "Froita" },
 
-    // SEMANA DE 21/12/2026
+    // SEMANA DE 21/12/2026 -menú 2
     "2026-12-21": { primeiro: "Crema de cenoria e pataca", segundo: "Milanesa de polo e ensalada de follas verdes con espárragos e millo", sobremesa: "Froita" },
 
     // Vacacións de Nadal a partir do 21/12/2026
@@ -129,7 +129,7 @@ const MENUS_BASAL = {
     // XANEIRO 2027
     // ============================================================
 
-  // SEMANA DE 08/01/2027 — menú 5
+  // SEMANA DE 08/01/2027 — menú 4
     "2027-01-08": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe e marisco", sobremesa: "Froita" }, 
  
  // SEMANA DE 11/01/2027 — menú 5
@@ -210,14 +210,14 @@ const MENUS_BASAL = {
     "2027-03-18": { primeiro: "Arroz 3 verduras", segundo: "Costela de porco ao forno con champiñóns", sobremesa: "Froita" },
     "2027-03-19": { primeiro: "", segundo: "", sobremesa: "" },
 
-    // SEMANA DE 22/03/2027
+    // SEMANA DE 22/03/2027 - menú 3
     "2027-03-22": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-23": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-24": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-25": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-26": { primeiro: "", segundo: "", sobremesa: "" },
 
-    // SEMANA DE 29/03/2027
+    // SEMANA DE 29/03/2027 - menú 4
     "2027-03-29": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-03-30": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
     "2027-03-31": { primeiro: "Brócoli con bechamel", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
@@ -262,35 +262,35 @@ const MENUS_BASAL = {
     // BASAL MAIO-XUÑO 2027
     // ============================================================
 
-    // SEMANA DE 03/05/2027
+    // SEMANA DE 03/05/2027 -menú 1
     "2027-05-03": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de espinacas e ensalada de leituga, cebola e olivas", sobremesa: "Froita" },
     "2027-05-04": { primeiro: "Sopa de verduras con fideos integrais e garavanzos", segundo: "Luras á romana con ensalada de follas verdes e espárragos", sobremesa: "Froita" },
     "2027-05-05": { primeiro: "Repolo con allada", segundo: "Polo ao forno con verduras e patacas", sobremesa: "Iogur ou froita" },
     "2027-05-06": { primeiro: "Pasta integral con pisto", segundo: "Peixe ao forno con verduras", sobremesa: "Froita" },
     "2027-05-07": { primeiro: "Ensalada Arco Da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
 
-    // SEMANA DE 10/05/2027
+    // SEMANA DE 10/05/2027 - menú 2
     "2027-05-10": { primeiro: "Coliflor con refrito", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
     "2027-05-11": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
     "2027-05-12": { primeiro: "Ensalada primavera", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
     "2027-05-13": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón con ensalada de leituga e cebola", sobremesa: "Froita" },
     "2027-05-14": { primeiro: "", segundo: "", sobremesa: "" },
 
-    // SEMANA DE 17/05/2027
+    // SEMANA DE 17/05/2027 - menú 3
     "2027-05-17": { primeiro: "", segundo: "", sobremesa: "" },
     "2027-05-18": { primeiro: "Sopa de polo con fideos integrais", segundo: "Peixe en salsa verde con patacas cocidas con ensalada con froita de tempada", sobremesa: "Froita" },
     "2027-05-19": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
     "2027-05-20": { primeiro: "Ensalada de leituga, cenoria, pemento asado e olivas", segundo: "Pasta integral con bonito e salsa de verduras", sobremesa: "Froita" },
     "2027-05-21": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
 
-    // SEMANA DE 24/05/2027
+    // SEMANA DE 24/05/2027 -menú 4
     "2027-05-24": { primeiro: "Arroz 3 verduras", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
     "2027-05-25": { primeiro: "Ensalada de tomate, olivas e sardiñas", segundo: "Tortilla de patacas e cebola con cabaciña á prancha", sobremesa: "Froita" },
     "2027-05-26": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta", sobremesa: "Iogur ou froita" },
     "2027-05-27": { primeiro: "Crema de cabaza", segundo: "Polo guisado e patacas ao forno con ensalada de cenoria", sobremesa: "Froita" },
     "2027-05-28": { primeiro: "Menestra con allada", segundo: "Peixe á prancha con ensalada campera", sobremesa: "Froita" },
 
-    // SEMANA DE 31/05/2027
+    // SEMANA DE 31/05/2027 -menú 1
     "2027-05-31": { primeiro: "Crema de cenoria con pataca", segundo: "Tortilla de espinacas e ensalada de leituga, cebola e olivas", sobremesa: "Froita" },
 
     // ============================================================
@@ -302,21 +302,21 @@ const MENUS_BASAL = {
     "2027-06-03": { primeiro: "Pasta integral con pisto", segundo: "Peixe ao forno con verduras", sobremesa: "Froita" },
     "2027-06-04": { primeiro: "Ensalada Arco Da Vella", segundo: "Arroz con lentellas", sobremesa: "Froita" },
 
-    // SEMANA DE 07/06/2027
+    // SEMANA DE 07/06/2027 - menú 2
     "2027-06-07": { primeiro: "Coliflor con refrito", segundo: "Guiso de tenreira con patacas cocidas", sobremesa: "Froita" },
     "2027-06-08": { primeiro: "Crema de verduras de tempada", segundo: "Arroz á cubana", sobremesa: "Iogur ou froita" },
     "2027-06-09": { primeiro: "Ensalada primavera", segundo: "Potaxe de garavanzos con verduras", sobremesa: "Froita" },
     "2027-06-10": { primeiro: "Guiso de patacas con verduras", segundo: "Peituga de polo ao limón con ensalada de leituga e cebola", sobremesa: "Froita" },
     "2027-06-11": { primeiro: "Ensalada completa", segundo: "Fideuá de marisco", sobremesa: "Froita" },
 
-    // SEMANA DE 14/06/2027
+    // SEMANA DE 14/06/2027 -menú 3
     "2027-06-14": { primeiro: "Crema de cenoria", segundo: "Raxo de pavo e arroz con pisto", sobremesa: "Froita" },
     "2027-06-15": { primeiro: "Sopa de polo con fideos integrais", segundo: "Peixe en salsa verde con patacas cocidas con ensalada con froita de tempada", sobremesa: "Froita" },
     "2027-06-16": { primeiro: "Ensalada de garavanzos", segundo: "Brócoli con pataca e ovo con allada", sobremesa: "Froita" },
     "2027-06-17": { primeiro: "Ensalada de leituga, cenoria, pemento asado e olivas", segundo: "Pasta integral con bonito e salsa de verduras", sobremesa: "Froita" },
     "2027-06-18": { primeiro: "Salteado de verduras con fabas", segundo: "Ensaladilla rusa", sobremesa: "Iogur ou froita" },
 
-    // SEMANA DE 21/06/2027
+    // SEMANA DE 21/06/2027 -menú 4
     "2027-06-21": { primeiro: "Arroz 3 verduras", segundo: "Lombo ao forno con salsa de verduras", sobremesa: "Froita" },
 
 };
