@@ -1,4 +1,4 @@
-
+q 
  // ============================================================
  // MENUS CEIP JUAN REY
  // Curso 2026-2027
@@ -1046,8 +1046,8 @@ const MENUS_MUSULMAN = {
     "2026-09-28": { primeiro: "Xudías verdes con patacas", segundo: "Pavo ao forno con salsa de verduras", sobremesa: "Froita" },
     "2026-09-29": { primeiro: "Ensalada de tomate, olivas e sardiñas", segundo: "Tortilla de patacas e cebola con cabaciña á prancha", sobremesa: "Froita" },
     "2026-09-30": { primeiro: "Garavanzos con espinacas", segundo: "Ensalada de pasta", sobremesa: "Iogur ou froita" },
-    "2026-10-01": { primeiro: "Arroz tres verduras", segundo: "Salmón á prancha con ensalada con froita de tempada", sobremesa: "Froita" },
-    "2026-10-02": { primeiro: "Crema de cabaza", segundo: "Polo guisado e patacas ao forno con ensalada de cenoria", sobremesa: "Iogur ou froita" },
+    "2026-10-01": { primeiro: "Crema de cabaza", segundo: "Polo guisado e patacas ao forno con ensalada de cenoria", sobremesa: "Froita" },
+    "2026-10-02": { primeiro: "Arroz tres verduras", segundo: "Salmón á prancha con ensalada con froita de tempada", sobremesa: "Froita" },
 
     // ============================================================
     // OUTUBRO 2026
@@ -1088,7 +1088,7 @@ const MENUS_MUSULMAN = {
     // NOVEMBRO 2026
     // ============================================================
 
-    "2026-11-02": { primeiro: "Pasta integral con salsa de calabaza", segundo: "Pavo guisado con verduras", sobremesa: "Froita" },
+    "2026-11-02": { primeiro: "", segundo: "", sobremesa: "" },
     "2026-11-03": { primeiro: "Arroz tres delicias", segundo: "Peixe ao forno con cenorias", sobremesa: "Froita" },
     "2026-11-04": { primeiro: "Crema de verduras de inverno", segundo: "Tortilla de pataca con ensalada de leituga e millo", sobremesa: "Froita" },
     "2026-11-05": { primeiro: "Sopa xuliana", segundo: "Guiso de luras con patacas", sobremesa: "Iogur ou froita" },
