@@ -412,7 +412,7 @@ const MENUS_SEN_LACTOSA = {
 
     // SEMANA 3 — 16 ao 20 de novembro
 
-    "2026-11-16": { primeiro: "Arroz con pisto de verduras", segundo: "Raxo de pavo con champiñóns", sobremesa: "Froita" },
+    "2026-11-16": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", segundo: "Raxo de pavo con champiñóns", sobremesa: "Froita" },
     "2026-11-17": { primeiro: "Caldo galego", segundo: "Luras á romana con ensalada de leituga e cebola", sobremesa: "Froita" },
     "2026-11-18": { primeiro: "Ensalada de leituga, cenoria, pementos asados e olivas", segundo: "Pasta con ovo cocido e salsa de verduras", sobremesa: "Iogur sen lactosa ou froita" },
     "2026-11-19": { primeiro: "Crema de allo porro", segundo: "Salmón ao forno con puré de pataca", sobremesa: "Froita" },
@@ -420,7 +420,7 @@ const MENUS_SEN_LACTOSA = {
 
     // SEMANA 4 — 23 ao 27 de novembro
 
-    "2026-11-23": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
+    "2026-11-23": { primeiro: "Arroz con pisto de verduras", segundo: "Raxo de pavo con champiñóns ao allo", sobremesa: "Froita"},
     "2026-11-24": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur sen lactosa ou froita" },
     "2026-11-25": { primeiro: "Brócoli con bechamel sen lactosa", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
     "2026-11-26": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
