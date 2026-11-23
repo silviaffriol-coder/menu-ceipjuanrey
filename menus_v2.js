@@ -86,8 +86,8 @@ const MENUS_BASAL = {
     "2026-11-20": { primeiro: "Ensaladda de laranxa", segundo: "Potaxe de fabas con cabaza", sobremesa: "Froita" },
 
     // SEMANA DE 23/11/2026 — menú 4
-    "2026-11-23": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
-    "2026-11-24": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-23": { primeiro:  "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-24": { primeiro:  "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
     "2026-11-25": { primeiro: "Brócoli con bechamel", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
     "2026-11-26": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
     "2026-11-27": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe e marisco", sobremesa: "Froita" },
@@ -420,8 +420,8 @@ const MENUS_SEN_LACTOSA = {
 
     // SEMANA 4 — 23 ao 27 de novembro
 
-    "2026-11-23": { primeiro: "Arroz con pisto de verduras", segundo: "Raxo de pavo con champiñóns ao allo", sobremesa: "Froita"},
-    "2026-11-24": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur sen lactosa ou froita" },
+    "2026-11-23": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-24": { primeiro: "Arroz con pisto de verduras", segundo: "Raxo de pavo con champiñóns ao allo", sobremesa: "Froita"},
     "2026-11-25": { primeiro: "Brócoli con bechamel sen lactosa", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
     "2026-11-26": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
     "2026-11-27": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe e marisco", sobremesa: "Froita" },
@@ -1108,8 +1108,8 @@ const MENUS_MUSULMAN = {
     "2026-11-20": { primeiro: "Ensaladda de laranxa", segundo: "Potaxe de fabas con cabaza", sobremesa: "Froita" },
 
     // SEMANA DE 23/11/2026 — menú 4
-    "2026-11-23": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
-    "2026-11-24": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-23": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-24": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
     "2026-11-25": { primeiro: "Brócoli con bechamel", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
     "2026-11-26": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
     "2026-11-27": { primeiro: "Chícharos con  cebola e cenoria", segundo: "Paella de peixe e marisco", sobremesa: "Froita" },
@@ -1438,8 +1438,8 @@ const MENUS_SEN_MARISCO = {
     "2026-11-20": { primeiro: "Ensaladda de laranxa", segundo: "Potaxe de fabas con cabaza", sobremesa: "Froita" },
 
     // SEMANA DE 23/11/2026 — menú 4
-    "2026-11-23": { primeiro: "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
-    "2026-11-24": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-23": { primeiro: "Crema de cabaza e cenoria", segundo: "Tortilla de pataca e cebola con ensalada de follas verdes con olivas", sobremesa: "Iogur ou froita" },
+    "2026-11-24": { primeiro:  "Pasta integral con salsa de verduras", segundo: "Guiso de tenreira con verduras", sobremesa: "Froita" },
     "2026-11-25": { primeiro: "Brócoli con bechamel", segundo: "Lentellas estufadas con verduras", sobremesa: "Froita" },
     "2026-11-26": { primeiro: "Sopa de verduras con garavanzos", segundo: "Polo ao forno con ensalada completa", sobremesa: "Froita" },
     "2026-11-27": { primeiro: "Chícharos con xamón", segundo: "Paella de peixe", sobremesa: "Froita" },
